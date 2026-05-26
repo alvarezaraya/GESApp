@@ -25,9 +25,7 @@ struct ContentView: View {
                         )
                     } else {
                         ForEach(resultados) { problema in
-                            NavigationLink {
-                                DetalleGESView(problema: problema, favoritosString: $favoritosString)
-                            } label: {
+                            NavigationLink(value: problema.id) {
                                 ProblemaRow(problema: problema, esFavorito: favoritosSet.contains(problema.id))
                             }
                         }
@@ -36,6 +34,11 @@ struct ContentView: View {
                 .listSectionSeparator(.hidden, edges: .top)
             }
             .listStyle(.plain)
+            .navigationDestination(for: Int.self) { id in
+                if let problema = ProblemaGES.todos.first(where: { $0.id == id }) {
+                    DetalleGESView(problema: problema, favoritosString: $favoritosString)
+                }
+            }
             .searchable(text: $searchText, prompt: "Buscar por nombre o número...")
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
@@ -119,7 +122,8 @@ struct ContentView: View {
             for p in todos {
                 idx[p.id] = "\(p.id) \(p.nombre) \(p.descripcion) \(p.poblacionObjetivo)".lowercased()
             }
-            await MainActor.run { searchIndex = idx }
+            let result = idx
+            await MainActor.run { searchIndex = result }
         }
     }
 

@@ -21,11 +21,11 @@ struct PDFKitView: UIViewRepresentable {
     func makeUIView(context: Context) -> PDFView {
         let view = PDFView()
         view.autoScales = true
-        if let url = Bundle.main.url(forResource: nombreArchivo,
-                                     withExtension: nil,
-                                     subdirectory: "Guias Rapidas SIGGES"),
-           let doc = PDFDocument(url: url) {
-            view.document = doc
+        if let bundleURL = Bundle.main.resourceURL {
+            let fileURL = bundleURL.appendingPathComponent(nombreArchivo)
+            if let doc = PDFDocument(url: fileURL) {
+                view.document = doc
+            }
         }
         return view
     }
