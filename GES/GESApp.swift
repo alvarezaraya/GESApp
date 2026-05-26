@@ -1,32 +1,16 @@
-//
-//  GESApp.swift
-//  GES
-//
-//  Created by Felipe Álvarez on 11-05-26.
-//
-
 import SwiftUI
-import SwiftData
 
 @main
 struct GESApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    init() {
+        // Fuerza la inicialización del static let antes del primer render,
+        // evitando que ocurra durante una animación o interacción del usuario.
+        _ = ProblemaGES.todos
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
     }
 }
