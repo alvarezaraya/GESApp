@@ -67,10 +67,12 @@ struct ContentView: View {
                     }
                 }
                 ToolbarItem(placement: .principal) {
-                    Image("GESLogo")
+                    Image("GESIconArtwork")
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 30)
+                        .padding(7)
+                        .frame(width: 38, height: 38)
+                        .glassEffect(in: .rect(cornerRadius: 9))
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {

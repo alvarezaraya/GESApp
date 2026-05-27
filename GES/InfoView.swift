@@ -2,6 +2,7 @@ import SwiftUI
 
 struct InfoView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         NavigationStack {
@@ -9,12 +10,13 @@ struct InfoView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     // Ícono de la app + decreto
                     VStack(spacing: 12) {
-                        Image("GESIconArtwork")
+                        Image("GESAppIcon")
                             .resizable()
                             .scaledToFit()
-                            .padding(14)
                             .frame(width: 84, height: 84)
-                            .glassEffect(in: .rect(cornerRadius: 19))
+                            .clipShape(RoundedRectangle(cornerRadius: 19, style: .continuous))
+                            .shadow(color: .black.opacity(colorScheme == .dark ? 0.4 : 0.15),
+                                    radius: 6, x: 0, y: 3)
 
                         Text("Basado en el Decreto Supremo N° 29\nMinisterio de Salud de Chile · Vigente desde el 1 de diciembre de 2025")
                             .font(.caption)
