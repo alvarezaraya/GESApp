@@ -62,7 +62,8 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button { mostrarInfo = true } label: {
-                        Image(systemName: "info.circle").imageScale(.large)
+                        Image(systemName: "info.circle")
+                            .font(.title3)
                     }
                 }
                 ToolbarItem(placement: .principal) {
@@ -71,7 +72,16 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(height: 30)
                 }
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        withAnimation { mostrarFavoritos.toggle() }
+                    } label: {
+                        Image(systemName: mostrarFavoritos ? "star.fill" : "star")
+                            .font(.title3)
+                            .foregroundColor(mostrarFavoritos ? .yellow : .primary)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         if selectedCategoria != nil {
                             Button(role: .destructive) {
@@ -93,19 +103,9 @@ struct ContentView: View {
                             }
                         }
                     } label: {
-                        Image(systemName: selectedCategoria != nil
-                              ? "line.3.horizontal.decrease.circle.fill"
-                              : "line.3.horizontal.decrease.circle")
-                            .imageScale(.large)
+                        Image(systemName: "line.3.horizontal.decrease")
+                            .font(.title3)
                             .foregroundColor(selectedCategoria.map { $0.color } ?? .primary)
-                    }
-
-                    Button {
-                        withAnimation { mostrarFavoritos.toggle() }
-                    } label: {
-                        Image(systemName: mostrarFavoritos ? "star.fill" : "star")
-                            .imageScale(.large)
-                            .foregroundColor(mostrarFavoritos ? .yellow : .primary)
                     }
                 }
             }
