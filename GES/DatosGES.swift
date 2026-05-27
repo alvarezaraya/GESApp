@@ -12,6 +12,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio de hemodiálisis en 7 días desde la indicación médica. Acceso vascular para hemodiálisis: habilitación en 90 días desde la indicación médica. Peritoneodiálisis: inicio en 21 días desde la indicación médica.",
             tratamiento: "Etapa 4: manejo conservador con nefroprotección (IECA/ARA II, iSGLT2), control de factores de riesgo, preparación para terapia de sustitución. Etapa 5: hemodiálisis, diálisis peritoneal o trasplante renal.",
             seguimiento: "Etapa 4: control nefrológico cada 1-3 meses. Etapa 5: control mensual en hemodiálisis. Evaluación trimestral de acceso vascular. Laboratorio mensual (BUN, creatinina, electrolitos, hemograma).",
+            archivoGuiaSIGGES: "1 enfermedad renal cronica etapa 4 y 5 v2.1.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -26,6 +27,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico pre-natal: confirmación en 30 días desde las 20 semanas de gestación. Diagnóstico postnatal: 48 horas (neonatos 0–7 días), 21 días (lactantes 8 días a 2 años) o 180 días (2–15 años) desde la sospecha. Tratamiento: cardiopatía grave, ingreso para cirugía en 48 horas desde la estabilización; otras cardiopatías según indicación médica.",
             tratamiento: "Corrección quirúrgica de la cardiopatía (cierre de CIA, CIV, corrección de tetralogía de Fallot, etc.). Manejo médico preoperatorio.",
             seguimiento: "Control cardiológico periódico post cirugía. Ecocardiograma de seguimiento. Profilaxis de endocarditis según indicación.",
+            archivoGuiaSIGGES: "2 cardiopatías congénitas operables v2.2.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -40,6 +42,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación en 40 días desde la sospecha. Etapificación: en 20 días desde la confirmación. Tratamiento preinvasora bajo grado: en 180 días desde la indicación médica. Tratamiento preinvasora alto grado: en 30 días desde la confirmación. Tratamiento cáncer invasor: en 20 días desde la etapificación. Seguimiento: primer control en 90 días desde la indicación médica.",
             tratamiento: "Según etapa: conización, histerectomía radical, radioterapia, quimioterapia o combinaciones. Etapas IA1: conización. Etapas IB-IVA: radio-quimioterapia.",
             seguimiento: "Control cada 3 meses los primeros 2 años, luego semestral hasta 5 años. PAP y examen ginecológico en cada control.",
+            archivoGuiaSIGGES: "3 Cáncer Cérvicouterino v1.0.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -82,6 +85,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: consulta con especialista en 7 días desde la sospecha. Tratamiento: inicio en 24 horas desde la confirmación diagnóstica.",
             tratamiento: "Insulinoterapia intensificada (basal-bolo o bomba de insulina). Sensor de monitoreo continuo de glicemia (MCG) garantizado GES para menores de 18 años y personas gestantes. Automonitoreo de glicemia en el resto de la población. Educación en conteo de carbohidratos.",
             seguimiento: "Control cada 3 meses con HbA1c. Monitoreo continuo con MCG en menores de 18 años y embarazadas. Screening anual de complicaciones: fondo de ojo, microalbuminuria, perfil lipídico, función renal.",
+            archivoGuiaSIGGES: "6 Diabetes Mellitus Tipo 1 v3.1.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -96,6 +100,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación en 30 días desde la primera consulta con glicemia elevada. Tratamiento: inicio en 24 horas desde la confirmación diagnóstica. Atención por especialista: en 60 días desde la derivación.",
             tratamiento: "Cambios en estilo de vida, metformina como primera línea. Asociar iSGLT2 (renoprotección garantizada GES para pacientes con albuminuria y riesgo cardiovascular/renal elevado), iDPP4, sulfonilureas o insulina según HbA1c y comorbilidades.",
             seguimiento: "Control cada 3-4 meses con HbA1c. Screening anual de complicaciones microvasculares y macrovasculares. Examen de pie diabético.",
+            archivoGuiaSIGGES: "07 Diabetes Mellitus 2 Instructivo GES V2.0.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -306,6 +311,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: evaluación por especialista en 60 días desde la derivación. Tratamiento: inicio en 7 días desde la confirmación diagnóstica.",
             tratamiento: "Primera línea: ácido valproico (generalizada), carbamazepina u oxcarbazepina (focal). Monoterapia inicial obligatoria.",
             seguimiento: "Control neurológico cada 3 meses el primer año, luego semestral. EEG de control. Niveles plasmáticos de antiepilépticos.",
+            archivoGuiaSIGGES: "22 Epilepsia infantil 2.2.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -600,6 +606,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación en 25 días desde la sospecha. Tratamiento primario: inicio en 30 días desde la confirmación diagnóstica. Tratamiento secundario: inicio en 30 días desde la indicación médica.",
             tratamiento: "Cirugía (resección máxima segura). Radioterapia + temozolomida en gliomas de alto grado (GBM). Observación en meningiomas grado I.",
             seguimiento: "RNM de control cada 3 meses el primer año, luego semestral. Evaluación neurológica y funcional periódica.",
+            archivoGuiaSIGGES: "43 Tumores Primarios SNC Instructivo GES V2.0.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -628,6 +635,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Leucemia aguda — Diagnóstico: confirmación en 21 días desde la sospecha. Tratamiento: inicio de quimioterapia en 72 horas desde la indicación médica. Leucemia crónica — Diagnóstico: confirmación en 60 días desde la sospecha. Tratamiento: inicio de quimioterapia en 10 días desde la indicación médica.",
             tratamiento: "LLA: quimioterapia de inducción (vincristina, dexametasona, asparaginasa), consolidación, mantención. LMA: quimioterapia intensiva (citarabina + antraciclina, esquema 7+3). LMC: inhibidores de tirosina kinasa (imatinib primera línea; dasatinib o nilotinib en resistencia). Trasplante de médula ósea en seleccionados.",
             seguimiento: "Control hematológico según protocolo. Evaluación de remisión completa. Vigilancia de recaída y efectos secundarios.",
+            archivoGuiaSIGGES: "45 Leucemia v2.3.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -712,6 +720,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio inmediato desde la confirmación diagnóstica.",
             tratamiento: "Kinesioterapia respiratoria diaria, antibióticos (tobramicina inhalada), enzimas pancreáticas, vitaminas liposolubles (A, D, E, K), DNasa (alfa-dornasa). Moduladores CFTR (elexacaftor/tezacaftor/ivacaftor) en pacientes elegibles según indicación médica.",
             seguimiento: "Control multidisciplinario cada 1-3 meses. Cultivos de esputo, espirometría, evaluación nutricional. Referir a trasplante pulmonar si indicado.",
+            archivoGuiaSIGGES: "51 Fibrosis Quística Instructivo GES v2.0.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -838,6 +847,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio en 7 días desde la confirmación diagnóstica. Evaluación por especialista: en 60 días desde la derivación.",
             tratamiento: "Monoterapia inicial: levetiracetam, lamotrigina (focal), ácido valproico (generalizada).",
             seguimiento: "Control neurológico cada 3-6 meses. EEG de control. Educación sobre restricciones (conducción, natación). Considerar retiro tras 2 años sin crisis.",
+            archivoGuiaSIGGES: "60.  Epilepsia no Refractaria adulto v1.1.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(
@@ -852,6 +862,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación en 20 días desde la sospecha. Tratamiento: inicio desde la confirmación diagnóstica. Atención con especialista: en 60 días desde la derivación.",
             tratamiento: "Broncodilatadores de rescate (salbutamol). Corticosteroides inhalados (ICS) como terapia controladora de base; ICS + LABA (fluticasona-salmeterol) en asma persistente moderada a grave. Teofilina, bromuro de ipratropio o corticosteroides orales como opciones adicionales según severidad. Tratamiento de exacerbaciones.",
             seguimiento: "Control cada 1-3 meses hasta lograr control. Evaluación de técnica inhalatoria, adherencia, control ambiental. Espirometría anual.",
+            archivoGuiaSIGGES: "61 Asma Bronquial adultos v1.3.pdf",
             estadoDS29: .modificado
         ),
         ProblemaGES(

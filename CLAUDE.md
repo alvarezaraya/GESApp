@@ -55,7 +55,9 @@ GES = *Garantías Explícitas en Salud*, Chile's mandatory health guarantees. Cu
 **DS N°29 modified problems** — `estadoDS29: .modificado`, available PDF is from the prior decree:
 PS 1, 2, 3, 6, 7, 22, 43, 45, 51, 60, 61
 
-Do **not** set `archivoGuiaSIGGES` on any of these 14 PS (3 new + 11 modified) — the button either doesn't apply or would show an outdated guide without the disclaimer already built into the alert banner.
+`archivoGuiaSIGGES` **should be set** on these 11 PS — `DetalleGESView` automatically shows the subtitle "Guía del decreto anterior" when `estadoDS29 == .modificado`, so the old-guide disclaimer is built into the UI.
+
+Do **not** set `archivoGuiaSIGGES` on the 3 new PS (88, 89, 90) — no SIGGES guide exists for them.
 
 ## Content review
 

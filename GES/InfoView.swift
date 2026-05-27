@@ -63,7 +63,7 @@ struct InfoView: View {
                         cuerpo: "Los contenidos referencian el Decreto Supremo N° 29 del Ministerio de Salud de Chile, que establece las Garantías Explícitas en Salud para el período 2025–2028. Dicho decreto es un documento de dominio público del Estado de Chile."
                     )
 
-                    Text("Versión de datos: DS N° 29 · 2025–2028")
+                    Text("Hecha en Chile, por un chileno 🇨🇱")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity)
