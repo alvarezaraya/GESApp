@@ -81,13 +81,13 @@ Modifications include new treatment baskets, access adjustments, expanded servic
 All 90 `ProblemaGES` entries in `DatosGES.swift` are being reviewed field-by-field against the SIGGES PDF guides in `GES/Guias Rapidas SIGGES/`. The review checks that `descripcion`, `poblacionObjetivo`, `sospechaDiagnostica`, `confirmacionDiagnostica`, `garantiaOportunidad`, `tratamiento`, and `seguimiento` are concordant with the official guides.
 
 **Review status** (✅ verified, ⏳ pending):
-- PS 1 — Enfermedad Renal Crónica Etapa 4 y 5 ⏳ (DS N°29 modified, no PDF to compare)
-- PS 2 — Cardiopatías Congénitas Operables ⏳ (DS N°29 modified, no PDF to compare)
-- PS 3 — Cáncer Cervicouterino ⏳ (DS N°29 modified, no PDF to compare)
+- PS 1 — Enfermedad Renal Crónica Etapa 4 y 5 ✅ (garantiaOportunidad verified vs pre-DS N°29 guide; DS N°29 may add new guarantees)
+- PS 2 — Cardiopatías Congénitas Operables ✅ (garantiaOportunidad verified vs pre-DS N°29 guide)
+- PS 3 — Cáncer Cervicouterino ✅ (garantiaOportunidad verified vs DS N°72/2022 guide)
 - PS 4 — Alivio del Dolor y Cuidados Paliativos ✅
 - PS 5 — Infarto Agudo del Miocardio ✅
-- PS 6 — Diabetes Mellitus Tipo 1 ⏳ (DS N°29 modified, no PDF to compare)
-- PS 7 — Diabetes Mellitus Tipo 2 ⏳ (DS N°29 modified, no PDF to compare)
+- PS 6 — Diabetes Mellitus Tipo 1 ✅ (garantiaOportunidad verified vs pre-DS N°29 guide)
+- PS 7 — Diabetes Mellitus Tipo 2 ✅ (garantiaOportunidad verified vs DS N°72/2022 guide)
 - PS 8 — Cáncer de Mama ✅
 - PS 9 — Disrafias Espinales ✅
 - PS 10 — Escoliosis ✅
@@ -102,7 +102,7 @@ All 90 `ProblemaGES` entries in `DatosGES.swift` are being reviewed field-by-fie
 - PS 19 — IRA ✅
 - PS 20 — Neumonía ✅
 - PS 21 — Hipertensión Arterial ✅
-- PS 22 — Epilepsia infantil ⏳ (DS N°29 modified)
+- PS 22 — Epilepsia infantil ✅ (garantiaOportunidad verified vs pre-DS N°29 guide)
 - PS 23 — Salud Oral 6 años ✅
 - PS 24 — Prevención parto prematuro ✅
 - PS 25 — Marcapasos ✅
@@ -123,15 +123,15 @@ All 90 `ProblemaGES` entries in `DatosGES.swift` are being reviewed field-by-fie
 - PS 40 — SDRN ✅
 - PS 41 — Artrosis de Cadera y Rodilla ✅
 - PS 42 — Hemorragia Subaracnoidea ✅
-- PS 43 — Tumores SNC ⏳ (DS N°29 modified, no PDF to compare)
+- PS 43 — Tumores SNC ✅ (garantiaOportunidad verified vs DS N°72/2022 guide)
 - PS 44 — Hernia del Núcleo Pulposo ✅
-- PS 45 — Leucemia ⏳ (DS N°29 modified, no PDF to compare)
+- PS 45 — Leucemia ✅ (garantiaOportunidad verified vs pre-DS N°29 guide; aguda vs crónica distinction)
 - PS 46 — Urgencia Odontológica ✅
 - PS 47 — Salud Oral 60 años ✅
 - PS 48 — Politraumatizado Grave ✅
 - PS 49 — TCE ✅
 - PS 50 — Trauma Ocular Grave ✅
-- PS 51 — Fibrosis Quística ⏳ (DS N°29 modified, no PDF to compare)
+- PS 51 — Fibrosis Quística ✅ (garantiaOportunidad verified vs DS N°72/2022 guide; only tratamiento guarantee, no diagnóstico)
 - PS 52 — Artritis Reumatoidea ✅
 - PS 53 — Consumo perjudicial alcohol y drogas ✅
 - PS 54 — Analgesia del Parto ✅
@@ -140,8 +140,8 @@ All 90 `ProblemaGES` entries in `DatosGES.swift` are being reviewed field-by-fie
 - PS 57 — Retinopatía del Prematuro ✅
 - PS 58 — Displasia Broncopulmonar ✅
 - PS 59 — Hipoacusia Neurosensorial del Prematuro ✅
-- PS 60 — Epilepsia adulto ⏳ (DS N°29 modified, no PDF to compare)
-- PS 61 — Asma adulto ⏳ (DS N°29 modified, no PDF to compare)
+- PS 60 — Epilepsia adulto ✅ (garantiaOportunidad verified vs pre-DS N°29 guide; only tratamiento guarantee)
+- PS 61 — Asma adulto ✅ (garantiaOportunidad verified vs pre-DS N°29 guide)
 - PS 62 — Parkinson ✅
 - PS 63 — Artritis Idiopática Juvenil ✅
 - PS 64 — Prevención Secundaria IRC ✅
