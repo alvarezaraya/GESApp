@@ -13,6 +13,9 @@ struct DetalleGESView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 headerSection
+                if problema.estadoDS29 != .vigente {
+                    alertaDS29Section
+                }
                 seccionIngreso
                 seccionInfo(titulo: "Descripción", icono: "info.circle.fill", contenido: problema.descripcion)
                 seccionInfo(titulo: "Población Objetivo", icono: "person.2.fill", contenido: problema.poblacionObjetivo)
@@ -28,8 +31,15 @@ struct DetalleGESView: View {
                     } label: {
                         HStack(spacing: 8) {
                             Image(systemName: "doc.fill")
-                            Text("Ver Guía para SIGGES")
-                                .fontWeight(.semibold)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Ver Guía para SIGGES")
+                                    .fontWeight(.semibold)
+                                if problema.estadoDS29 == .modificado {
+                                    Text("Guía del decreto anterior")
+                                        .font(.caption)
+                                        .opacity(0.85)
+                                }
+                            }
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -109,6 +119,35 @@ struct DetalleGESView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(.secondarySystemGroupedBackground))
         .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    private var alertaDS29Section: some View {
+        let esNuevo = problema.estadoDS29 == .nuevo
+        return HStack(alignment: .top, spacing: 12) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .foregroundStyle(.orange)
+                .font(.title3)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(esNuevo ? "Nuevo en DS N°29 (2025–2028)" : "Modificado en DS N°29 (2025–2028)")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.orange)
+                Text(esNuevo
+                     ? "Problema de salud incorporado por el DS N°29, vigente desde el 1 de diciembre de 2025. La información puede no haber sido validada contra una guía SIGGES oficial."
+                     : "Este problema fue modificado por el DS N°29, vigente desde el 1 de diciembre de 2025. El contenido podría no reflejar los cambios del nuevo decreto. La guía SIGGES disponible corresponde al decreto anterior.")
+                    .font(.caption)
+                    .foregroundStyle(.primary.opacity(0.7))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.orange.opacity(0.10))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(.orange.opacity(0.3), lineWidth: 1)
+        )
     }
 
     private var seccionIngreso: some View {

@@ -9,9 +9,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Todas las personas.",
             sospechaDiagnostica: "Paciente con VFG < 30 mL/min/1.73m², elevación persistente de creatinina, síntomas urémicos (náuseas, prurito, fatiga extrema, edema refractario), anemia renal.",
             confirmacionDiagnostica: "Creatinina sérica, clearance de creatinina, ecografía renal, biopsia renal cuando corresponda. VFG 15-29 mL/min confirma etapa 4, VFG < 15 mL/min confirma etapa 5.",
-            garantiaOportunidad: "Sospecha → diagnóstico: evaluación nefrológica en 90 días (etapa 4). Diagnóstico → tratamiento: etapa 5 con acceso a diálisis en 7 días desde la indicación médica. Trasplante renal: según disponibilidad de órgano. Urgencia: síntomas urémicos graves o hiperpotasemia severa, atención inmediata.",
+            garantiaOportunidad: "Diagnóstico: evaluación nefrológica en 90 días (etapa 4). Tratamiento: etapa 5 con acceso a diálisis en 7 días desde la indicación médica. Trasplante renal: según disponibilidad de órgano.",
             tratamiento: "Etapa 4: manejo conservador con nefroprotección (IECA/ARA II, iSGLT2), control de factores de riesgo, preparación para terapia de sustitución. Etapa 5: hemodiálisis, diálisis peritoneal o trasplante renal.",
-            seguimiento: "Etapa 4: control nefrológico cada 1-3 meses. Etapa 5: control mensual en hemodiálisis. Evaluación trimestral de acceso vascular. Laboratorio mensual (BUN, creatinina, electrolitos, hemograma)."
+            seguimiento: "Etapa 4: control nefrológico cada 1-3 meses. Etapa 5: control mensual en hemodiálisis. Evaluación trimestral de acceso vascular. Laboratorio mensual (BUN, creatinina, electrolitos, hemograma).",
+            archivoGuiaSIGGES: "1 enfermedad renal cronica etapa 4 y 5 v2.1.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 2,
@@ -22,9 +24,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Menores de 15 años con cardiopatía congénita operable.",
             sospechaDiagnostica: "Soplo cardíaco patológico, cianosis, dificultad respiratoria, falla de medro, saturación de oxígeno disminuida, taquicardia inexplicada.",
             confirmacionDiagnostica: "Ecocardiograma Doppler color. En casos complejos: cateterismo cardíaco, angioTAC o resonancia magnética cardíaca.",
-            garantiaOportunidad: "Sospecha → diagnóstico: confirmación en 180 días. Diagnóstico → tratamiento: cirugía en 365 días desde confirmación. Urgencia: cardiopatía cianótica crítica o descompensación hemodinámica, resolución quirúrgica inmediata.",
+            garantiaOportunidad: "Diagnóstico: confirmación en 180 días. Tratamiento: cirugía en 365 días desde la confirmación diagnóstica.",
             tratamiento: "Corrección quirúrgica de la cardiopatía (cierre de CIA, CIV, corrección de tetralogía de Fallot, etc.). Manejo médico preoperatorio.",
-            seguimiento: "Control cardiológico periódico post cirugía. Ecocardiograma de seguimiento. Profilaxis de endocarditis según indicación."
+            seguimiento: "Control cardiológico periódico post cirugía. Ecocardiograma de seguimiento. Profilaxis de endocarditis según indicación.",
+            archivoGuiaSIGGES: "2 cardiopatías congénitas operables v2.2.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 3,
@@ -35,9 +39,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Mujeres de 15 años y más.",
             sospechaDiagnostica: "PCR-VPH positivo (tamizaje primario cada 5 años, vigente desde DS N°29/2025). PAP alterado (NIE II, NIE III, carcinoma in situ o invasor), sangrado genital anormal, sinusorragia, flujo vaginal persistente.",
             confirmacionDiagnostica: "PCR-VPH como método de tamizaje primario (sensibilidad 93% vs 30% del PAP). Colposcopía y biopsia cervical ante VPH positivo o PAP alterado. Etapificación con examen físico, TAC, resonancia magnética pélvica.",
-            garantiaOportunidad: "Sospecha → diagnóstico: confirmación en 30 días desde resultado PCR-VPH positivo o PAP alterado. Diagnóstico → tratamiento: inicio en 30 días desde etapificación. Urgencia: lesión macroscópica invasora, derivación prioritaria.",
+            garantiaOportunidad: "Diagnóstico: confirmación en 30 días desde resultado PCR-VPH positivo o PAP alterado. Tratamiento: inicio en 30 días desde la etapificación.",
             tratamiento: "Según etapa: conización, histerectomía radical, radioterapia, quimioterapia o combinaciones. Etapas IA1: conización. Etapas IB-IVA: radio-quimioterapia.",
-            seguimiento: "Control cada 3 meses los primeros 2 años, luego semestral hasta 5 años. PAP y examen ginecológico en cada control."
+            seguimiento: "Control cada 3 meses los primeros 2 años, luego semestral hasta 5 años. PAP y examen ginecológico en cada control.",
+            archivoGuiaSIGGES: "3 Cáncer Cérvicouterino v1.0.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 4,
@@ -76,9 +82,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Todas las personas.",
             sospechaDiagnostica: "Polidipsia, poliuria, polifagia, baja de peso inexplicada, cetoacidosis diabética. Debut frecuente en niños y adolescentes.",
             confirmacionDiagnostica: "Glicemia en ayunas ≥ 126 mg/dL o glicemia casual ≥ 200 mg/dL con síntomas. Péptido C bajo, anticuerpos anti-GAD, anti-IA2.",
-            garantiaOportunidad: "Sospecha → diagnóstico: confirmación en 30 días. Diagnóstico → tratamiento: inicio inmediato desde confirmación. Urgencia: cetoacidosis diabética, atención de urgencias inmediata.",
+            garantiaOportunidad: "Diagnóstico: confirmación en 30 días. Tratamiento: inicio desde la confirmación diagnóstica.",
             tratamiento: "Insulinoterapia intensificada (basal-bolo o bomba de insulina). Sensor de monitoreo continuo de glicemia (MCG) garantizado GES para menores de 18 años y personas gestantes. Automonitoreo de glicemia en el resto de la población. Educación en conteo de carbohidratos.",
-            seguimiento: "Control cada 3 meses con HbA1c. Monitoreo continuo con MCG en menores de 18 años y embarazadas. Screening anual de complicaciones: fondo de ojo, microalbuminuria, perfil lipídico, función renal."
+            seguimiento: "Control cada 3 meses con HbA1c. Monitoreo continuo con MCG en menores de 18 años y embarazadas. Screening anual de complicaciones: fondo de ojo, microalbuminuria, perfil lipídico, función renal.",
+            archivoGuiaSIGGES: "6 Diabetes Mellitus Tipo 1 v3.1.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 7,
@@ -89,9 +97,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas de 15 años y más.",
             sospechaDiagnostica: "Glicemia en ayunas ≥ 100 mg/dL, factores de riesgo (obesidad, antecedentes familiares, síndrome metabólico), polidipsia, poliuria.",
             confirmacionDiagnostica: "Glicemia en ayunas ≥ 126 mg/dL en 2 ocasiones, PTGO ≥ 200 mg/dL a las 2 horas, o HbA1c ≥ 6.5%.",
-            garantiaOportunidad: "Sospecha → diagnóstico: confirmación en 45 días. Diagnóstico → tratamiento: inicio desde confirmación. Urgencia: descompensación hiperglicémica severa o hipoglicemia grave, atención inmediata.",
+            garantiaOportunidad: "Diagnóstico: confirmación en 45 días. Tratamiento: inicio desde la confirmación diagnóstica.",
             tratamiento: "Cambios en estilo de vida, metformina como primera línea. Asociar iSGLT2 (renoprotección garantizada GES para pacientes con albuminuria y riesgo cardiovascular/renal elevado), iDPP4, sulfonilureas o insulina según HbA1c y comorbilidades.",
-            seguimiento: "Control cada 3-4 meses con HbA1c. Screening anual de complicaciones microvasculares y macrovasculares. Examen de pie diabético."
+            seguimiento: "Control cada 3-4 meses con HbA1c. Screening anual de complicaciones microvasculares y macrovasculares. Examen de pie diabético.",
+            archivoGuiaSIGGES: "07 Diabetes Mellitus 2 Instructivo GES V2.0.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 8,
@@ -298,9 +308,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas desde 1 año y menores de 15 años.",
             sospechaDiagnostica: "Crisis convulsivas recurrentes (≥ 2 crisis no provocadas), episodios de desconexión, automatismos, crisis tónico-clónicas generalizadas.",
             confirmacionDiagnostica: "Electroencefalograma (EEG). RNM de cerebro para descartar lesión estructural. Clasificación del tipo de epilepsia.",
-            garantiaOportunidad: "Sospecha → diagnóstico: confirmación (EEG + RNM) en 60 días. Diagnóstico → tratamiento: inicio desde confirmación. Urgencia: status epiléptico, atención de urgencias inmediata con benzodiazepinas IV. Epilepsia refractaria: evaluación en centro especializado en 90 días.",
+            garantiaOportunidad: "Diagnóstico: confirmación (EEG + RNM) en 60 días. Tratamiento: inicio desde la confirmación diagnóstica. Epilepsia refractaria: evaluación en centro especializado en 90 días.",
             tratamiento: "Primera línea: ácido valproico (generalizada), carbamazepina u oxcarbazepina (focal). Monoterapia inicial obligatoria. Epilepsia refractaria (falla a ≥2 fármacos en dosis adecuadas): lacosamida, brivaracetam, perampanel o cannabidiol (CBD) según tipo de síndrome epiléptico. Evaluación neuroquirúrgica en epilepsia focal refractaria.",
-            seguimiento: "Control neurológico cada 3 meses el primer año, luego semestral. EEG de control. Niveles plasmáticos de antiepilépticos."
+            seguimiento: "Control neurológico cada 3 meses el primer año, luego semestral. EEG de control. Niveles plasmáticos de antiepilépticos.",
+            archivoGuiaSIGGES: "22 Epilepsia infantil 2.2.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 23,
@@ -591,9 +603,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas de 15 años y más.",
             sospechaDiagnostica: "Cefalea progresiva con signos de hipertensión endocraneana, déficit neurológico focal progresivo, crisis epilépticas de inicio tardío.",
             confirmacionDiagnostica: "RNM de cerebro con gadolinio. Biopsia estereotáxica o resección quirúrgica con estudio histopatológico.",
-            garantiaOportunidad: "Sospecha → diagnóstico: RNM con gadolinio y confirmación histológica en 30 días. Diagnóstico → tratamiento: inicio en 30 días desde confirmación. Urgencia: hipertensión endocraneana severa o déficit neurológico progresivo, cirugía descompresiva inmediata.",
+            garantiaOportunidad: "Diagnóstico: confirmación (RNM con gadolinio e histología) en 30 días. Tratamiento: inicio en 30 días desde la confirmación diagnóstica.",
             tratamiento: "Cirugía (resección máxima segura). Radioterapia + temozolomida en gliomas de alto grado (GBM). Campos de tratamiento de tumores (TTFields) en GBM. Inhibidores de IDH1/IDH2 (ivosidenib, enasidenib) en gliomas IDH-mutados de bajo grado. Observación en meningiomas grado I.",
-            seguimiento: "RNM de control cada 3 meses el primer año, luego semestral. Evaluación neurológica y funcional periódica."
+            seguimiento: "RNM de control cada 3 meses el primer año, luego semestral. Evaluación neurológica y funcional periódica.",
+            archivoGuiaSIGGES: "43 Tumores Primarios SNC Instructivo GES V2.0.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 44,
@@ -618,9 +632,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas de 15 años y más.",
             sospechaDiagnostica: "Palidez, fatiga, fiebre, infecciones recurrentes, sangrado mucocutáneo, adenopatías, esplenomegalia, dolor óseo.",
             confirmacionDiagnostica: "Hemograma con blastos, mielograma con > 20% blastos, inmunofenotipo, citogenética, biología molecular.",
-            garantiaOportunidad: "Sospecha → diagnóstico: confirmación (mielograma + inmunofenotipo) en 14 días. Diagnóstico → tratamiento: inicio en 14 días desde confirmación. Urgencia: leucemia con complicaciones vitales (neutropenia febril, síndrome de lisis tumoral, leucostasis), atención inmediata.",
+            garantiaOportunidad: "Diagnóstico: confirmación (mielograma + inmunofenotipo) en 14 días. Tratamiento: inicio en 14 días desde la confirmación diagnóstica.",
             tratamiento: "LLA: quimioterapia de inducción (vincristina, dexametasona, asparaginasa), consolidación, mantención; blinatumomab o inotuzumab ozogamicina en recaída/refractariedad; CAR-T en seleccionados. LMA: quimioterapia intensiva (7+3); midostaurin si FLT3+; venetoclax + azacitidina en pacientes no aptos para quimioterapia intensiva. LMC: imatinib primera línea; dasatinib o nilotinib en resistencia; ponatinib en mutación T315I. LLP: ibrutinib, acalabrutinib o venetoclax + obinutuzumab. Trasplante de médula ósea en seleccionados.",
-            seguimiento: "Control hematológico según protocolo. Evaluación de remisión completa. Vigilancia de recaída y efectos secundarios."
+            seguimiento: "Control hematológico según protocolo. Evaluación de remisión completa. Vigilancia de recaída y efectos secundarios.",
+            archivoGuiaSIGGES: "45 Leucemia v2.3.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 46,
@@ -701,9 +717,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Todas las personas.",
             sospechaDiagnostica: "Infecciones respiratorias recurrentes, bronquiectasias, insuficiencia pancreática, íleo meconial, falla de medro, sudor salado.",
             confirmacionDiagnostica: "Test del sudor (cloro > 60 mmol/L positivo). Estudio genético de mutaciones CFTR. Screening neonatal (TIR).",
-            garantiaOportunidad: "Sospecha → diagnóstico: test del sudor y confirmación en 30 días. Diagnóstico → tratamiento: inicio desde confirmación. Urgencia: exacerbación pulmonar severa o íleo meconial, hospitalización inmediata.",
+            garantiaOportunidad: "Diagnóstico: confirmación (test del sudor) en 30 días. Tratamiento: inicio desde la confirmación diagnóstica.",
             tratamiento: "Kinesioterapia respiratoria diaria, antibióticos (tobramicina inhalada), enzimas pancreáticas, vitaminas liposolubles, DNasa (alfa-dornasa). Moduladores CFTR: elexacaftor/tezacaftor/ivacaftor (Trikafta) garantizado GES para pacientes ≥6 años con mutación F508del u otras mutaciones respondedoras (triple terapia de primera elección en elegibles).",
-            seguimiento: "Control multidisciplinario cada 1-3 meses. Cultivos de esputo, espirometría, evaluación nutricional. Referir a trasplante pulmonar si indicado."
+            seguimiento: "Control multidisciplinario cada 1-3 meses. Cultivos de esputo, espirometría, evaluación nutricional. Referir a trasplante pulmonar si indicado.",
+            archivoGuiaSIGGES: "51 Fibrosis Quística Instructivo GES v2.0.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 52,
@@ -826,9 +844,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas de 15 años y más.",
             sospechaDiagnostica: "Crisis epilépticas recurrentes (≥ 2 crisis no provocadas), pérdida de conciencia, movimientos tónico-clónicos, automatismos, aura.",
             confirmacionDiagnostica: "EEG (puede ser normal interictalmente). RNM de cerebro. Clasificación del tipo de epilepsia y crisis.",
-            garantiaOportunidad: "Sospecha → diagnóstico: confirmación (EEG + RNM) en 60 días. Diagnóstico → tratamiento: inicio desde confirmación. Urgencia: status epiléptico, atención de urgencias inmediata con benzodiazepinas IV. Epilepsia refractaria: evaluación en centro especializado en 90 días desde la confirmación de refractariedad.",
+            garantiaOportunidad: "Diagnóstico: confirmación (EEG + RNM) en 60 días. Tratamiento: inicio desde la confirmación diagnóstica. Epilepsia refractaria: evaluación en centro especializado en 90 días desde la confirmación de refractariedad.",
             tratamiento: "Monoterapia inicial: levetiracetam, lamotrigina (focal), ácido valproico (generalizada). Epilepsia refractaria (falla a ≥2 fármacos en dosis adecuadas): lacosamida, brivaracetam, perampanel o cenobamate. Evaluación para cirugía de epilepsia, estimulación del nervio vago (VNS) o neuroestimulación responsiva (RNS) en refractarios.",
-            seguimiento: "Control neurológico cada 3-6 meses. EEG de control. Educación sobre restricciones (conducción, natación). Considerar retiro tras 2 años sin crisis."
+            seguimiento: "Control neurológico cada 3-6 meses. EEG de control. Educación sobre restricciones (conducción, natación). Considerar retiro tras 2 años sin crisis.",
+            archivoGuiaSIGGES: "60.  Epilepsia no Refractaria adulto v1.1.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 61,
@@ -839,9 +859,11 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas de 15 años y más.",
             sospechaDiagnostica: "Sibilancias recurrentes, disnea episódica, tos nocturna o con ejercicio, opresión torácica. Mejora con broncodilatadores.",
             confirmacionDiagnostica: "Espirometría con prueba broncodilatadora positiva (aumento VEF1 ≥ 12% y ≥ 200 mL). Test de metacolina si espirometría normal.",
-            garantiaOportunidad: "Sospecha → diagnóstico: espirometría confirmatoria en 60 días. Diagnóstico → tratamiento: inicio desde confirmación. Urgencia: crisis asmática grave o status asmático, atención de urgencias inmediata. Asma grave no controlada: acceso a biológicos garantizado GES.",
+            garantiaOportunidad: "Diagnóstico: espirometría confirmatoria en 60 días. Tratamiento: inicio desde la confirmación diagnóstica. Asma grave no controlada: acceso a biológicos garantizado GES.",
             tratamiento: "Escalones GINA: pasos 1-2: ICS dosis baja + formoterol PRN. Paso 3: ICS dosis media + LABA. Paso 4: ICS dosis alta + LABA. Paso 5 (asma grave): biológicos según fenotipo: mepolizumab o benralizumab (asma eosinofílica, eos ≥300/μL), dupilumab (eosinofílico o alérgico, FENO ≥25 ppb), tezepelumab (fenotipo no T2 o múltiple). Todos garantizados GES en asma grave.",
-            seguimiento: "Control cada 1-3 meses hasta lograr control. Evaluación de técnica inhalatoria, adherencia, control ambiental. Espirometría anual."
+            seguimiento: "Control cada 1-3 meses hasta lograr control. Evaluación de técnica inhalatoria, adherencia, control ambiental. Espirometría anual.",
+            archivoGuiaSIGGES: "61 Asma Bronquial adultos v1.3.pdf",
+            estadoDS29: .modificado
         ),
         ProblemaGES(
             id: 62,
@@ -1216,9 +1238,10 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas hospitalizadas por descompensación de cirrosis hepática (ascitis, peritonitis bacteriana espontánea, hemorragia variceal, encefalopatía hepática).",
             sospechaDiagnostica: "Paciente con cirrosis conocida que presenta descompensación: ascitis a tensión, hemorragia digestiva variceal, encefalopatía hepática, peritonitis bacteriana espontánea.",
             confirmacionDiagnostica: "Diagnóstico de cirrosis establecido (clínico, imagenológico o histológico). Hospitalización por evento de descompensación documentado. Clasificación Child-Pugh.",
-            garantiaOportunidad: "Diagnóstico → tratamiento farmacológico: acceso desde el alta hospitalaria. Control hepatológico post alta: dentro de los primeros 7-14 días. Urgencia: nueva descompensación (hemorragia variceal, encefalopatía, PBE), atención de urgencias inmediata.",
+            garantiaOportunidad: "Tratamiento: desde el alta hospitalaria. Seguimiento: control hepatológico dentro de 7 a 14 días post alta.",
             tratamiento: "Según tipo de descompensación: diuréticos (espironolactona, furosemida), lactulosa, rifaximina, betabloqueadores no selectivos (profilaxis de hemorragia variceal), albúmina, norfloxacino profiláctico.",
-            seguimiento: "Control hepatológico dentro de los primeros 7-14 días post alta. Luego mensual. Evaluación para trasplante hepático. Monitoreo de función hepática y renal."
+            seguimiento: "Control hepatológico dentro de los primeros 7-14 días post alta. Luego mensual. Evaluación para trasplante hepático. Monitoreo de función hepática y renal.",
+            estadoDS29: .nuevo
         ),
         ProblemaGES(
             id: 89,
@@ -1229,9 +1252,10 @@ extension ProblemaGES {
             poblacionObjetivo: "Menores de 15 años con depresión grave refractaria a tratamiento ambulatorio, depresión con síntomas psicóticos, o depresión con riesgo suicida alto.",
             sospechaDiagnostica: "Ideación suicida activa con plan, intento suicida reciente, síntomas psicóticos (alucinaciones, delirios), deterioro funcional severo, falla a tratamiento ambulatorio adecuado.",
             confirmacionDiagnostica: "Evaluación psiquiátrica especializada. Criterios de depresión grave según CIE-10/DSM-5. Evaluación de riesgo suicida con instrumentos validados. Descarte de causas orgánicas.",
-            garantiaOportunidad: "Urgencia: hospitalización en ≤24 horas desde la indicación médica. Diagnóstico → evaluación por especialista: en 30 días desde la derivación. Alta hospitalaria: con plan de egreso y control ambulatorio dentro de 7 días post alta.",
+            garantiaOportunidad: "Hospitalización: dentro de 24 horas desde la indicación médica. Consulta de especialista: en 30 días desde la derivación. Alta hospitalaria: con plan de egreso y control ambulatorio dentro de 7 días post alta.",
             tratamiento: "Hospitalización en unidad de psiquiatría infanto-juvenil. Farmacoterapia (ISRS, ajuste de dosis), psicoterapia intensiva, contención de crisis, intervención familiar. Terapia electroconvulsiva en casos excepcionales.",
-            seguimiento: "Plan de egreso con control psiquiátrico dentro de 7 días post alta. Seguimiento ambulatorio intensivo. Coordinación con red educacional. Prevención de reingreso."
+            seguimiento: "Plan de egreso con control psiquiátrico dentro de 7 días post alta. Seguimiento ambulatorio intensivo. Coordinación con red educacional. Prevención de reingreso.",
+            estadoDS29: .nuevo
         ),
         ProblemaGES(
             id: 90,
@@ -1242,9 +1266,10 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas de 25 años y más fumadoras que deseen dejar de fumar.",
             sospechaDiagnostica: "Fumador activo que expresa deseo de cesación o que presenta patología asociada al tabaquismo. Evaluación con test de Fagerström para dependencia a nicotina.",
             confirmacionDiagnostica: "Confirmación de tabaquismo activo. Evaluación de grado de dependencia (test de Fagerström). Evaluación de motivación (estadios de cambio de Prochaska).",
-            garantiaOportunidad: "Solicitud → inicio de intervención: en 30 días desde la solicitud del paciente. Seguimiento: controles a las 1, 2, 4, 8 y 12 semanas. Alta: al completar 6 meses de abstinencia confirmada.",
+            garantiaOportunidad: "Tratamiento: inicio en 30 días desde la solicitud del paciente. Seguimiento: controles a las 1, 2, 4, 8 y 12 semanas hasta completar 6 meses de abstinencia confirmada.",
             tratamiento: "Consejería breve (ABC), terapia conductual grupal o individual, terapia de reemplazo de nicotina (parches, chicles), vareniclina o bupropión según evaluación.",
-            seguimiento: "Seguimiento a las 1, 2, 4, 8 y 12 semanas. Evaluación de abstinencia. Manejo de recaídas. Seguimiento hasta completar 6 meses sin fumar."
+            seguimiento: "Seguimiento a las 1, 2, 4, 8 y 12 semanas. Evaluación de abstinencia. Manejo de recaídas. Seguimiento hasta completar 6 meses sin fumar.",
+            estadoDS29: .nuevo
         ),
     ]
 }

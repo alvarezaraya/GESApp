@@ -98,6 +98,12 @@ enum NivelIngresoGES: String {
     }
 }
 
+enum EstadoDS29 {
+    case vigente
+    case modificado   // cambiado en DS N°29 (dic. 2025)
+    case nuevo        // incorporado en DS N°29 (dic. 2025)
+}
+
 struct ProblemaGES: Identifiable {
     let id: Int
     let nombre: String
@@ -111,4 +117,5 @@ struct ProblemaGES: Identifiable {
     let tratamiento: String
     let seguimiento: String
     var archivoGuiaSIGGES: String? = nil
+    var estadoDS29: EstadoDS29 = .vigente
 }
