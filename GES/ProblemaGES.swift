@@ -65,6 +65,8 @@ enum NivelIngresoGES: String {
     case secundaria = "Se deriva a nivel secundario"
     case urgencias = "Ingresa por Urgencia"
     case ambos = "Se ingresa a nivel primario o secundario"
+    case cualquierNivel = "Ingresa en cualquier nivel"
+    case derivaSecundaria = "Sospecha en APS, confirma especialista"
 
     var icono: String {
         switch self {
@@ -72,6 +74,8 @@ enum NivelIngresoGES: String {
         case .secundaria: "building.2.fill"
         case .urgencias: "cross.fill"
         case .ambos: "arrow.triangle.branch"
+        case .cualquierNivel: "point.3.connected.trianglepath.dotted"
+        case .derivaSecundaria: "arrowshape.turn.up.right.fill"
         }
     }
 
@@ -81,19 +85,25 @@ enum NivelIngresoGES: String {
         case .secundaria: .blue
         case .urgencias: .red
         case .ambos: .orange
+        case .cualquierNivel: .purple
+        case .derivaSecundaria: .indigo
         }
     }
 
     var procesoGES: String {
         switch self {
         case .primaria:
-            return "La sospecha GES se registra en APS (SIGGES). Si el diagnóstico se confirma en el nivel primario, el profesional de cabecera genera la notificación GES y gestiona el tratamiento sin necesidad de derivación. Se deriva a nivel secundario solo ante complicaciones o refractariedad terapéutica."
+            return "La confirmación diagnóstica GES se realiza en Atención Primaria (APS/CESFAM). El profesional de cabecera genera la notificación GES y coordina el tratamiento en el nivel primario. Se deriva a nivel secundario solo ante complicaciones o refractariedad terapéutica."
         case .secundaria:
-            return "El profesional de APS registra la sospecha GES (SIGGES) y genera la derivación al especialista de nivel secundario. La confirmación diagnóstica, la notificación GES y la activación de la garantía de tratamiento ocurren en el nivel secundario, donde se coordina el tratamiento."
+            return "La confirmación diagnóstica GES se realiza en el nivel secundario (médico especialista). APS puede detectar la sospecha y emitir la derivación, pero la notificación GES y la activación de garantías ocurren cuando el especialista confirma el diagnóstico."
         case .urgencias:
-            return "Ingreso directo por el servicio de urgencias hospitalario. La sospecha y notificación GES se registran en ese nivel, sin requerir derivación previa desde APS. La garantía de oportunidad aplica desde el momento de la atención de urgencia."
+            return "El caso GES se confirma y notifica directamente en el Servicio de Urgencia, sin requerir derivación previa desde APS. La garantía de oportunidad aplica desde el momento de la atención de urgencia."
         case .ambos:
-            return "La sospecha GES puede activarse en APS (tamizaje o detección temprana) o registrarse directamente en nivel secundario según la vía de consulta. APS confirma y trata los casos de menor complejidad; deriva a especialista cuando el diagnóstico o tratamiento requieren nivel secundario."
+            return "La confirmación diagnóstica GES puede ocurrir en APS (para casos detectados en tamizaje o consulta ambulatoria) o en el nivel secundario (para casos derivados o de mayor complejidad), según la vía de ingreso del paciente."
+        case .cualquierNivel:
+            return "El caso GES puede iniciarse en cualquier nivel de la red asistencial: en el Servicio de Urgencia ante una descompensación o presentación aguda (la garantía GES se activa desde la atención de urgencia), en Atención Primaria (APS/CESFAM) durante una consulta ambulatoria de morbilidad, o en el nivel secundario durante una consulta de especialidad o un período de hospitalización por otro problema de salud."
+        case .derivaSecundaria:
+            return "El caso GES se abre desde la sospecha en Atención Primaria (APS/CESFAM): el médico emite una Solicitud de Interconsulta (SIC) que registra la sospecha en SIGGES e inicia la garantía de oportunidad de diagnóstico. La confirmación diagnóstica y el tratamiento se realizan siempre en el nivel secundario (médico especialista). La derivación al especialista es obligatoria en todos los casos."
         }
     }
 }
