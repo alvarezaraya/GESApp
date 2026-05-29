@@ -17,7 +17,6 @@ struct ContentView: View {
     @State private var favoritosSet: Set<Int> = []
     @AppStorage("favoritos") private var favoritosString = ""
     @State private var guiaAbierta: ProblemaGES?
-@Environment(\.appDelegate) private var appDelegate
 
     private let categoryCounts: [CategoriaGES: Int] = Dictionary(
         grouping: ProblemaGES.todos, by: \.categoria
@@ -90,14 +89,14 @@ struct ContentView: View {
             .navigationDestination(for: ProblemaGES.self) { problema in
                 DetalleGESView(problema: problema)
             }
-.searchable(text: $searchText, prompt: "Buscar por nombre o número...")
+            .searchable(text: $searchText, prompt: "Buscar por nombre o número...")
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 favoritosSet = favoritosString.asFavoritosSet()
                 aplicarFiltros()
-                if let accion = appDelegate.accionPendiente {
-                    appDelegate.accionPendiente = nil
+                if let accion = AppDelegate.accionPendiente {
+                    AppDelegate.accionPendiente = nil
                     switch accion {
                     case .favoritos: withAnimation { mostrarFavoritos = true }
                     case .buscar: break
@@ -210,7 +209,9 @@ struct ContentView: View {
     }
 
     private func aplicarFiltros() {
-        let query = searchText.lowercased().trimmingCharacters(in: .whitespaces)
+        let query = searchText
+            .folding(options: [.caseInsensitive, .diacriticInsensitive], locale: .current)
+            .trimmingCharacters(in: .whitespaces)
         let categoria = selectedCategoria
         let soloFavoritos = mostrarFavoritos
         let favs = favoritosSet
@@ -219,7 +220,8 @@ struct ContentView: View {
             if soloFavoritos, !favs.contains(p.id) { return false }
             if let cat = categoria, p.categoria != cat { return false }
             if !query.isEmpty {
-                let texto = "\(p.id) \(p.nombre) \(p.descripcion) \(p.poblacionObjetivo)".lowercased()
+                let texto = "\(p.id) \(p.nombre) \(p.descripcion) \(p.poblacionObjetivo)"
+                    .folding(options: [.caseInsensitive, .diacriticInsensitive], locale: .current)
                 return texto.contains(query)
             }
             return true

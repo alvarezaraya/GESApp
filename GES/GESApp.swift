@@ -12,25 +12,12 @@ struct GESApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.appDelegate, appDelegate)
                 .background(
                     Text("0123456789")
                         .font(.system(.title3, design: .serif, weight: .bold))
                         .hidden()
                 )
         }
-    }
-
-}
-
-private struct AppDelegateKey: EnvironmentKey {
-    static let defaultValue = AppDelegate()
-}
-
-extension EnvironmentValues {
-    var appDelegate: AppDelegate {
-        get { self[AppDelegateKey.self] }
-        set { self[AppDelegateKey.self] = newValue }
     }
 }
 
@@ -45,9 +32,8 @@ extension Notification.Name {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    // Acción pendiente cuando la app arranca fría desde un quick action.
-    // ContentView la consume en onAppear.
-    var accionPendiente: QuickAction?
+    /// Acción pendiente en arranque frío. ContentView la consume en onAppear.
+    static var accionPendiente: QuickAction?
 
     func application(
         _ application: UIApplication,
@@ -67,9 +53,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 icon: UIApplicationShortcutIcon(systemImageName: "magnifyingglass")
             ),
         ]
-        // Arranque frío desde quick action
         if let item = launchOptions?[.shortcutItem] as? UIApplicationShortcutItem {
-            accionPendiente = QuickAction(rawValue: item.type)
+            AppDelegate.accionPendiente = QuickAction(rawValue: item.type)
         }
         return true
     }
@@ -79,7 +64,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         performActionFor shortcutItem: UIApplicationShortcutItem,
         completionHandler: @escaping (Bool) -> Void
     ) {
-        // App ya en background: la UI está activa, notificación directa
         switch QuickAction(rawValue: shortcutItem.type) {
         case .favoritos:
             NotificationCenter.default.post(name: .abrirFavoritos, object: nil)
