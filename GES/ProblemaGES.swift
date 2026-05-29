@@ -114,7 +114,15 @@ enum EstadoDS29 {
     case nuevo        // incorporado en DS N°29 (dic. 2025)
 }
 
-struct ProblemaGES: Identifiable {
+extension String {
+    func asFavoritosSet() -> Set<Int> {
+        Set(split(separator: ",").compactMap { Int($0) })
+    }
+}
+
+struct ProblemaGES: Identifiable, Hashable {
+    static func == (lhs: Self, rhs: Self) -> Bool { lhs.id == rhs.id }
+    func hash(into hasher: inout Hasher) { hasher.combine(id) }
     let id: Int
     let nombre: String
     let categoria: CategoriaGES

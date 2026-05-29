@@ -2,11 +2,11 @@ import SwiftUI
 
 struct DetalleGESView: View {
     let problema: ProblemaGES
-    @Binding var favoritosString: String
+    @AppStorage("favoritos") private var favoritosString = ""
     @State private var mostrarGuia = false
 
     private var esFavorito: Bool {
-        Set(favoritosString.split(separator: ",").compactMap { Int($0) }).contains(problema.id)
+        favoritosString.asFavoritosSet().contains(problema.id)
     }
 
     var body: some View {
@@ -199,7 +199,7 @@ struct DetalleGESView: View {
     }
 
     private func toggleFavorito() {
-        var set = Set(favoritosString.split(separator: ",").compactMap { Int($0) })
+        var set = favoritosString.asFavoritosSet()
         if set.contains(problema.id) {
             set.remove(problema.id)
         } else {

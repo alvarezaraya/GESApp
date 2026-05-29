@@ -1,15 +1,25 @@
 import SwiftUI
 
+private enum OrdenGES: String, CaseIterable, Identifiable {
+    case porId = "Número"
+    case porNombre = "Nombre"
+    case porCategoria = "Categoría"
+    var id: String { rawValue }
+}
+
 struct ContentView: View {
     @State private var searchText = ""
     @State private var selectedCategoria: CategoriaGES?
     @State private var mostrarFavoritos = false
     @State private var mostrarInfo = false
+    @State private var sortOrder: OrdenGES = .porId
     @State private var resultados: [ProblemaGES] = ProblemaGES.todos
     @State private var favoritosSet: Set<Int> = []
-    // Índice precalculado: id → string unificada y en minúsculas para búsqueda rápida
-    @State private var searchIndex: [Int: String] = [:]
     @AppStorage("favoritos") private var favoritosString = ""
+
+    private let categoryCounts: [CategoriaGES: Int] = Dictionary(
+        grouping: ProblemaGES.todos, by: \.categoria
+    ).mapValues(\.count)
 
     var body: some View {
         NavigationStack {
@@ -25,7 +35,7 @@ struct ContentView: View {
                         )
                     } else {
                         ForEach(resultados) { problema in
-                            NavigationLink(value: problema.id) {
+                            NavigationLink(value: problema) {
                                 ProblemaRow(problema: problema, esFavorito: favoritosSet.contains(problema.id))
                             }
                         }
@@ -34,25 +44,23 @@ struct ContentView: View {
                 .listSectionSeparator(.hidden, edges: .top)
             }
             .listStyle(.plain)
-            .navigationDestination(for: Int.self) { id in
-                if let problema = ProblemaGES.todos.first(where: { $0.id == id }) {
-                    DetalleGESView(problema: problema, favoritosString: $favoritosString)
-                }
+            .navigationDestination(for: ProblemaGES.self) { problema in
+                DetalleGESView(problema: problema)
             }
             .searchable(text: $searchText, prompt: "Buscar por nombre o número...")
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                favoritosSet = Self.parseFavoritos(favoritosString)
-                preconstruirIndice()
+                favoritosSet = favoritosString.asFavoritosSet()
+                aplicarFiltros()
             }
             .onChange(of: favoritosString) { _, new in
-                favoritosSet = Self.parseFavoritos(new)
+                favoritosSet = new.asFavoritosSet()
                 aplicarFiltros()
             }
             .onChange(of: selectedCategoria) { _, _ in aplicarFiltros() }
             .onChange(of: mostrarFavoritos)   { _, _ in aplicarFiltros() }
-            // Debounce: espera 200 ms tras el último carácter antes de filtrar
+            .onChange(of: sortOrder)          { _, _ in aplicarFiltros() }
             .task(id: searchText) {
                 if searchText.isEmpty { aplicarFiltros(); return }
                 try? await Task.sleep(for: .milliseconds(200))
@@ -83,22 +91,32 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        if selectedCategoria != nil {
-                            Button(role: .destructive) {
-                                selectedCategoria = nil
-                            } label: {
-                                Label("Todas las categorías", systemImage: "xmark.circle")
+                        Section("Ordenar") {
+                            Picker("Orden", selection: $sortOrder) {
+                                ForEach(OrdenGES.allCases) { orden in
+                                    Label(orden.rawValue, systemImage: sortIcon(orden))
+                                        .tag(orden)
+                                }
                             }
-                            Divider()
                         }
-                        ForEach(CategoriaGES.allCases) { cat in
-                            Button {
-                                selectedCategoria = selectedCategoria == cat ? nil : cat
-                            } label: {
-                                Label {
-                                    Text(cat.rawValue)
-                                } icon: {
-                                    Image(systemName: selectedCategoria == cat ? "checkmark" : cat.icono)
+
+                        Section("Filtrar por categoría") {
+                            if selectedCategoria != nil {
+                                Button(role: .destructive) {
+                                    selectedCategoria = nil
+                                } label: {
+                                    Label("Todas las categorías", systemImage: "xmark.circle")
+                                }
+                            }
+                            ForEach(CategoriaGES.allCases) { cat in
+                                Button {
+                                    selectedCategoria = selectedCategoria == cat ? nil : cat
+                                } label: {
+                                    Label {
+                                        Text("\(cat.rawValue) (\(categoryCounts[cat] ?? 0))")
+                                    } icon: {
+                                        Image(systemName: selectedCategoria == cat ? "checkmark" : cat.icono)
+                                    }
                                 }
                             }
                         }
@@ -112,49 +130,37 @@ struct ContentView: View {
         }
     }
 
-    // Construye el índice una sola vez en background al lanzar la app
-    private func preconstruirIndice() {
-        guard searchIndex.isEmpty else { return }
-        let todos = ProblemaGES.todos
-        Task.detached(priority: .background) {
-            var idx: [Int: String] = [:]
-            idx.reserveCapacity(todos.count)
-            for p in todos {
-                idx[p.id] = "\(p.id) \(p.nombre) \(p.descripcion) \(p.poblacionObjetivo)".lowercased()
-            }
-            let result = idx
-            await MainActor.run { searchIndex = result }
+    private func sortIcon(_ orden: OrdenGES) -> String {
+        switch orden {
+        case .porId: "number"
+        case .porNombre: "textformat.abc"
+        case .porCategoria: "tag"
         }
     }
 
-    // Filtrado síncrono en main thread — 90 items es trivial; evita overhead de dispatch
     private func aplicarFiltros() {
         let query = searchText.lowercased().trimmingCharacters(in: .whitespaces)
         let categoria = selectedCategoria
         let soloFavoritos = mostrarFavoritos
         let favs = favoritosSet
-        let idx = searchIndex
-        let todos = ProblemaGES.todos
 
-        resultados = todos.filter { p in
+        var filtered = ProblemaGES.todos.filter { p in
             if soloFavoritos, !favs.contains(p.id) { return false }
             if let cat = categoria, p.categoria != cat { return false }
             if !query.isEmpty {
-                if idx.isEmpty {
-                    // Índice aún no listo: fallback directo
-                    return p.nombre.lowercased().contains(query)
-                        || p.descripcion.lowercased().contains(query)
-                        || p.poblacionObjetivo.lowercased().contains(query)
-                        || String(p.id) == query
-                }
-                return idx[p.id]?.contains(query) == true
+                let texto = "\(p.id) \(p.nombre) \(p.descripcion) \(p.poblacionObjetivo)".lowercased()
+                return texto.contains(query)
             }
             return true
         }
-    }
 
-    private static func parseFavoritos(_ string: String) -> Set<Int> {
-        Set(string.split(separator: ",").compactMap { Int($0) })
+        switch sortOrder {
+        case .porId: break
+        case .porNombre: filtered.sort { $0.nombre < $1.nombre }
+        case .porCategoria: filtered.sort { $0.categoria.rawValue < $1.categoria.rawValue }
+        }
+
+        resultados = filtered
     }
 }
 
