@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var favoritosSet: Set<Int> = []
     @AppStorage("favoritos") private var favoritosString = ""
     @State private var guiaAbierta: ProblemaGES?
+    @State private var busquedaActiva = false
 
     private let categoryCounts: [CategoriaGES: Int] = Dictionary(
         grouping: ProblemaGES.todos, by: \.categoria
@@ -89,18 +90,16 @@ struct ContentView: View {
             .navigationDestination(for: ProblemaGES.self) { problema in
                 DetalleGESView(problema: problema)
             }
-            .searchable(text: $searchText, prompt: "Buscar por nombre o número...")
+            .searchable(text: $searchText, isPresented: $busquedaActiva, prompt: "Buscar por nombre o número...")
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 favoritosSet = favoritosString.asFavoritosSet()
                 aplicarFiltros()
+                // Arranque frío vía quick action
                 if let accion = AppDelegate.accionPendiente {
                     AppDelegate.accionPendiente = nil
-                    switch accion {
-                    case .favoritos: withAnimation { mostrarFavoritos = true }
-                    case .buscar: break
-                    }
+                    ejecutar(accion)
                 }
             }
             .onChange(of: favoritosString) { _, new in
@@ -116,15 +115,12 @@ struct ContentView: View {
                 aplicarFiltros()
             }
             .sheet(isPresented: $mostrarInfo) { InfoView() }
+            // App ya en ejecución (warm): el SceneDelegate emite estas notificaciones.
             .onReceive(NotificationCenter.default.publisher(for: .abrirFavoritos)) { _ in
-                withAnimation { mostrarFavoritos = true }
+                ejecutar(.favoritos)
             }
             .onReceive(NotificationCenter.default.publisher(for: .enfocarBusqueda)) { _ in
-                // El searchable field no tiene un focus directo en SwiftUI;
-                // limpiar el texto y activar el filtro lleva al usuario al estado de búsqueda.
-                searchText = ""
-                selectedCategoria = nil
-                mostrarFavoritos = false
+                ejecutar(.buscar)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -198,6 +194,23 @@ struct ContentView: View {
         var set = favoritosString.asFavoritosSet()
         if set.contains(id) { set.remove(id) } else { set.insert(id) }
         favoritosString = set.sorted().map(String.init).joined(separator: ",")
+    }
+
+    /// Ejecuta un quick action del ícono de la app.
+    private func ejecutar(_ accion: QuickAction) {
+        switch accion {
+        case .favoritos:
+            busquedaActiva = false
+            withAnimation { mostrarFavoritos = true }
+        case .buscar:
+            mostrarFavoritos = false
+            selectedCategoria = nil
+            // Pequeño retardo para que la barra de búsqueda esté instalada
+            // (necesario en arranque frío, cuando el .searchable aún no existe).
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                busquedaActiva = true
+            }
+        }
     }
 
     private func sortIcon(_ orden: OrdenGES) -> String {

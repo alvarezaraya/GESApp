@@ -53,14 +53,34 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 icon: UIApplicationShortcutIcon(systemImageName: "magnifyingglass")
             ),
         ]
-        if let item = launchOptions?[.shortcutItem] as? UIApplicationShortcutItem {
-            AppDelegate.accionPendiente = QuickAction(rawValue: item.type)
-        }
         return true
     }
 
     func application(
         _ application: UIApplication,
+        configurationForConnecting connectingSceneSession: UISceneSession,
+        options: UIScene.ConnectionOptions
+    ) -> UISceneConfiguration {
+        let config = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
+        config.delegateClass = SceneDelegate.self
+        return config
+    }
+}
+
+class SceneDelegate: NSObject, UIWindowSceneDelegate {
+    func scene(
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
+        // Arranque frío vía quick action: ContentView la consume en onAppear.
+        if let item = connectionOptions.shortcutItem {
+            AppDelegate.accionPendiente = QuickAction(rawValue: item.type)
+        }
+    }
+
+    func windowScene(
+        _ windowScene: UIWindowScene,
         performActionFor shortcutItem: UIApplicationShortcutItem,
         completionHandler: @escaping (Bool) -> Void
     ) {
