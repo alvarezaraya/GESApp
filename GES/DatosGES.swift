@@ -937,7 +937,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: dentro de 60 días desde la sospecha. Tratamiento: inicio dentro de 30 días desde la confirmación diagnóstica. Rehabilitación: inicio dentro de 30 días desde la indicación médica. Rehabilitación integral en brote: inicio dentro de 48 horas desde la indicación médica. Bastones: entrega dentro de 20 días desde la indicación médica. Sillas de ruedas, andadores y órtesis tobillo-pie: entrega dentro de 30 días desde la indicación médica.",
             tratamiento: "Brotes: metilprednisolona EV. Terapia modificadora: interferón beta, acetato de glatiramer, fingolimod, natalizumab según actividad.",
             seguimiento: "Control neurológico cada 3-6 meses. RNM anual. Evaluación de discapacidad (EDSS). Monitoreo de efectos adversos de terapia.",
-            archivoGuiaSIGGES: "67 Esclerosis Multiple RR Instructivo GES v2.0 19-07-2023.pdf"
+            archivoGuiaSIGGES: "67-_Esclerosis_Múltiple_Remitente_Recurrente_v4.0.pdf"
         ),
         ProblemaGES(
             id: 68,
@@ -971,7 +971,7 @@ extension ProblemaGES {
             id: 70,
             nombre: "Cáncer Colorrectal en Personas de 15 Años y Más",
             categoria: .oncologico,
-            nivelIngreso: .secundaria,
+            nivelIngreso: .derivaSecundaria,
             descripcion: "Neoplasia maligna de colon y recto. Tercera causa de muerte por cáncer.",
             poblacionObjetivo: "Personas de 15 años y más.",
             sospechaDiagnostica: "Cambio del hábito intestinal, rectorragia, anemia ferropénica inexplicada, baja de peso, masa abdominal palpable, test de sangre oculta positivo.",
@@ -979,7 +979,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 45 días desde la sospecha. Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica. Diagnóstico → tratamiento primario: inicio dentro de 30 días desde la indicación médica. Tratamiento adyuvante y/o neoadyuvante: inicio dentro de 30 días desde la indicación médica. Reconstitución del tránsito intestinal y/o cierre de colostomía: dentro de 90 días desde la indicación quirúrgica. Seguimiento: primer control dentro de 90 días desde la indicación médica.",
             tratamiento: "Colon: colectomía + quimioterapia adyuvante (FOLFOX si etapa III). Recto: neoadyuvancia (QT-RT), resección anterior baja o amputación abdominoperineal.",
             seguimiento: "CEA cada 3 meses por 3 años. TAC cada 6-12 meses. Colonoscopía al año, luego cada 3-5 años.",
-            archivoGuiaSIGGES: "70 Cáncer colorectal Instructivo GES v2.0.pdf"
+            archivoGuiaSIGGES: "70_-_Cáncer_Colorectal_15_Años_y_Más_4.0.pdf"
         ),
         ProblemaGES(
             id: 71,
@@ -1007,13 +1007,13 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación → etapificación: dentro de 30 días desde la indicación médica. Confirmación → tratamiento primario: dentro de 45 días desde la indicación médica. Confirmación → tratamiento adyuvante: dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 30 días desde la indicación médica.",
             tratamiento: "Superficial: RTU + BCG intravesical. Músculo-invasor: cistectomía radical + derivación urinaria. Quimioterapia neoadyuvante.",
             seguimiento: "Cistoscopía cada 3 meses el primer año, semestral hasta 5 años. Citología urinaria.",
-            archivoGuiaSIGGES: "72 Cáncer Vesical Instructivo GES v2.0.pdf"
+            archivoGuiaSIGGES: "72_-_Cáncer_Vesical_15_Años_y_Más_3.0.pdf"
         ),
         ProblemaGES(
             id: 73,
             nombre: "Osteosarcoma en Personas de 15 Años y Más",
             categoria: .oncologico,
-            nivelIngreso: .secundaria,
+            nivelIngreso: .derivaSecundaria,
             descripcion: "Tumor óseo maligno primario más frecuente. Predomina en adolescentes y adultos jóvenes.",
             poblacionObjetivo: "Personas de 15 años y más.",
             sospechaDiagnostica: "Dolor óseo persistente (rodilla, fémur distal, tibia proximal, húmero), masa de partes blandas, fractura patológica.",
@@ -1021,7 +1021,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica y etapificación dentro de 60 días desde la sospecha. Diagnóstico → tratamiento primario: inicio dentro de 30 días desde la indicación médica. Diagnóstico → tratamiento adyuvante: inicio dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 30 días desde la indicación médica. Rehabilitación: inicio dentro de 15 días desde la indicación médica. Silla de ruedas y andadores: entrega dentro de 30 días desde la indicación médica. Bastones: entrega dentro de 20 días desde la indicación médica. Vendaje para preparación de muñón: entrega dentro de 48 horas desde la indicación médica.",
             tratamiento: "Quimioterapia neoadyuvante, cirugía con preservación de extremidad o amputación, quimioterapia adyuvante. Rehabilitación.",
             seguimiento: "Control cada 3 meses con imágenes. TAC de tórax para vigilancia de metástasis pulmonares. Rehabilitación funcional.",
-            archivoGuiaSIGGES: "73 Osteosarcoma Instructivo GES  v.2.0.pdf"
+            archivoGuiaSIGGES: "73_-_Osteosarcoma_15_Años_y_Más_v3.0.pdf"
         ),
         ProblemaGES(
             id: 74,
@@ -1125,7 +1125,7 @@ extension ProblemaGES {
             id: 81,
             nombre: "Cáncer de Pulmón en Personas de 15 Años y Más",
             categoria: .oncologico,
-            nivelIngreso: .secundaria,
+            nivelIngreso: .derivaSecundaria,
             descripcion: "Neoplasia maligna pulmonar. Principal causa de muerte por cáncer a nivel mundial. Fuertemente asociado al tabaquismo.",
             poblacionObjetivo: "Personas de 15 años y más.",
             sospechaDiagnostica: "Tos persistente, hemoptisis, disnea, dolor torácico, baja de peso, nódulo o masa pulmonar en imágenes, síndrome de vena cava superior.",
@@ -1133,7 +1133,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 60 días desde la sospecha. Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica. Diagnóstico → tratamiento primario: inicio dentro de 45 días desde la indicación médica. Tratamientos adyuvantes: inicio dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 30 días desde la indicación médica.",
             tratamiento: "Etapas I-II: cirugía (lobectomía + linfadenectomía) ± QT adyuvante. Etapa III: QT-RT. Etapa IV: QT, inmunoterapia, terapia dirigida según marcadores.",
             seguimiento: "TAC cada 3-6 meses los primeros 2 años, luego anual. Control clínico según síntomas.",
-            archivoGuiaSIGGES: "81 Cáncer de pulmón Instructivo GES v2.0.pdf"
+            archivoGuiaSIGGES: "81_-_Cáncer_de_Pulmón_V._3.0.pdf"
         ),
         ProblemaGES(
             id: 82,
@@ -1161,7 +1161,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica. Diagnóstico → tratamiento primario: inicio dentro de 30 días desde la indicación médica. Tratamientos adyuvantes: inicio dentro de 30 días desde la indicación médica.",
             tratamiento: "Nefrectomía radical o parcial según tamaño y localización. Terapias sistémicas en enfermedad avanzada: antiangiogénicos, inmunoterapia (nivolumab + ipilimumab), inhibidores de tirosina quinasa.",
             seguimiento: "TAC cada 3-6 meses los primeros 2 años, luego anual. Control de función renal. Vigilancia del riñón contralateral.",
-            archivoGuiaSIGGES: "83 Cáncer Renal Instructivo GES  v2.0.pdf"
+            archivoGuiaSIGGES: "83_-_Cáncer_Renal_en_Personas_de_15_Años_y_Más_V.3.pdf"
         ),
         ProblemaGES(
             id: 84,
@@ -1175,7 +1175,7 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica. Diagnóstico → tratamiento primario: inicio dentro de 30 días desde la indicación médica. Tratamiento adyuvante: inicio dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 30 días desde la indicación médica.",
             tratamiento: "Inducción: VRd (bortezomib, lenalidomida, dexametasona). Trasplante autólogo en elegibles. Mantención con lenalidomida.",
             seguimiento: "Electroforesis y cadenas livianas cada 1-2 meses. Evaluación de respuesta según criterios IMWG. Vigilancia de complicaciones óseas.",
-            archivoGuiaSIGGES: "84 Mieloma  Multiple Instructivo GES v2.0.pdf"
+            archivoGuiaSIGGES: "84_-_Mieloma_Múltiple_en_Personas_de_15_Años_y_Más.pdf"
         ),
         ProblemaGES(
             id: 85,
@@ -1228,10 +1228,10 @@ extension ProblemaGES {
             poblacionObjetivo: "Personas hospitalizadas por descompensación de cirrosis hepática (ascitis, peritonitis bacteriana espontánea, hemorragia variceal, encefalopatía hepática).",
             sospechaDiagnostica: "Paciente con cirrosis conocida que presenta descompensación: ascitis a tensión, hemorragia digestiva variceal, encefalopatía hepática, peritonitis bacteriana espontánea.",
             confirmacionDiagnostica: "Diagnóstico de cirrosis establecido (clínico, imagenológico o histológico). Hospitalización por evento de descompensación documentado. Clasificación Child-Pugh.",
-            garantiaOportunidad: "Tratamiento: desde el alta hospitalaria. Seguimiento: control hepatológico dentro de 7 a 14 días post alta.",
+            garantiaOportunidad: "Tratamiento: inicio dentro de 30 días desde la indicación médica (al alta hospitalaria). El acceso a fármacos garantizados se entrega tanto en nivel de especialidad como en APS. Seguimiento: no garantizado (control hepatológico recomendado dentro de 7 a 14 días post alta).",
             tratamiento: "Según tipo de descompensación: diuréticos (espironolactona, furosemida), lactulosa, rifaximina, betabloqueadores no selectivos (profilaxis de hemorragia variceal), albúmina, norfloxacino profiláctico.",
             seguimiento: "Control hepatológico dentro de los primeros 7-14 días post alta. Luego mensual. Evaluación para trasplante hepático. Monitoreo de función hepática y renal.",
-            estadoDS29: .nuevo
+            archivoGuiaSIGGES: "88_-_Tratamiento_Farmacológico_Cirrosis_v.1.0.pdf"
         ),
         ProblemaGES(
             id: 89,
@@ -1242,24 +1242,24 @@ extension ProblemaGES {
             poblacionObjetivo: "Menores de 15 años con depresión grave refractaria a tratamiento ambulatorio, depresión con síntomas psicóticos, o depresión con riesgo suicida alto.",
             sospechaDiagnostica: "Ideación suicida activa con plan, intento suicida reciente, síntomas psicóticos (alucinaciones, delirios), deterioro funcional severo, falla a tratamiento ambulatorio adecuado.",
             confirmacionDiagnostica: "Evaluación psiquiátrica especializada. Criterios de depresión grave según CIE-10/DSM-5. Evaluación de riesgo suicida con instrumentos validados. Descarte de causas orgánicas.",
-            garantiaOportunidad: "Hospitalización: dentro de 24 horas desde la indicación médica. Consulta de especialista: en 30 días desde la derivación. Alta hospitalaria: con plan de egreso y control ambulatorio dentro de 7 días post alta.",
-            tratamiento: "Hospitalización en unidad de psiquiatría infanto-juvenil. Farmacoterapia (ISRS, ajuste de dosis), psicoterapia intensiva, contención de crisis, intervención familiar. Terapia electroconvulsiva en casos excepcionales.",
-            seguimiento: "Plan de egreso con control psiquiátrico dentro de 7 días post alta. Seguimiento ambulatorio intensivo. Coordinación con red educacional. Prevención de reingreso.",
-            estadoDS29: .nuevo
+            garantiaOportunidad: "Tratamiento (hospitalización): inicio inmediato desde la confirmación diagnóstica. Consulta con especialista: dentro de 30 días desde la derivación (continuidad de atención ambulatoria al egreso).",
+            tratamiento: "Hospitalización en unidad de psiquiatría infanto-juvenil (UHCIP/UHCE) o cuidados medios pediátricos. Farmacoterapia (ISRS, ajuste de dosis), psicoterapia intensiva, contención de crisis, intervención familiar. Hospitalización diurna al egreso si se requiere. Terapia electroconvulsiva en casos excepcionales.",
+            seguimiento: "Al egreso, continuidad de atención ambulatoria de especialidad (COSAM, CAE o CDT). Seguimiento ambulatorio intensivo. Coordinación con red educacional. Prevención de reingreso.",
+            archivoGuiaSIGGES: "89_-_Tratamiento_Hospitalario_Depresión_v.1.0.pdf"
         ),
         ProblemaGES(
             id: 90,
             nombre: "Cesación del Consumo de Tabaco en Personas de 25 Años y Más",
             categoria: .otros,
-            nivelIngreso: .primaria,
+            nivelIngreso: .ambos,
             descripcion: "Programa de apoyo integral para dejar de fumar. Incluye consejería, terapia conductual y tratamiento farmacológico.",
-            poblacionObjetivo: "Personas de 25 años y más fumadoras que deseen dejar de fumar.",
-            sospechaDiagnostica: "Fumador activo que expresa deseo de cesación o que presenta patología asociada al tabaquismo. Evaluación con test de Fagerström para dependencia a nicotina.",
-            confirmacionDiagnostica: "Confirmación de tabaquismo activo. Evaluación de grado de dependencia (test de Fagerström). Evaluación de motivación (estadios de cambio de Prochaska).",
-            garantiaOportunidad: "Tratamiento: inicio en 30 días desde la solicitud del paciente. Seguimiento: controles a las 1, 2, 4, 8 y 12 semanas hasta completar 6 meses de abstinencia confirmada.",
-            tratamiento: "Consejería breve (ABC), terapia conductual grupal o individual, terapia de reemplazo de nicotina (parches, chicles), vareniclina o bupropión según evaluación.",
-            seguimiento: "Seguimiento a las 1, 2, 4, 8 y 12 semanas. Evaluación de abstinencia. Manejo de recaídas. Seguimiento hasta completar 6 meses sin fumar.",
-            estadoDS29: .nuevo
+            poblacionObjetivo: "Personas de 25 años y más con alta dependencia y en etapa de preparación o acción para el abandono del consumo de tabaco.",
+            sospechaDiagnostica: "Fumador activo que expresa deseo de cesación o que presenta patología asociada al tabaquismo. Tamizaje en cualquier tipo de atención (morbilidad espontánea, sala ERA, dental, EMP, etc.). Evaluación con test de Fagerström para dependencia a nicotina.",
+            confirmacionDiagnostica: "Confirmación de tabaquismo activo con alta dependencia. Evaluación de grado de dependencia (test de Fagerström). Evaluación de motivación (estadios de cambio de Prochaska).",
+            garantiaOportunidad: "Tratamiento farmacológico: inicio dentro de 30 días desde la confirmación diagnóstica. Sospecha, confirmación y seguimiento: no garantizados. El caso se cierra automáticamente 13 semanas después de la primera entrega del tratamiento farmacológico.",
+            tratamiento: "Consejería breve (ABC), terapia conductual grupal o individual (6 sesiones), terapia farmacológica iniciada 5-7 días antes del Día D por 12 semanas: terapia de reemplazo de nicotina (parches, chicles), vareniclina o bupropión según evaluación.",
+            seguimiento: "Seguimiento a los 1, 3, 6 y 12 meses. Evaluación de abstinencia. Manejo de recaídas.",
+            archivoGuiaSIGGES: "90_-CESACIÓN_DEL_CONSUMO_DE_TABACO_EN_PERSONAS_DE_.pdf"
         ),
     ]
 }
