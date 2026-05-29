@@ -7,12 +7,12 @@ struct GESApp: App {
 
     init() {
         _ = ProblemaGES.todos
-        registrarQuickActions()
     }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.appDelegate, appDelegate)
                 .background(
                     Text("0123456789")
                         .font(.system(.title3, design: .serif, weight: .bold))
@@ -21,21 +21,16 @@ struct GESApp: App {
         }
     }
 
-    private func registrarQuickActions() {
-        UIApplication.shared.shortcutItems = [
-            UIApplicationShortcutItem(
-                type: QuickAction.favoritos.rawValue,
-                localizedTitle: "Mis Favoritos",
-                localizedSubtitle: nil,
-                icon: UIApplicationShortcutIcon(systemImageName: "star.fill")
-            ),
-            UIApplicationShortcutItem(
-                type: QuickAction.buscar.rawValue,
-                localizedTitle: "Buscar PS",
-                localizedSubtitle: nil,
-                icon: UIApplicationShortcutIcon(systemImageName: "magnifyingglass")
-            ),
-        ]
+}
+
+private struct AppDelegateKey: EnvironmentKey {
+    static let defaultValue = AppDelegate()
+}
+
+extension EnvironmentValues {
+    var appDelegate: AppDelegate {
+        get { self[AppDelegateKey.self] }
+        set { self[AppDelegateKey.self] = newValue }
     }
 }
 
@@ -50,11 +45,41 @@ extension Notification.Name {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    // Acción pendiente cuando la app arranca fría desde un quick action.
+    // ContentView la consume en onAppear.
+    var accionPendiente: QuickAction?
+
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    ) -> Bool {
+        application.shortcutItems = [
+            UIApplicationShortcutItem(
+                type: QuickAction.favoritos.rawValue,
+                localizedTitle: "Mis Favoritos",
+                localizedSubtitle: nil,
+                icon: UIApplicationShortcutIcon(systemImageName: "star.fill")
+            ),
+            UIApplicationShortcutItem(
+                type: QuickAction.buscar.rawValue,
+                localizedTitle: "Buscar PS",
+                localizedSubtitle: nil,
+                icon: UIApplicationShortcutIcon(systemImageName: "magnifyingglass")
+            ),
+        ]
+        // Arranque frío desde quick action
+        if let item = launchOptions?[.shortcutItem] as? UIApplicationShortcutItem {
+            accionPendiente = QuickAction(rawValue: item.type)
+        }
+        return true
+    }
+
     func application(
         _ application: UIApplication,
         performActionFor shortcutItem: UIApplicationShortcutItem,
         completionHandler: @escaping (Bool) -> Void
     ) {
+        // App ya en background: la UI está activa, notificación directa
         switch QuickAction(rawValue: shortcutItem.type) {
         case .favoritos:
             NotificationCenter.default.post(name: .abrirFavoritos, object: nil)

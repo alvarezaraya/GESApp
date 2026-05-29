@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var favoritosSet: Set<Int> = []
     @AppStorage("favoritos") private var favoritosString = ""
     @State private var guiaAbierta: ProblemaGES?
+@Environment(\.appDelegate) private var appDelegate
 
     private let categoryCounts: [CategoriaGES: Int] = Dictionary(
         grouping: ProblemaGES.todos, by: \.categoria
@@ -54,9 +55,6 @@ struct ContentView: View {
                                         Label("Ver Guía SIGGES", systemImage: "doc.richtext")
                                     }
                                 }
-                            } preview: {
-                                DetalleGESView(problema: problema)
-                                    .frame(width: 320)
                             }
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                 let esFav = favoritosSet.contains(problema.id)
@@ -92,12 +90,19 @@ struct ContentView: View {
             .navigationDestination(for: ProblemaGES.self) { problema in
                 DetalleGESView(problema: problema)
             }
-            .searchable(text: $searchText, prompt: "Buscar por nombre o número...")
+.searchable(text: $searchText, prompt: "Buscar por nombre o número...")
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 favoritosSet = favoritosString.asFavoritosSet()
                 aplicarFiltros()
+                if let accion = appDelegate.accionPendiente {
+                    appDelegate.accionPendiente = nil
+                    switch accion {
+                    case .favoritos: withAnimation { mostrarFavoritos = true }
+                    case .buscar: break
+                    }
+                }
             }
             .onChange(of: favoritosString) { _, new in
                 favoritosSet = new.asFavoritosSet()
@@ -270,6 +275,7 @@ private struct ProblemaRow: View {
         .padding(.vertical, 4)
     }
 }
+
 
 #Preview("Light") { ContentView() }
 #Preview("Dark") { ContentView().preferredColorScheme(.dark) }

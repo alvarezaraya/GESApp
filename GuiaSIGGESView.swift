@@ -20,15 +20,13 @@ struct GuiaSIGGESView: View {
                 .onChange(of: textoBusqueda) { _, query in
                     reiniciarBusqueda()
                     guard let pdfView, let doc = pdfView.document, !query.isEmpty else { return }
-                    doc.beginFindString(query, withOptions: .caseInsensitive)
-                }
-                .onReceive(
-                    NotificationCenter.default.publisher(for: .PDFDocumentDidFindMatch)
-                ) { note in
-                    guard let sel = note.userInfo?["PDFDocumentFoundSelections"] as? [PDFSelection],
-                          let match = sel.first else { return }
-                    resultados.append(match)
-                    if resultados.count == 1 { navegarA(0) }
+                    Task.detached(priority: .userInitiated) {
+                        let matches = doc.findString(query, withOptions: .caseInsensitive)
+                        await MainActor.run {
+                            resultados = matches
+                            if !matches.isEmpty { navegarA(0) }
+                        }
+                    }
                 }
                 .safeAreaInset(edge: .bottom) {
                     if !textoBusqueda.isEmpty && !resultados.isEmpty {
