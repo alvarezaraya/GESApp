@@ -493,7 +493,7 @@ extension ProblemaGES {
         ProblemaGES(
             id: 36,
             nombre: "Ayudas Técnicas para Personas de 65 Años y Más",
-            categoria: .otros,
+            categoria: .musculoesqueletico,
             nivelIngreso: .primaria,
             descripcion: "Entrega de ayudas técnicas para mejorar la funcionalidad y autonomía de adultos mayores.",
             poblacionObjetivo: "Personas de 65 años y más con déficit funcional.",
@@ -1194,7 +1194,7 @@ extension ProblemaGES {
         ProblemaGES(
             id: 86,
             nombre: "Atención Integral de Salud en Agresión Sexual Aguda",
-            categoria: .otros,
+            categoria: .traumatismoUrgencias,
             nivelIngreso: .urgencias,
             descripcion: "Atención de emergencia integral (médica, psicológica, legal) a víctimas de agresión sexual reciente.",
             poblacionObjetivo: "Todas las personas víctimas de agresión sexual aguda (dentro de las primeras 72 horas).",
@@ -1250,7 +1250,7 @@ extension ProblemaGES {
         ProblemaGES(
             id: 90,
             nombre: "Cesación del Consumo de Tabaco en Personas de 25 Años y Más",
-            categoria: .otros,
+            categoria: .saludMental,
             nivelIngreso: .ambos,
             descripcion: "Programa de apoyo integral para dejar de fumar. Incluye consejería, terapia conductual y tratamiento farmacológico.",
             poblacionObjetivo: "Personas de 25 años y más con alta dependencia y en etapa de preparación o acción para el abandono del consumo de tabaco.",
