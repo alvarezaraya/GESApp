@@ -92,10 +92,15 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Section("Ordenar por:") {
-                            Picker("Orden", selection: $sortOrder) {
-                                ForEach(OrdenGES.allCases) { orden in
-                                    Label(orden.rawValue, systemImage: sortIcon(orden))
-                                        .tag(orden)
+                            ForEach(OrdenGES.allCases) { orden in
+                                Button {
+                                    sortOrder = orden
+                                } label: {
+                                    Label {
+                                        Text(orden.rawValue)
+                                    } icon: {
+                                        Image(systemName: sortOrder == orden ? "checkmark" : sortIcon(orden))
+                                    }
                                 }
                             }
                         }
