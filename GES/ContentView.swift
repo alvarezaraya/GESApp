@@ -91,7 +91,7 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        Section("Ordenar") {
+                        Section("Ordenar por:") {
                             Picker("Orden", selection: $sortOrder) {
                                 ForEach(OrdenGES.allCases) { orden in
                                     Label(orden.rawValue, systemImage: sortIcon(orden))
