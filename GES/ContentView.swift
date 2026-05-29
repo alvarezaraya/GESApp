@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var resultados: [ProblemaGES] = ProblemaGES.todos
     @State private var favoritosSet: Set<Int> = []
     @AppStorage("favoritos") private var favoritosString = ""
+    @State private var guiaAbierta: ProblemaGES?
 
     private let categoryCounts: [CategoriaGES: Int] = Dictionary(
         grouping: ProblemaGES.todos, by: \.categoria
@@ -37,6 +38,50 @@ struct ContentView: View {
                         ForEach(resultados) { problema in
                             NavigationLink(value: problema) {
                                 ProblemaRow(problema: problema, esFavorito: favoritosSet.contains(problema.id))
+                            }
+                            .contextMenu {
+                                let esFav = favoritosSet.contains(problema.id)
+                                Button {
+                                    toggleFavorito(problema.id)
+                                } label: {
+                                    Label(esFav ? "Quitar de favoritos" : "Agregar a favoritos",
+                                          systemImage: esFav ? "star.slash" : "star")
+                                }
+                                if problema.archivoGuiaSIGGES != nil {
+                                    Button {
+                                        guiaAbierta = problema
+                                    } label: {
+                                        Label("Ver Guía SIGGES", systemImage: "doc.richtext")
+                                    }
+                                }
+                            } preview: {
+                                DetalleGESView(problema: problema)
+                                    .frame(width: 320)
+                            }
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                let esFav = favoritosSet.contains(problema.id)
+                                Button {
+                                    toggleFavorito(problema.id)
+                                } label: {
+                                    Label(esFav ? "Quitar" : "Favorito",
+                                          systemImage: esFav ? "star.slash" : "star")
+                                }
+                                .tint(esFav ? .gray : .yellow)
+                            }
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                if problema.archivoGuiaSIGGES != nil {
+                                    Button {
+                                        guiaAbierta = problema
+                                    } label: {
+                                        Label("Ver Guía", systemImage: "doc.richtext")
+                                    }
+                                    .tint(.blue)
+                                }
+                            }
+                        }
+                        .sheet(item: $guiaAbierta) { problema in
+                            if let archivo = problema.archivoGuiaSIGGES {
+                                GuiaSIGGESView(nombreArchivo: archivo, problema: problema)
                             }
                         }
                     }
@@ -67,6 +112,16 @@ struct ContentView: View {
                 aplicarFiltros()
             }
             .sheet(isPresented: $mostrarInfo) { InfoView() }
+            .onReceive(NotificationCenter.default.publisher(for: .abrirFavoritos)) { _ in
+                withAnimation { mostrarFavoritos = true }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .enfocarBusqueda)) { _ in
+                // El searchable field no tiene un focus directo en SwiftUI;
+                // limpiar el texto y activar el filtro lleva al usuario al estado de búsqueda.
+                searchText = ""
+                selectedCategoria = nil
+                mostrarFavoritos = false
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button { mostrarInfo = true } label: {
@@ -133,6 +188,12 @@ struct ContentView: View {
                 }
             }
         }
+    }
+
+    private func toggleFavorito(_ id: Int) {
+        var set = favoritosString.asFavoritosSet()
+        if set.contains(id) { set.remove(id) } else { set.insert(id) }
+        favoritosString = set.sorted().map(String.init).joined(separator: ",")
     }
 
     private func sortIcon(_ orden: OrdenGES) -> String {

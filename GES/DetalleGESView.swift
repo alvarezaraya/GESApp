@@ -30,7 +30,7 @@ struct DetalleGESView: View {
                         mostrarGuia = true
                     } label: {
                         HStack(spacing: 8) {
-                            Image(systemName: "doc.fill")
+                            Image(systemName: "doc.richtext")
                             VStack(alignment: .leading, spacing: 2) {
                                 Text("Ver Guía para SIGGES")
                                     .fontWeight(.semibold)

@@ -16,7 +16,7 @@
             {
               "appearance" : "tinted",
               "value" : {
-                "solid" : "extended-gray:1.00000,1.00000"
+                "automatic-gradient" : "gray:0.75000,1.00000"
               }
             }
           ],
