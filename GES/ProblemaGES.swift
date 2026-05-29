@@ -61,12 +61,12 @@ enum CategoriaGES: String, CaseIterable, Identifiable {
 }
 
 enum NivelIngresoGES: String {
-    case primaria = "Ingresa en APS"
+    case primaria = "Confirmación en APS"
     case secundaria = "Se deriva a nivel secundario"
     case urgencias = "Ingresa por Urgencia"
-    case ambos = "Se ingresa a nivel primario o secundario"
+    case ambos = "Mixto"
     case cualquierNivel = "Ingresa en cualquier nivel"
-    case derivaSecundaria = "Sospecha en APS, confirma especialista"
+    case derivaSecundaria = "Derivar a nivel secundario"
 
     var icono: String {
         switch self {

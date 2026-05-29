@@ -5,8 +5,6 @@ struct GuiaSIGGESView: View {
     let nombreArchivo: String
     let problema: ProblemaGES
 
-    @State private var mostrarMiniaturas = false
-    @State private var mostrarBusqueda = false
     @State private var textoBusqueda = ""
     @State private var pdfView: PDFView?
     @State private var resultados: [PDFSelection] = []
@@ -14,53 +12,29 @@ struct GuiaSIGGESView: View {
 
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .trailing) {
-                PDFKitView(nombreArchivo: nombreArchivo, onViewCreated: { pdfView = $0 })
-                    .ignoresSafeArea(edges: .bottom)
-
-                if mostrarMiniaturas, let pdfView {
-                    ThumbnailSidebarView(pdfView: pdfView)
-                        .transition(.move(edge: .trailing))
+            PDFKitView(nombreArchivo: nombreArchivo, onViewCreated: { pdfView = $0 })
+                .ignoresSafeArea(edges: .bottom)
+                .navigationTitle(problema.nombre)
+                .navigationBarTitleDisplayMode(.inline)
+                .searchable(text: $textoBusqueda, prompt: "Buscar en guía…")
+                .onChange(of: textoBusqueda) { _, query in
+                    reiniciarBusqueda()
+                    guard let pdfView, let doc = pdfView.document, !query.isEmpty else { return }
+                    doc.beginFindString(query, withOptions: .caseInsensitive)
                 }
-            }
-            .navigationTitle(problema.nombre)
-            .navigationBarTitleDisplayMode(.inline)
-            .searchable(text: $textoBusqueda, isPresented: $mostrarBusqueda, prompt: "Buscar en guía…")
-            .onChange(of: textoBusqueda) { _, query in
-                reiniciarBusqueda()
-                guard let pdfView, let doc = pdfView.document, !query.isEmpty else { return }
-                doc.beginFindString(query, withOptions: .caseInsensitive)
-            }
-            .onReceive(
-                NotificationCenter.default.publisher(for: .PDFDocumentDidFindMatch)
-            ) { note in
-                guard let sel = note.userInfo?["PDFDocumentFoundSelections"] as? [PDFSelection],
-                      let match = sel.first else { return }
-                resultados.append(match)
-                if resultados.count == 1 { navegarA(0) }
-            }
-            .safeAreaInset(edge: .bottom) {
-                if mostrarBusqueda && !resultados.isEmpty {
-                    navBar
+                .onReceive(
+                    NotificationCenter.default.publisher(for: .PDFDocumentDidFindMatch)
+                ) { note in
+                    guard let sel = note.userInfo?["PDFDocumentFoundSelections"] as? [PDFSelection],
+                          let match = sel.first else { return }
+                    resultados.append(match)
+                    if resultados.count == 1 { navegarA(0) }
                 }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 16) {
-                        Button {
-                            withAnimation { mostrarBusqueda.toggle() }
-                            if !mostrarBusqueda { reiniciarBusqueda() }
-                        } label: {
-                            Image(systemName: "magnifyingglass")
-                        }
-                        Button {
-                            withAnimation { mostrarMiniaturas.toggle() }
-                        } label: {
-                            Image(systemName: mostrarMiniaturas ? "sidebar.right" : "sidebar.squares.right")
-                        }
+                .safeAreaInset(edge: .bottom) {
+                    if !textoBusqueda.isEmpty && !resultados.isEmpty {
+                        navBar
                     }
                 }
-            }
         }
     }
 
@@ -131,21 +105,4 @@ struct PDFKitView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: PDFView, context: Context) {}
-}
-
-// MARK: - Thumbnail sidebar
-
-struct ThumbnailSidebarView: UIViewRepresentable {
-    let pdfView: PDFView
-
-    func makeUIView(context: Context) -> PDFThumbnailView {
-        let thumb = PDFThumbnailView()
-        thumb.pdfView = pdfView
-        thumb.thumbnailSize = CGSize(width: 80, height: 110)
-        thumb.layoutMode = .vertical
-        thumb.backgroundColor = UIColor.systemGroupedBackground
-        return thumb
-    }
-
-    func updateUIView(_ uiView: PDFThumbnailView, context: Context) {}
 }
