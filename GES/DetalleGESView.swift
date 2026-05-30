@@ -5,8 +5,17 @@ struct DetalleGESView: View {
     @AppStorage("favoritos") private var favoritosString = ""
     @State private var mostrarGuia = false
 
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.colorSchemeContrast) private var contraste
+    @ScaledMetric(relativeTo: .title2) private var headerIconSize: CGFloat = 52
+
     private var esFavorito: Bool {
         favoritosString.asFavoritosSet().contains(problema.id)
+    }
+
+    /// Opacidad de fondo de las tarjetas, reforzada cuando el usuario pide más contraste.
+    private func fondoOpacidad(_ base: Double) -> Double {
+        contraste == .increased ? min(base * 2.2, 0.4) : base
     }
 
     var body: some View {
@@ -47,6 +56,7 @@ struct DetalleGESView: View {
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                     }
+                    .accessibilityInputLabels(["Ver guía", "Guía", "Guía SIGGES"])
                     .sheet(isPresented: $mostrarGuia) {
                         GuiaSIGGESView(nombreArchivo: archivo, problema: problema)
                     }
@@ -66,6 +76,9 @@ struct DetalleGESView: View {
                         .foregroundColor(esFavorito ? .yellow : .gray)
                 }
                 .accessibilityLabel(esFavorito ? "Quitar de favoritos" : "Agregar a favoritos")
+                .accessibilityValue(esFavorito ? "Favorito" : "")
+                .accessibilityAddTraits(esFavorito ? .isSelected : [])
+                .accessibilityInputLabels(["Favorito", "Marcar favorito"])
             }
         }
     }
@@ -76,7 +89,7 @@ struct DetalleGESView: View {
                 Image(systemName: problema.categoria.icono)
                     .font(.title2)
                     .foregroundColor(.white)
-                    .frame(width: 52, height: 52)
+                    .frame(width: headerIconSize, height: headerIconSize)
                     .background(problema.categoria.color.gradient)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .accessibilityHidden(true)
@@ -93,13 +106,17 @@ struct DetalleGESView: View {
                 }
             }
 
-            HStack(spacing: 8) {
+            // En tamaños de texto accesibles las dos píldoras se apilan para no desbordar.
+            let layoutPildoras = dynamicTypeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
+                : AnyLayout(HStackLayout(spacing: 8))
+            layoutPildoras {
                 Text(problema.categoria.rawValue)
                     .font(.caption)
                     .fontWeight(.semibold)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
-                    .background(problema.categoria.color.opacity(0.15))
+                    .background(problema.categoria.color.opacity(fondoOpacidad(0.15)))
                     .foregroundColor(problema.categoria.color)
                     .clipShape(Capsule())
 
@@ -113,7 +130,7 @@ struct DetalleGESView: View {
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
-                .background(problema.nivelIngreso.color.opacity(0.15))
+                .background(problema.nivelIngreso.color.opacity(fondoOpacidad(0.15)))
                 .foregroundColor(problema.nivelIngreso.color)
                 .clipShape(Capsule())
             }
@@ -146,12 +163,13 @@ struct DetalleGESView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.orange.opacity(0.10))
+        .background(.orange.opacity(fondoOpacidad(0.10)))
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .overlay(
             RoundedRectangle(cornerRadius: 12)
                 .stroke(.orange.opacity(0.3), lineWidth: 1)
         )
+        .accessibilityElement(children: .combine)
     }
 
     private var seccionIngreso: some View {
@@ -172,12 +190,13 @@ struct DetalleGESView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(nivel.color.opacity(0.07))
+        .background(nivel.color.opacity(fondoOpacidad(0.07)))
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .overlay(
             RoundedRectangle(cornerRadius: 12)
                 .stroke(nivel.color.opacity(0.25), lineWidth: 1)
         )
+        .accessibilityElement(children: .combine)
     }
 
     @ViewBuilder
@@ -201,6 +220,7 @@ struct DetalleGESView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color(.secondarySystemGroupedBackground))
             .clipShape(RoundedRectangle(cornerRadius: 12))
+            .accessibilityElement(children: .combine)
         }
     }
 

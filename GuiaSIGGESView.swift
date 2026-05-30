@@ -12,6 +12,8 @@ struct GuiaSIGGESView: View {
     @State private var documento: PDFDocument?
     @State private var cargaFinalizada = false
 
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparencia
+
     var body: some View {
         NavigationStack {
             Group {
@@ -89,7 +91,14 @@ struct GuiaSIGGESView: View {
         }
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity)
-        .background(.regularMaterial)
+        .background {
+            // Con "Reducir transparencia" el material translúcido se sustituye por un fondo sólido.
+            if reduceTransparencia {
+                Color(.systemBackground)
+            } else {
+                Rectangle().fill(.regularMaterial)
+            }
+        }
     }
 
     // MARK: - Helpers

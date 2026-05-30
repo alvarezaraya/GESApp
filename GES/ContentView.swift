@@ -136,6 +136,7 @@ struct ContentView: View {
                             .font(.title3)
                     }
                     .accessibilityLabel("Acerca de esta app")
+                    .accessibilityInputLabels(["Información", "Acerca de"])
                 }
                 ToolbarItem(placement: .principal) {
                     Image("GESLogo")
@@ -156,6 +157,7 @@ struct ContentView: View {
                     .accessibilityLabel("Mostrar solo favoritos")
                     .accessibilityValue(mostrarFavoritos ? "Activado" : "Desactivado")
                     .accessibilityAddTraits(mostrarFavoritos ? .isSelected : [])
+                    .accessibilityInputLabels(["Favoritos", "Mostrar favoritos"])
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
@@ -200,6 +202,7 @@ struct ContentView: View {
                     }
                     .accessibilityLabel("Ordenar y filtrar")
                     .accessibilityValue(selectedCategoria.map { "Filtrado por \($0.rawValue)" } ?? "Sin filtro de categoría")
+                    .accessibilityInputLabels(["Ordenar", "Filtrar", "Ordenar y filtrar"])
                 }
             }
         }
@@ -280,12 +283,14 @@ private struct ProblemaRow: View {
     let problema: ProblemaGES
     let esFavorito: Bool
 
+    @ScaledMetric(relativeTo: .title3) private var circuloSize: CGFloat = 46
+
     var body: some View {
         HStack(spacing: 12) {
             ZStack {
                 Circle()
                     .fill(problema.categoria.color.opacity(0.15))
-                    .frame(width: 46, height: 46)
+                    .frame(width: circuloSize, height: circuloSize)
                 Text("\(problema.id)")
                     .font(.system(.title3, design: .serif, weight: .bold))
                     .foregroundColor(problema.categoria.color)
@@ -321,6 +326,12 @@ private struct ProblemaRow: View {
             "Problema \(problema.id). \(problema.nombre). \(problema.categoria.rawValue)."
             + (esFavorito ? " Favorito." : "")
         )
+        // Control por Voz: alias cortos para "tocar" la fila sin decir el label completo.
+        .accessibilityInputLabels([
+            problema.nombre,
+            "Problema \(problema.id)",
+            "\(problema.id)"
+        ])
     }
 }
 
