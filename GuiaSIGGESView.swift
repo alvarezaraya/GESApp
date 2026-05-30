@@ -61,7 +61,7 @@ struct GuiaSIGGESView: View {
             }
     }
 
-    private static func cargarDocumento(_ nombreArchivo: String) -> PDFDocument? {
+    private nonisolated static func cargarDocumento(_ nombreArchivo: String) -> PDFDocument? {
         guard let url = Bundle.main.resourceURL?.appendingPathComponent(nombreArchivo) else { return nil }
         return PDFDocument(url: url)
     }
