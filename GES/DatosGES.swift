@@ -27,7 +27,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico prenatal: confirmación en 30 días desde la sospecha (≥20 semanas de gestación). Diagnóstico postnatal: 48 horas (0–7 días de vida), 21 días (8 días–menor a 2 años) o 180 días (2–15 años) desde la sospecha. Tratamiento CCO Grave: hospitalización en 48 horas desde la estabilización del paciente. Tratamiento CCO Otras: cirugía o procedimiento según indicación médica. Seguimiento post-cirugía: primer control dentro de 1 año desde el alta quirúrgica.",
             tratamiento: "Corrección quirúrgica de la cardiopatía (cierre de CIA, CIV, corrección de tetralogía de Fallot, etc.). Manejo médico preoperatorio. Reintervenciones según indicación médica. Recambio de marcapasos, generador o electrodo según indicación médica.",
             seguimiento: "Control cardiológico periódico post cirugía. Ecocardiograma de seguimiento. Profilaxis de endocarditis según indicación.",
-            archivoGuiaSIGGES: "02_-_Cardiopatías_Congénitas_Operables_Menor_15_Añ.pdf"
+            archivoGuiaSIGGES: "02_-_Cardiopatías_Congénitas_Operables_Menor_15_Añ.pdf",
+            flujogramaDerivacion: "FlujogramaPS2"
         ),
         ProblemaGES(
             id: 3,
@@ -41,7 +42,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tamizaje PAP: resultado en 30 días desde la realización del examen (beneficiarios 25–65 años). Confirmación diagnóstica: en 40 días desde la sospecha. Etapificación (invasor): en 20 días desde la confirmación. Tratamiento pre-invasor bajo grado: en 180 días desde la indicación médica. Tratamiento pre-invasor alto grado: en 30 días desde la confirmación diagnóstica. Tratamiento invasor: en 20 días desde la etapificación. Tratamientos adyuvantes (quimioterapia, radioterapia/braquiterapia, cirugía): en 20 días desde la indicación médica. Seguimiento: primer control en 90 días desde la indicación médica.",
             tratamiento: "Pre-invasor bajo grado: conducta expectante o tratamiento ante progresión. Pre-invasor alto grado: conización (LEEP o cono frío) o histerectomía según caso. Invasor: histerectomía radical, radioterapia, quimioterapia o combinaciones según etapa. Tratamientos adyuvantes: quimioterapia (cisplatino), radioterapia externa, braquiterapia y cirugía adyuvante según indicación médica.",
             seguimiento: "Pre-invasor: controles en Patología Cervical u Oncología con PAP y colposcopía. Invasor: controles en Oncología con examen clínico, PAP e imágenes según protocolo. Primer control garantizado dentro de 90 días desde la indicación médica.",
-            archivoGuiaSIGGES: "03_-_Cáncer_Cérvicouterino_v.24.0.pdf"
+            archivoGuiaSIGGES: "03_-_Cáncer_Cérvicouterino_v.24.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS3"
         ),
         ProblemaGES(
             id: 4,
@@ -55,7 +57,8 @@ extension ProblemaGES {
             garantiaOportunidad: "El tratamiento se inicia dentro de 5 días desde la confirmación diagnóstica.",
             tratamiento: "Tratamiento integral y cuidados paliativos para cáncer progresivo, o tratamiento integral por alivio del dolor para cáncer no progresivo. El paciente permanece en la Unidad de Cuidados Paliativos mientras lo requiera.",
             seguimiento: "El caso GES permanece abierto de forma indefinida. No aplica cierre por término de tratamiento. El caso solo se cierra por causales atribuibles al usuario.",
-            archivoGuiaSIGGES: "04 Alivio del Dolor y Cuidados Paliativos Instructivo GES v2.0.pdf"
+            archivoGuiaSIGGES: "04 Alivio del Dolor y Cuidados Paliativos Instructivo GES v2.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS4"
         ),
         ProblemaGES(
             id: 5,
@@ -69,7 +72,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Con sospecha: ECG dentro de 30 minutos desde la atención médica de urgencia. Con confirmación y supradesnivel ST: trombolisis dentro de 30 minutos desde la confirmación con ECG, según indicación médica. Primer control de prevención secundaria dentro de 30 días desde el alta por tratamiento médico de IAM, bypass coronario o angioplastia coronaria percutánea.",
             tratamiento: "Con supradesnivel ST confirmado, el médico puede indicar trombolisis. Todos los casos confirmados requieren hospitalización para tratamiento médico. El bypass y la angioplastia de rescate no están cubiertos por el GES. Al alta, se indica seguimiento por prevención secundaria.",
             seguimiento: "Primer control de prevención secundaria dentro de 30 días desde el alta, en cardiología, medicina interna o APS según la red local. Los controles son mensuales. Si durante el seguimiento se confirma un nuevo infarto, se abre un caso GES nuevo.",
-            archivoGuiaSIGGES: "5 Infarto Agudo al Miocardio v4.1.pdf"
+            archivoGuiaSIGGES: "5 Infarto Agudo al Miocardio v4.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS5"
         ),
         ProblemaGES(
             id: 6,
