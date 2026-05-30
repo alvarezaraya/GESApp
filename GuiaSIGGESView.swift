@@ -9,31 +9,61 @@ struct GuiaSIGGESView: View {
     @State private var pdfView: PDFView?
     @State private var resultados: [PDFSelection] = []
     @State private var indiceActual: Int = 0
+    @State private var documento: PDFDocument?
+    @State private var cargaFinalizada = false
 
     var body: some View {
         NavigationStack {
-            PDFKitView(nombreArchivo: nombreArchivo, onViewCreated: { pdfView = $0 })
-                .ignoresSafeArea(edges: .bottom)
-                .navigationTitle(problema.nombre)
-                .navigationBarTitleDisplayMode(.inline)
-                .searchable(text: $textoBusqueda, prompt: "Buscar en guía…")
-                .onChange(of: textoBusqueda) { _, query in
-                    reiniciarBusqueda()
-                    guard let pdfView, let doc = pdfView.document, !query.isEmpty else { return }
-                    Task.detached(priority: .userInitiated) {
-                        let matches = doc.findString(query, withOptions: .caseInsensitive)
-                        await MainActor.run {
-                            resultados = matches
-                            if !matches.isEmpty { navegarA(0) }
-                        }
+            Group {
+                if let documento {
+                    visorPDF(documento)
+                } else if cargaFinalizada {
+                    ContentUnavailableView {
+                        Label("No se pudo abrir la guía", systemImage: "doc.questionmark")
+                    } description: {
+                        Text("El archivo de la guía SIGGES no está disponible o está dañado.")
                     }
+                } else {
+                    ProgressView()
                 }
-                .safeAreaInset(edge: .bottom) {
-                    if !textoBusqueda.isEmpty && !resultados.isEmpty {
-                        navBar
-                    }
-                }
+            }
+            .navigationTitle(problema.nombre)
+            .navigationBarTitleDisplayMode(.inline)
         }
+        .task {
+            let archivo = nombreArchivo
+            documento = await Task.detached(priority: .userInitiated) {
+                Self.cargarDocumento(archivo)
+            }.value
+            cargaFinalizada = true
+        }
+    }
+
+    private func visorPDF(_ documento: PDFDocument) -> some View {
+        PDFKitView(documento: documento, onViewCreated: { pdfView = $0 })
+            .ignoresSafeArea(edges: .bottom)
+            .searchable(text: $textoBusqueda, prompt: "Buscar en guía…")
+            .onChange(of: textoBusqueda) { _, query in
+                reiniciarBusqueda()
+                guard let pdfView, let doc = pdfView.document, !query.isEmpty else { return }
+                Task.detached(priority: .userInitiated) {
+                    let matches = doc.findString(query, withOptions: .caseInsensitive)
+                    await MainActor.run {
+                        resultados = matches
+                        if !matches.isEmpty { navegarA(0) }
+                    }
+                }
+            }
+            .safeAreaInset(edge: .bottom) {
+                if !textoBusqueda.isEmpty && !resultados.isEmpty {
+                    navBar
+                }
+            }
+    }
+
+    private static func cargarDocumento(_ nombreArchivo: String) -> PDFDocument? {
+        guard let url = Bundle.main.resourceURL?.appendingPathComponent(nombreArchivo) else { return nil }
+        return PDFDocument(url: url)
     }
 
     // MARK: - Barra de navegación de resultados
@@ -44,15 +74,18 @@ struct GuiaSIGGESView: View {
                 Image(systemName: "chevron.up")
             }
             .disabled(resultados.count <= 1)
+            .accessibilityLabel("Resultado anterior")
 
             Text("\(indiceActual + 1) de \(resultados.count)")
                 .font(.subheadline.monospacedDigit())
                 .foregroundStyle(.secondary)
+                .accessibilityLabel("Resultado \(indiceActual + 1) de \(resultados.count)")
 
             Button { navegar(delta: +1) } label: {
                 Image(systemName: "chevron.down")
             }
             .disabled(resultados.count <= 1)
+            .accessibilityLabel("Resultado siguiente")
         }
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity)
@@ -84,7 +117,7 @@ struct GuiaSIGGESView: View {
 // MARK: - PDF wrapper
 
 struct PDFKitView: UIViewRepresentable {
-    let nombreArchivo: String
+    let documento: PDFDocument
     let onViewCreated: (PDFView) -> Void
 
     func makeUIView(context: Context) -> PDFView {
@@ -92,12 +125,7 @@ struct PDFKitView: UIViewRepresentable {
         view.autoScales = true
         view.displayMode = .singlePageContinuous
         view.displayDirection = .vertical
-        if let bundleURL = Bundle.main.resourceURL {
-            let fileURL = bundleURL.appendingPathComponent(nombreArchivo)
-            if let doc = PDFDocument(url: fileURL) {
-                view.document = doc
-            }
-        }
+        view.document = documento
         onViewCreated(view)
         return view
     }
