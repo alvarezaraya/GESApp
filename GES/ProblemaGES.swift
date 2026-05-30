@@ -49,7 +49,9 @@ enum CategoriaGES: String, CaseIterable, Identifiable {
         case .endocrinoMetabolico: .orange
         case .musculoesqueletico: .brown
         case .oftalmologico: .blue
-        case .renalUrologico: .yellow
+        // Dorado oscuro en vez de .yellow puro: el amarillo del sistema usado como
+        // texto/ícono sobre fondos claros no cumple el contraste mínimo (WCAG AA).
+        case .renalUrologico: Color(red: 0.72, green: 0.53, blue: 0.04)
         case .digestivo: .green
         case .saludOral: .mint
         case .neonatalPediatrico: .pink

@@ -17,6 +17,7 @@ struct InfoView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 19, style: .continuous))
                             .shadow(color: .black.opacity(colorScheme == .dark ? 0.4 : 0.15),
                                     radius: 6, x: 0, y: 3)
+                            .accessibilityHidden(true)
 
                         Text("Basado en el Decreto Supremo N° 29\nMinisterio de Salud de Chile · Vigente desde el 1 de diciembre de 2025")
                             .font(.caption)
@@ -88,6 +89,7 @@ struct InfoView: View {
             HStack(spacing: 8) {
                 Image(systemName: icono)
                     .foregroundColor(color)
+                    .accessibilityHidden(true)
                 Text(titulo)
                     .font(.headline)
             }

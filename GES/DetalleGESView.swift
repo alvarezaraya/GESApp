@@ -65,6 +65,7 @@ struct DetalleGESView: View {
                     Image(systemName: esFavorito ? "star.fill" : "star")
                         .foregroundColor(esFavorito ? .yellow : .gray)
                 }
+                .accessibilityLabel(esFavorito ? "Quitar de favoritos" : "Agregar a favoritos")
             }
         }
     }
@@ -78,6 +79,7 @@ struct DetalleGESView: View {
                     .frame(width: 52, height: 52)
                     .background(problema.categoria.color.gradient)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .accessibilityHidden(true)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("GES #\(problema.id)")
@@ -104,6 +106,7 @@ struct DetalleGESView: View {
                 HStack(spacing: 4) {
                     Image(systemName: problema.nivelIngreso.icono)
                         .font(.caption)
+                        .accessibilityHidden(true)
                     Text(problema.nivelIngreso.rawValue)
                         .font(.caption)
                         .fontWeight(.semibold)
@@ -127,6 +130,7 @@ struct DetalleGESView: View {
             Image(systemName: "exclamationmark.triangle.fill")
                 .foregroundStyle(.orange)
                 .font(.title3)
+                .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 4) {
                 Text(esNuevo ? "Nuevo en DS N°29 (2025–2028)" : "Modificado en DS N°29 (2025–2028)")
                     .font(.subheadline)
@@ -156,6 +160,7 @@ struct DetalleGESView: View {
             HStack(spacing: 6) {
                 Image(systemName: nivel.icono)
                     .foregroundColor(nivel.color)
+                    .accessibilityHidden(true)
                 Text("Ingreso al sistema GES")
                     .font(.headline)
             }
@@ -182,6 +187,7 @@ struct DetalleGESView: View {
                 HStack(spacing: 6) {
                     Image(systemName: icono)
                         .foregroundColor(problema.categoria.color)
+                        .accessibilityHidden(true)
                     Text(titulo)
                         .font(.headline)
                 }
