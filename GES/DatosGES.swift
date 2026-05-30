@@ -12,7 +12,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Hemodiálisis: inicio en 7 días desde la indicación médica. Acceso vascular para hemodiálisis: habilitación en 90 días desde la indicación médica. Peritoneodiálisis: inicio en 21 días desde la indicación médica. Estudio pre-trasplante: completar en 10 meses desde la indicación del especialista. Tratamiento inmunosupresor: en donante cadáver desde el trasplante; en donante vivo desde 48 horas antes del trasplante.",
             tratamiento: "Etapa 4: manejo conservador con nefroprotección (IECA/ARA II, iSGLT2), control de factores de riesgo, preparación para terapia de sustitución. En menores de 15 años con retardo de crecimiento: diagnóstico y tratamiento con hormona del crecimiento. Etapa 5: peritoneodiálisis como primera línea de tratamiento; hemodiálisis como alternativa cuando no es posible la peritoneodiálisis. Trasplante renal (donante vivo, vivo cruzado o fallecido) según criterios NTMA, con estudio pre-trasplante completo. Terapia de desensibilización para pacientes hipersensibilizados según criterios NTMA.",
             seguimiento: "En diálisis: controles nefrológicos periódicos con laboratorio mensual (BUN, creatinina, electrolitos, hemograma). Post-trasplante: seguimiento especializado con drogas inmunosupresoras, profilaxis y tratamiento de citomegalovirus según indicación médica, y terapia de rechazo según indicación médica.",
-            archivoGuiaSIGGES: "01_-_Enfermedad_Renal_Etapa_4_y_5_V.28.0.pdf"
+            archivoGuiaSIGGES: "01_-_Enfermedad_Renal_Etapa_4_y_5_V.28.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS1"
         ),
         ProblemaGES(
             id: 2,

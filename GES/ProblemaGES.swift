@@ -138,4 +138,7 @@ struct ProblemaGES: Identifiable, Hashable {
     let seguimiento: String
     var archivoGuiaSIGGES: String? = nil
     var estadoDS29: EstadoDS29 = .vigente
+    /// Nombre del asset (en Assets.xcassets) con el flujograma de derivación
+    /// extraído de la sección "Flujo de Proceso" de la guía SIGGES. Opcional.
+    var flujogramaDerivacion: String? = nil
 }
