@@ -4,6 +4,7 @@ struct DetalleGESView: View {
     let problema: ProblemaGES
     @AppStorage("favoritos") private var favoritosString = ""
     @State private var mostrarGuia = false
+    @State private var mostrarFlujograma = false
 
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.colorSchemeContrast) private var contraste
@@ -26,6 +27,9 @@ struct DetalleGESView: View {
                     alertaDS29Section
                 }
                 seccionIngreso
+                if let flujograma = problema.flujogramaDerivacion {
+                    seccionFlujograma(nombreImagen: flujograma)
+                }
                 seccionInfo(titulo: "Descripción", icono: "info.circle.fill", contenido: problema.descripcion)
                 seccionInfo(titulo: "Población Objetivo", icono: "person.2.fill", contenido: problema.poblacionObjetivo)
                 seccionInfo(titulo: "Sospecha Diagnóstica", icono: "magnifyingglass", contenido: problema.sospechaDiagnostica)
@@ -199,6 +203,53 @@ struct DetalleGESView: View {
         .accessibilityElement(children: .combine)
     }
 
+    private func seccionFlujograma(nombreImagen: String) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 6) {
+                Image(systemName: "flowchart.fill")
+                    .foregroundColor(problema.categoria.color)
+                    .accessibilityHidden(true)
+                Text("Flujograma de derivación")
+                    .font(.headline)
+                Spacer()
+                Image(systemName: "arrow.up.left.and.arrow.down.right")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .accessibilityHidden(true)
+            }
+
+            Button {
+                mostrarFlujograma = true
+            } label: {
+                Image(nombreImagen)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color(.separator), lineWidth: 1)
+                    )
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Flujograma de derivación del proceso GES. Toca para ampliar.")
+            .accessibilityInputLabels(["Flujograma", "Ampliar flujograma"])
+
+            Text("Extraído de la sección «Flujo de Proceso» de la guía SIGGES. Toca para ampliar.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .sheet(isPresented: $mostrarFlujograma) {
+            FlujogramaZoomView(nombreImagen: nombreImagen, titulo: problema.nombre)
+        }
+    }
+
     @ViewBuilder
     private func seccionInfo(titulo: String, icono: String, contenido: String) -> some View {
         if !contenido.isEmpty {
@@ -232,5 +283,93 @@ struct DetalleGESView: View {
             set.insert(problema.id)
         }
         favoritosString = set.sorted().map(String.init).joined(separator: ",")
+    }
+}
+
+// MARK: - Visor de flujograma con zoom
+
+/// Presenta el flujograma a pantalla completa con pinch-to-zoom y desplazamiento,
+/// usando un `UIScrollView` nativo para una experiencia fluida.
+struct FlujogramaZoomView: View {
+    let nombreImagen: String
+    let titulo: String
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            ZoomableImageView(nombreImagen: nombreImagen)
+                .ignoresSafeArea(edges: .bottom)
+                .navigationTitle(titulo)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Cerrar") { dismiss() }
+                    }
+                }
+        }
+    }
+}
+
+struct ZoomableImageView: UIViewRepresentable {
+    let nombreImagen: String
+
+    func makeUIView(context: Context) -> UIScrollView {
+        let scrollView = UIScrollView()
+        scrollView.delegate = context.coordinator
+        scrollView.minimumZoomScale = 1
+        scrollView.maximumZoomScale = 6
+        scrollView.bouncesZoom = true
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.backgroundColor = .systemBackground
+
+        let imageView = UIImageView(image: UIImage(named: nombreImagen))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(imageView)
+        context.coordinator.imageView = imageView
+
+        NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            imageView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            imageView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor)
+        ])
+
+        // Doble toque para alternar entre ajuste y acercamiento.
+        let doblePulsacion = UITapGestureRecognizer(
+            target: context.coordinator,
+            action: #selector(Coordinator.manejarDoblePulsacion(_:))
+        )
+        doblePulsacion.numberOfTapsRequired = 2
+        scrollView.addGestureRecognizer(doblePulsacion)
+
+        return scrollView
+    }
+
+    func updateUIView(_ uiView: UIScrollView, context: Context) {}
+
+    func makeCoordinator() -> Coordinator { Coordinator() }
+
+    final class Coordinator: NSObject, UIScrollViewDelegate {
+        weak var imageView: UIImageView?
+
+        func viewForZooming(in scrollView: UIScrollView) -> UIView? { imageView }
+
+        @objc func manejarDoblePulsacion(_ gesto: UITapGestureRecognizer) {
+            guard let scrollView = gesto.view as? UIScrollView else { return }
+            if scrollView.zoomScale > scrollView.minimumZoomScale {
+                scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
+            } else {
+                let punto = gesto.location(in: imageView)
+                let nuevoZoom = min(scrollView.maximumZoomScale, 3)
+                let ancho = scrollView.bounds.width / nuevoZoom
+                let alto = scrollView.bounds.height / nuevoZoom
+                let rect = CGRect(x: punto.x - ancho / 2, y: punto.y - alto / 2, width: ancho, height: alto)
+                scrollView.zoom(to: rect, animated: true)
+            }
+        }
     }
 }
