@@ -9,15 +9,22 @@ private enum OrdenGES: String, CaseIterable, Identifiable {
 
 struct ContentView: View {
     @State private var searchText = ""
-    @State private var selectedCategoria: CategoriaGES?
     @State private var mostrarFavoritos = false
     @State private var mostrarInfo = false
-    @State private var sortOrder: OrdenGES = .porId
     @State private var resultados: [ProblemaGES] = ProblemaGES.todos
     @State private var favoritosSet: Set<Int> = []
     @AppStorage("favoritos") private var favoritosString = ""
     @State private var guiaAbierta: ProblemaGES?
     @State private var busquedaActiva = false
+
+    // Orden y filtro de categoría se conservan entre lanzamientos.
+    @AppStorage("ordenGES") private var sortOrderRaw = OrdenGES.porId.rawValue
+    @AppStorage("categoriaFiltro") private var categoriaFiltroRaw = ""
+
+    private var sortOrder: OrdenGES { OrdenGES(rawValue: sortOrderRaw) ?? .porId }
+    private var selectedCategoria: CategoriaGES? {
+        categoriaFiltroRaw.isEmpty ? nil : CategoriaGES(rawValue: categoriaFiltroRaw)
+    }
 
     private let categoryCounts: [CategoriaGES: Int] = Dictionary(
         grouping: ProblemaGES.todos, by: \.categoria
@@ -106,9 +113,9 @@ struct ContentView: View {
                 favoritosSet = new.asFavoritosSet()
                 aplicarFiltros()
             }
-            .onChange(of: selectedCategoria) { _, _ in aplicarFiltros() }
+            .onChange(of: categoriaFiltroRaw) { _, _ in aplicarFiltros() }
             .onChange(of: mostrarFavoritos)   { _, _ in aplicarFiltros() }
-            .onChange(of: sortOrder)          { _, _ in aplicarFiltros() }
+            .onChange(of: sortOrderRaw)       { _, _ in aplicarFiltros() }
             .task(id: searchText) {
                 if searchText.isEmpty { aplicarFiltros(); return }
                 try? await Task.sleep(for: .milliseconds(200))
@@ -128,12 +135,15 @@ struct ContentView: View {
                         Image(systemName: "info.circle")
                             .font(.title3)
                     }
+                    .accessibilityLabel("Acerca de esta app")
                 }
                 ToolbarItem(placement: .principal) {
                     Image("GESLogo")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 30)
+                        .accessibilityLabel("GES")
+                        .accessibilityAddTraits(.isHeader)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -143,13 +153,16 @@ struct ContentView: View {
                             .font(.title3)
                             .foregroundColor(mostrarFavoritos ? .yellow : .primary)
                     }
+                    .accessibilityLabel("Mostrar solo favoritos")
+                    .accessibilityValue(mostrarFavoritos ? "Activado" : "Desactivado")
+                    .accessibilityAddTraits(mostrarFavoritos ? .isSelected : [])
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Section("Ordenar por:") {
                             ForEach(OrdenGES.allCases) { orden in
                                 Button {
-                                    sortOrder = orden
+                                    sortOrderRaw = orden.rawValue
                                 } label: {
                                     Label {
                                         Text(orden.rawValue)
@@ -163,14 +176,14 @@ struct ContentView: View {
                         Section("Filtrar por categoría") {
                             if selectedCategoria != nil {
                                 Button(role: .destructive) {
-                                    selectedCategoria = nil
+                                    categoriaFiltroRaw = ""
                                 } label: {
                                     Label("Todas las categorías", systemImage: "xmark.circle")
                                 }
                             }
                             ForEach(CategoriaGES.allCases) { cat in
                                 Button {
-                                    selectedCategoria = selectedCategoria == cat ? nil : cat
+                                    categoriaFiltroRaw = selectedCategoria == cat ? "" : cat.rawValue
                                 } label: {
                                     Label {
                                         Text("\(cat.rawValue) (\(categoryCounts[cat] ?? 0))")
@@ -185,6 +198,8 @@ struct ContentView: View {
                             .font(.title3)
                             .foregroundColor(selectedCategoria.map { $0.color } ?? .primary)
                     }
+                    .accessibilityLabel("Ordenar y filtrar")
+                    .accessibilityValue(selectedCategoria.map { "Filtrado por \($0.rawValue)" } ?? "Sin filtro de categoría")
                 }
             }
         }
@@ -204,10 +219,21 @@ struct ContentView: View {
             withAnimation { mostrarFavoritos = true }
         case .buscar:
             mostrarFavoritos = false
-            selectedCategoria = nil
-            // Pequeño retardo para que la barra de búsqueda esté instalada
-            // (necesario en arranque frío, cuando el .searchable aún no existe).
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            categoriaFiltroRaw = ""
+            activarBusqueda()
+        }
+    }
+
+    /// Activa la barra de búsqueda. En arranque frío el `.searchable` puede no
+    /// estar instalado aún cuando se consume el quick action, y un único retardo
+    /// fijo es frágil (demasiado pronto en dispositivos lentos, innecesariamente
+    /// tardío en los rápidos). Re-afirmamos la activación en varios instantes
+    /// dentro de una ventana corta: la primera que ocurra tras instalarse el
+    /// `.searchable` gana, y las posteriores son no-ops idempotentes.
+    private func activarBusqueda() {
+        guard !busquedaActiva else { return }
+        for retardo in [0.1, 0.35, 0.6] {
+            DispatchQueue.main.asyncAfter(deadline: .now() + retardo) {
                 busquedaActiva = true
             }
         }
@@ -263,6 +289,8 @@ private struct ProblemaRow: View {
                 Text("\(problema.id)")
                     .font(.system(.title3, design: .serif, weight: .bold))
                     .foregroundColor(problema.categoria.color)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
             }
 
             VStack(alignment: .leading, spacing: 3) {
@@ -288,6 +316,11 @@ private struct ProblemaRow: View {
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(
+            "Problema \(problema.id). \(problema.nombre). \(problema.categoria.rawValue)."
+            + (esFavorito ? " Favorito." : "")
+        )
     }
 }
 
