@@ -7,6 +7,9 @@ struct GESApp: App {
 
     init() {
         _ = ProblemaGES.todos
+        #if DEBUG
+        IntegridadDatos.validar()
+        #endif
     }
 
     var body: some Scene {

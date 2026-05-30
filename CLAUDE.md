@@ -13,20 +13,23 @@ For quick type-checking without a full build, use `XcodeRefreshCodeIssuesInFile`
 Single-target iOS SwiftUI app. All data is static (no network, no persistence beyond favorites).
 
 ```
-GESApp.swift           @main — WindowGroup → ContentView
+GESApp.swift           @main — WindowGroup → ContentView; AppDelegate/SceneDelegate for quick actions
 ContentView.swift      List + search + category filter + favorites
 DetalleGESView.swift   Detail screen for one ProblemaGES
 ProblemaGES.swift      Model types: ProblemaGES, CategoriaGES, NivelIngresoGES, EstadoDS29
 DatosGES.swift         Static data: ProblemaGES.todos — 90 hardcoded entries
 InfoView.swift         "Acerca de" modal sheet
 GuiaSIGGESView.swift   PDF viewer (PDFKit) — lives at project root, not inside GES/
+IntegridadDatos.swift  DEBUG-only integrity asserts run from GESApp.init()
 ```
 
 **Data flow**: `ProblemaGES.todos` → `ContentView.aplicarFiltros()` combines search text, category selection, and favorites set into `resultados`. Favorites persisted as a comma-separated ID string in `@AppStorage("favoritos")`, bound down to `DetalleGESView`.
 
 **PDF guides**: `ProblemaGES.archivoGuiaSIGGES` is an optional filename string (e.g. `"04 Alivio del Dolor... v2.0.pdf"`). When non-nil, `DetalleGESView` shows the "Ver Guía para SIGGES" button; when nil, it's omitted. PDFs live in `GES/Guias Rapidas SIGGES/` and are loaded from `Bundle.main.resourceURL`.
 
-**Search index**: `ContentView.preconstruirIndice()` builds a `[Int: String]` map of lowercased searchable text in a `Task.detached(priority: .background)` on first appear, enabling O(1) lookups in `aplicarFiltros()`.
+**Search**: `ContentView.aplicarFiltros()` filters `ProblemaGES.todos` on every change. Search text is matched with diacritic/case-insensitive `folding` over `id + nombre + descripcion + poblacionObjetivo`. A 200 ms debounce lives in `.task(id: searchText)`. With 90 static entries there is no precomputed index — folding runs inline per keystroke.
+
+**Data integrity**: `IntegridadDatos.validar()` (DEBUG only, called from `GESApp.init()`) asserts IDs are sequential 1...N and every `archivoGuiaSIGGES` exists in the bundle, and prints a warning listing any orphan PDF (a `.pdf` in the bundle not referenced by any entry). Every bundled PDF is currently referenced.
 
 ## Key types
 
