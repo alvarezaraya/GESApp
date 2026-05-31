@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var favoritosSet: Set<Int> = []
     @AppStorage("favoritos") private var favoritosString = ""
     @State private var guiaAbierta: ProblemaGES?
+    @State private var flujogramaAbierto: ProblemaGES?
     @State private var busquedaActiva = false
 
     // Orden y filtro de categoría se conservan entre lanzamientos.
@@ -62,8 +63,16 @@ struct ContentView: View {
                                         Label("Ver Guía SIGGES", systemImage: "doc.richtext")
                                     }
                                 }
+                                if problema.flujogramaDerivacion != nil {
+                                    Button {
+                                        flujogramaAbierto = problema
+                                    } label: {
+                                        Label("Ver Flujograma", systemImage: "flowchart.fill")
+                                    }
+                                }
                             }
-                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            // Deslizar a la derecha (borde inicial): marcar favorito.
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
                                 let esFav = favoritosSet.contains(problema.id)
                                 Button {
                                     toggleFavorito(problema.id)
@@ -73,12 +82,23 @@ struct ContentView: View {
                                 }
                                 .tint(esFav ? .gray : .yellow)
                             }
-                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            // Deslizar a la izquierda (borde final): guía GES y, a su
+                            // derecha, el flujograma de derivación. El primer botón
+                            // declarado queda más cerca del borde (más a la derecha).
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                if problema.flujogramaDerivacion != nil {
+                                    Button {
+                                        flujogramaAbierto = problema
+                                    } label: {
+                                        Label("Flujograma", systemImage: "flowchart.fill")
+                                    }
+                                    .tint(.indigo)
+                                }
                                 if problema.archivoGuiaSIGGES != nil {
                                     Button {
                                         guiaAbierta = problema
                                     } label: {
-                                        Label("Ver Guía", systemImage: "doc.richtext")
+                                        Label("Guía", systemImage: "doc.richtext")
                                     }
                                     .tint(.blue)
                                 }
@@ -87,6 +107,11 @@ struct ContentView: View {
                         .sheet(item: $guiaAbierta) { problema in
                             if let archivo = problema.archivoGuiaSIGGES {
                                 GuiaSIGGESView(nombreArchivo: archivo, problema: problema)
+                            }
+                        }
+                        .sheet(item: $flujogramaAbierto) { problema in
+                            if let flujograma = problema.flujogramaDerivacion {
+                                FlujogramaZoomView(nombreImagen: flujograma, titulo: problema.nombre)
                             }
                         }
                     }
