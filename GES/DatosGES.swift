@@ -87,7 +87,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: consulta con médico especialista en 7 días desde la sospecha por exámenes alterados. Con descompensación: glicemia en Servicio Médico de Urgencia dentro de 30 minutos desde la atención médica. Tratamiento: inicio en 24 horas desde la confirmación diagnóstica.",
             tratamiento: "Insulinoterapia intensificada (basal-bolo o bomba de insulina). Sensor de monitoreo continuo de glicemia (MCG) garantizado GES para menores de 18 años y personas gestantes. Automonitoreo de glicemia en el resto de la población. Educación en conteo de carbohidratos.",
             seguimiento: "Control cada 3 meses con HbA1c. Monitoreo continuo con MCG en menores de 18 años y embarazadas. Screening anual de complicaciones: fondo de ojo, microalbuminuria, perfil lipídico, función renal.",
-            archivoGuiaSIGGES: "06_-_Diabetes_Mellitus_1_v.20.0.pdf"
+            archivoGuiaSIGGES: "06_-_Diabetes_Mellitus_1_v.20.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS6"
         ),
         ProblemaGES(
             id: 7,
@@ -101,7 +102,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación en 30 días desde la primera consulta con glicemia elevada. Tratamiento: inicio en 24 horas desde la confirmación diagnóstica. Atención por especialista (oftalmología, endocrinología o diabetes): dentro de 60 días desde la derivación, según indicación médica. Primer tamizaje de retinopatía diabética: dentro de 12 meses desde la indicación del equipo tratante.",
             tratamiento: "Cambios en estilo de vida, metformina como primera línea. Asociar iSGLT2 (garantía GES para pacientes con DM2 y enfermedad renal crónica etapa 3 o 4 o insuficiencia cardíaca estadio C), iDPP4, sulfonilureas o insulina según HbA1c y comorbilidades. Tratamiento de pie diabético incluido en la garantía.",
             seguimiento: "Control cada 3-4 meses con HbA1c. Tamizaje de retinopatía diabética garantizado GES (primer tamizaje dentro de 12 meses; seguimiento periódico posterior). Screening anual de complicaciones microvasculares y macrovasculares. Examen de pie diabético.",
-            archivoGuiaSIGGES: "07_-_Diabetes_Mellitus_2_v16.0.pdf"
+            archivoGuiaSIGGES: "07_-_Diabetes_Mellitus_2_v16.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS7"
         ),
         ProblemaGES(
             id: 8,
@@ -115,7 +117,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: dentro de 45 días desde la sospecha con resultado de mamografía; si hay evidencia clínica de cáncer, el plazo es igualmente de 45 días sin exigir mamografía. Etapificación: dentro de 45 días desde la confirmación diagnóstica. Tratamiento primario: inicio dentro de 30 días desde la etapificación. Tratamientos adyuvantes: inicio dentro de 20 días desde la indicación médica. Seguimiento: primer control dentro de 90 días desde la indicación médica.",
             tratamiento: "El caso se presenta al comité oncológico para definir la conducta terapéutica. Las alternativas de tratamiento primario son cirugía, radioterapia, quimioterapia u hormonoterapia. Puede indicarse reconstitución mamaria durante o posterior al tratamiento. El GES también garantiza atención psiquiátrica e intervenciones psicosociales como parte de la atención integral. Si el paciente está fuera del alcance terapéutico, se deriva al PS N°4 de Alivio del Dolor y Cuidados Paliativos.",
             seguimiento: "El primer control se realiza dentro de 90 días desde la indicación médica. Los controles pueden realizarse de forma presencial o por telemedicina. Si durante el seguimiento se detecta una recidiva, el caso se cierra y se abre un nuevo caso GES.",
-            archivoGuiaSIGGES: "08_-_Cáncer_de_Mamas_15_Años_y_Más_v14.0.pdf"
+            archivoGuiaSIGGES: "08_-_Cáncer_de_Mamas_15_Años_y_Más_v14.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS8"
         ),
         ProblemaGES(
             id: 9,
@@ -129,7 +132,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico — Disrafia abierta: evaluación por neurocirujano dentro de las primeras 12 horas desde el nacimiento. Disrafia cerrada: consulta con neurocirujano dentro de 90 días desde la sospecha. Tratamiento — Disrafia abierta: cirugía dentro de 72 horas desde el nacimiento; válvula derivativa dentro de 90 días desde la indicación médica; control con neurocirujano dentro de 15 días desde el alta hospitalaria. Disrafia cerrada: cirugía dentro de 60 días desde la indicación médica; control con neurocirujano dentro de 15 días desde el alta hospitalaria. Seguimiento — Disrafia abierta: inicio de rehabilitación dentro de 30 días desde la indicación médica.",
             tratamiento: "En disrafia abierta se realiza intervención quirúrgica integral y, si el paciente lo requiere, instalación de válvula derivativa. En disrafia cerrada se realiza intervención quirúrgica integral. Tras el alta, el médico indica control postquirúrgico con neurocirujano. Las reintervenciones están incluidas en la garantía.",
             seguimiento: "En disrafia abierta, la rehabilitación se inicia dentro de 30 días desde la indicación médica, con prestaciones específicas según edad (0 a <19 meses, 19 meses a <3 años, 3 a <5 años, 5 a <16 años). Incluye ayudas técnicas y atención de rehabilitación para su uso en menores de 65 años, también dentro de los plazos garantizados. El seguimiento se coordina a través de neurología o neurocirugía infantil.",
-            archivoGuiaSIGGES: "09_-_Disrafias_Espinales_v26.0.pdf"
+            archivoGuiaSIGGES: "09_-_Disrafias_Espinales_v26.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS9"
         ),
         ProblemaGES(
             id: 10,
@@ -143,7 +147,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento quirúrgico: debe realizarse dentro de 270 días desde la confirmación diagnóstica. Primer control post-quirúrgico: dentro de 10 días desde el alta hospitalaria.",
             tratamiento: "Intervención quirúrgica integral de escoliosis, que puede corresponder a tipo idiopática, neuromuscular o asociada a mielomeningocele. El especialista deriva al paciente al hospital de referencia para la cirugía. Tras el alta, indica control postquirúrgico con traumatología o neurocirugía.",
             seguimiento: "El primer control post-quirúrgico se realiza dentro de 10 días desde el alta hospitalaria, con traumatología o neurocirugía según corresponda. La consulta puede realizarse por telemedicina.",
-            archivoGuiaSIGGES: "10  Escoliosis v2.2.pdf"
+            archivoGuiaSIGGES: "10  Escoliosis v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS10"
         ),
         ProblemaGES(
             id: 11,
