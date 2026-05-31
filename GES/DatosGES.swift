@@ -312,7 +312,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación dentro de 45 días. Diagnóstico → tratamiento: inicio dentro de 24 horas desde la confirmación diagnóstica. Consulta con especialista (si derivación indicada): dentro de 45 días desde la derivación.",
             tratamiento: "Cambios en estilo de vida (dieta DASH, ejercicio, restricción de sodio). Fármacos: IECA/ARA II, calcioantagonistas, tiazidas según perfil del paciente.",
             seguimiento: "Control mensual hasta alcanzar meta (< 140/90 mmHg, < 130/80 en diabéticos). Luego cada 3-6 meses. Evaluación anual de daño de órgano blanco.",
-            archivoGuiaSIGGES: "21 Hipertensión Arterial 2.2.pdf"
+            archivoGuiaSIGGES: "21 Hipertensión Arterial 2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS21"
         ),
         ProblemaGES(
             id: 22,
@@ -326,7 +327,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Evaluación por especialista: dentro de 60 días desde la solicitud de interconsulta. Tratamiento: inicio dentro de 7 días desde la confirmación diagnóstica.",
             tratamiento: "Primera línea: ácido valproico (generalizada), carbamazepina u oxcarbazepina (focal). Monoterapia inicial obligatoria.",
             seguimiento: "Control neurológico cada 3 meses el primer año, luego semestral. EEG de control. Niveles plasmáticos de antiepilépticos.",
-            archivoGuiaSIGGES: "22_-_Epilepsia_Infantil_v.10.0_.pdf"
+            archivoGuiaSIGGES: "22_-_Epilepsia_Infantil_v.10.0_.pdf",
+            flujogramaDerivacion: "FlujogramaPS22"
         ),
         ProblemaGES(
             id: 23,
@@ -340,7 +342,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Solicitud de atención → inicio de tratamiento: dentro de 90 días. Alta integral: una vez erupcionados los 4 primeros molares definitivos y completado el tratamiento indicado.",
             tratamiento: "Sellantes de fisuras en primeros molares permanentes, obturaciones, exodoncias según necesidad, educación en higiene oral, aplicación de flúor.",
             seguimiento: "Control odontológico anual. Refuerzo de hábitos de higiene oral.",
-            archivoGuiaSIGGES: "23 Salud Oral  6 años 2.2.pdf"
+            archivoGuiaSIGGES: "23 Salud Oral  6 años 2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS23"
         ),
         ProblemaGES(
             id: 24,
@@ -354,7 +357,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Personas gestantes con factores de riesgo (sin síntomas) → evaluación por especialista: dentro de 14 días desde la derivación (SIC a Obstetricia o Alto riesgo obstétrico). Personas gestantes con síntomas de parto prematuro → evaluación médica: dentro de 6 horas desde la derivación (urgencias/emergencias). Inicio de tratamiento: dentro de 2 horas desde la confirmación diagnóstica.",
             tratamiento: "Tocolisis (nifedipino, indometacina según indicación). Corticoides prenatales (betametasona) en síntomas de parto prematuro hasta las 34 semanas y 6 días de gestación. Sulfato de magnesio como neuroprotector fetal según protocolo.",
             seguimiento: "Control posterior según indicación del especialista tratante. El caso en SIGGES se abre una vez por embarazo y se cierra al nacer el bebé.",
-            archivoGuiaSIGGES: "24_-_Prematurez_Prev.Parto_Prematuro_v29.0.pdf"
+            archivoGuiaSIGGES: "24_-_Prematurez_Prev.Parto_Prematuro_v29.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS24"
         ),
         ProblemaGES(
             id: 25,
@@ -368,7 +372,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: dentro de 30 días desde la sospecha (SIC a Cardiología, Medicina Interna o Cirugía de Tórax). Tratamiento (implante de marcapasos): dentro de 30 días desde la confirmación diagnóstica. Cambio de generador y/o electrodo: dentro de 30 días desde la indicación médica. Recambio de marcapasos: dentro de 30 días desde la indicación médica.",
             tratamiento: "Implante de marcapasos definitivo (unicameral VVI o bicameral DDD según indicación). Cambio de generador y/o electrodo. Recambio de marcapasos completo según requerimiento clínico.",
             seguimiento: "Control por cardiólogo posterior al implante o recambio. Monitoreo de parámetros del dispositivo.",
-            archivoGuiaSIGGES: "25_-_Marcapaso_15_Años_y_Más_v10.0.pdf"
+            archivoGuiaSIGGES: "25_-_Marcapaso_15_Años_y_Más_v10.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS25"
         ),
         ProblemaGES(
             id: 26,
