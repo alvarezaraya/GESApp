@@ -462,7 +462,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → confirmación diagnóstica (Oftalmología): dentro de 90 días. Tratamiento fotocoagulación o vitrectomía no proliferativa: dentro de 60 días desde la indicación médica. Tratamiento fotocoagulación o vitrectomía proliferativa: dentro de 30 días desde la indicación médica.",
             tratamiento: "Fotocoagulación láser (panretinal o focal) según tipo: proliferativa o no proliferativa. Vitrectomía en casos indicados según tipo de retinopatía.",
             seguimiento: "Control por oftalmólogo según indicación clínica posterior al tratamiento. No existe GO Seguimiento vigente en este PS.",
-            archivoGuiaSIGGES: "31_-_Retinopatía_Diabética_v7.0.pdf"
+            archivoGuiaSIGGES: "31_-_Retinopatía_Diabética_v7.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS31"
         ),
         ProblemaGES(
             id: 32,
@@ -476,7 +477,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación dentro de 5 días desde la sospecha. Diagnóstico → tratamiento: vitrectomía o cirugía convencional dentro de 7 días desde la confirmación diagnóstica.",
             tratamiento: "Cirugía: vitrectomía posterior, retinopexia neumática o cirugía escleral (cerclaje/explante). Láser en desgarros sin desprendimiento.",
             seguimiento: "Control postoperatorio frecuente: día 1, semana 1, mes 1, luego mensual por 6 meses. Vigilancia del ojo contralateral.",
-            archivoGuiaSIGGES: "32 desprendimiento de retina 2.1.pdf"
+            archivoGuiaSIGGES: "32 desprendimiento de retina 2.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS32"
         ),
         ProblemaGES(
             id: 33,
@@ -490,7 +492,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación dentro de 15 días desde la sospecha. Diagnóstico → tratamiento: inicio desde la sospecha, según indicación médica.",
             tratamiento: "Reposición de factor deficiente: concentrado de factor VIII o IX. Profilaxis primaria en hemofilia severa. Desmopresina en hemofilia A leve.",
             seguimiento: "Control hematológico cada 3-6 meses. Búsqueda periódica de inhibidores. Evaluación articular. Rehabilitación musculoesquelética.",
-            archivoGuiaSIGGES: "33 Hemofilia 2.3.pdf"
+            archivoGuiaSIGGES: "33 Hemofilia 2.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS33"
         ),
         ProblemaGES(
             id: 34,
@@ -504,7 +507,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico → tratamiento: inicio desde la confirmación diagnóstica. Consulta con médico especialista (si derivación indicada): dentro de 30 días desde la derivación.",
             tratamiento: "Leve: psicoterapia. Moderada-severa: antidepresivos ISRS (fluoxetina, sertralina) + psicoterapia. Hospitalización si riesgo suicida alto.",
             seguimiento: "Control cada 2 semanas el primer mes, luego mensual. Mantener tratamiento 6-12 meses post remisión. Evaluación de riesgo suicida en cada control.",
-            archivoGuiaSIGGES: "34 Depresión v1.0.pdf"
+            archivoGuiaSIGGES: "34 Depresión v1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS34"
         ),
         ProblemaGES(
             id: 35,
@@ -518,7 +522,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico → tratamiento médico: dentro de 7 días desde la indicación médica. Tratamiento quirúrgico: dentro de 180 días desde la indicación médica en pacientes con retención urinaria aguda repetida y hematuria macroscópica recurrente o persistente; dentro de 90 días en pacientes con retención urinaria crónica, cálculos vesicales, infecciones urinarias recurrentes o insuficiencia renal secundaria a obstrucción prostática.",
             tratamiento: "Médico: alfa-bloqueadores (tamsulosina), inhibidores de 5-alfa-reductasa (finasteride). Quirúrgico: RTU prostática o adenomectomía.",
             seguimiento: "Control con IPSS y uroflujometría cada 6 meses. PSA anual. Evaluación de retención urinaria.",
-            archivoGuiaSIGGES: "35  hiperplasia de prostata v2.2.pdf"
+            archivoGuiaSIGGES: "35  hiperplasia de prostata v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS35"
         ),
         ProblemaGES(
             id: 36,
