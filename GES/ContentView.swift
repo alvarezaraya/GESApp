@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var guiaAbierta: ProblemaGES?
     @State private var flujogramaAbierto: ProblemaGES?
     @State private var busquedaActiva = false
+    @State private var path: [ProblemaGES] = []
+    @State private var navegador = NavegadorGES.shared
 
     // Orden y filtro de categoría se conservan entre lanzamientos.
     @AppStorage("ordenGES") private var sortOrderRaw = OrdenGES.porId.rawValue
@@ -32,7 +34,7 @@ struct ContentView: View {
     ).mapValues(\.count)
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List {
                 Section {
                     if resultados.isEmpty {
@@ -133,7 +135,15 @@ struct ContentView: View {
                     AppDelegate.accionPendiente = nil
                     ejecutar(accion)
                 }
+                // Arranque frío vía App Intent (Siri/Atajos/Spotlight).
+                consumirNavegacion()
             }
+            // App Intents en caliente: cada propiedad del navegador se observa y
+            // se consume en cuanto cambia.
+            .onChange(of: navegador.problemaParaAbrir)   { _, _ in consumirNavegacion() }
+            .onChange(of: navegador.categoriaParaFiltrar) { _, _ in consumirNavegacion() }
+            .onChange(of: navegador.debeAbrirFavoritos)   { _, _ in consumirNavegacion() }
+            .onChange(of: navegador.debeAbrirBusqueda)    { _, _ in consumirNavegacion() }
             .onChange(of: favoritosString) { _, new in
                 favoritosSet = new.asFavoritosSet()
                 aplicarFiltros()
@@ -237,6 +247,34 @@ struct ContentView: View {
         var set = favoritosString.asFavoritosSet()
         if set.contains(id) { set.remove(id) } else { set.insert(id) }
         favoritosString = set.sorted().map(String.init).joined(separator: ",")
+    }
+
+    /// Consume las solicitudes de navegación dejadas por los App Intents.
+    /// Cada solicitud es de un solo uso: se limpia tras aplicarse para no re-disparar.
+    private func consumirNavegacion() {
+        if let problema = navegador.problemaParaAbrir {
+            navegador.problemaParaAbrir = nil
+            busquedaActiva = false
+            mostrarFavoritos = false
+            path = [problema]
+        }
+        if let categoria = navegador.categoriaParaFiltrar {
+            navegador.categoriaParaFiltrar = nil
+            mostrarFavoritos = false
+            path = []
+            categoriaFiltroRaw = categoria.rawValue
+        }
+        if navegador.debeAbrirFavoritos {
+            navegador.debeAbrirFavoritos = false
+            path = []
+            ejecutar(.favoritos)
+        }
+        if navegador.debeAbrirBusqueda {
+            navegador.debeAbrirBusqueda = false
+            path = []
+            searchText = navegador.textoBusqueda
+            ejecutar(.buscar)
+        }
     }
 
     /// Ejecuta un quick action del ícono de la app.

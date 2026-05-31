@@ -1,5 +1,7 @@
 import SwiftUI
 import UIKit
+import CoreSpotlight
+import AppIntents
 
 @main
 struct GESApp: App {
@@ -10,6 +12,18 @@ struct GESApp: App {
         #if DEBUG
         IntegridadDatos.validar()
         #endif
+        indexarParaSpotlight()
+    }
+
+    /// Dona todos los PS al índice de Spotlight para que aparezcan como resultados
+    /// del sistema (App Intents · `IndexedEntity`).
+    private func indexarParaSpotlight() {
+        // `ProblemaGES.todos` está aislado al actor principal (default-isolation =
+        // MainActor); construimos las entidades ahí y donamos al índice.
+        Task { @MainActor in
+            let entidades = ProblemaGES.todos.map(ProblemaGESEntity.init)
+            try? await CSSearchableIndex.default().indexAppEntities(entidades)
+        }
     }
 
     var body: some Scene {
