@@ -162,7 +162,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación en 180 días (ambos ojos incluidos). Diagnóstico → tratamiento: con AV ≤ 0,1 en el mejor ojo, cirugía en 90 días desde confirmación; con AV ≤ 0,3, cirugía en 180 días desde confirmación. En caso bilateral: segundo ojo dentro de 180 días desde la intervención del primer ojo.",
             tratamiento: "Facoemulsificación con implante de lente intraocular. Cirugía ambulatoria con anestesia local.",
             seguimiento: "Control post-quirúrgico incluido en la prestación: primer control a las 24 horas, segundo a los 7 días, tercer control a los 30 días, con alta y cierre de caso GES. Estos controles no tienen plazo garantizado.",
-            archivoGuiaSIGGES: "11 Cataratas v1.1.pdf"
+            archivoGuiaSIGGES: "11 Cataratas v1.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS11"
         ),
         ProblemaGES(
             id: 12,
@@ -176,7 +177,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: intervención quirúrgica dentro de 240 días desde la confirmación diagnóstica. Primer control por especialista dentro de 40 días desde la cirugía. Recambio de endoprótesis (si indicado): dentro de 240 días desde la indicación médica. Rehabilitación: rehabilitación precoz hospitalaria dentro de 24 horas desde la indicación médica; rehabilitación ambulatoria dentro de 14 días desde la indicación médica.",
             tratamiento: "Endoprótesis total de cadera. Incluye recambio de endoprótesis cuando existe indicación médica.",
             seguimiento: "Rehabilitación precoz hospitalaria dentro de 24 horas desde la indicación médica. Rehabilitación ambulatoria dentro de 14 días desde la indicación médica. Primer control por médico especialista dentro de 40 días desde la cirugía.",
-            archivoGuiaSIGGES: "12 Endoprótesis Total de Caderas Instructivo GES v1.0.pdf"
+            archivoGuiaSIGGES: "12 Endoprótesis Total de Caderas Instructivo GES v1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS12"
         ),
         ProblemaGES(
             id: 13,
@@ -190,7 +192,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: dentro de 15 días desde la sospecha. Tratamiento — Ortopedia prequirúrgica (si indicada): dentro de 45 días desde el nacimiento. Cirugía primaria (1ª y 2ª intervención): dentro de 30 días desde la indicación médica. Cirugía secundaria: dentro de 60 días desde la indicación médica. Cirugía ortognática (personas >15 años con indicación médica): dentro de 90 días desde la indicación médica.",
             tratamiento: "Ortopedia prequirúrgica (si indicada). Queiloplastía (cierre de labio) y palatoplastía (cierre de paladar) como cirugías primarias. Cirugía secundaria según indicación. Rehabilitación oral incluida en menores de 15 años. Cirugía ortognática para personas mayores de 15 años con indicación médica.",
             seguimiento: "Seguimiento multidisciplinario con cirujano, ortodoncista, fonoaudiólogo, otorrinolaringólogo y psicólogo hasta completar el crecimiento craneofacial.",
-            archivoGuiaSIGGES: "13_-_Fisura_Labiopalatina_v16.0.pdf"
+            archivoGuiaSIGGES: "13_-_Fisura_Labiopalatina_v16.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS13"
         ),
         ProblemaGES(
             id: 14,
@@ -204,7 +207,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico (confirmación + etapificación): leucemia en 14 días desde sospecha; linfomas y tumores sólidos en 30 días desde sospecha. Tratamiento: quimioterapia en 24 horas desde confirmación; radioterapia en 10 días desde indicación médica; cirugía en 14 días desde indicación médica; catéter venoso central en 30 días desde indicación médica. Seguimiento: primer control post-tratamiento en leucemia en 7 días; en linfomas y tumores sólidos en 30 días.",
             tratamiento: "Según tipo: quimioterapia, cirugía, radioterapia o combinaciones. En leucemias y linfomas incluye trasplante de médula ósea según indicación médica. Protocolos PINDA (Programa Infantil Nacional de Drogas Antineoplásicas).",
             seguimiento: "Primer control post-tratamiento garantizado: leucemia en 7 días; linfomas y tumores sólidos en 30 días. Vigilancia de recaída y efectos tardíos del tratamiento. Los menores de 25 años con recidiva que tuvieron sospecha antes de los 15 años mantienen acceso a la garantía.",
-            archivoGuiaSIGGES: "14_-_Cáncer_en_Menores_15_Años_v17.0.pdf"
+            archivoGuiaSIGGES: "14_-_Cáncer_en_Menores_15_Años_v17.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS14"
         ),
         ProblemaGES(
             id: 15,
@@ -218,7 +222,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: atención por especialista psiquiatra dentro de 20 días desde la derivación. El especialista puede indicar evaluación inicial con medicamentos por hasta 180 días mientras se determina el diagnóstico. Tratamiento: inicio desde la indicación del especialista.",
             tratamiento: "Antipsicóticos según indicación del especialista. Intervención psicosocial, rehabilitación y terapia familiar. Seguimiento y control de por vida por especialista.",
             seguimiento: "Control psiquiátrico de por vida. Frecuencia según condición del paciente. Puede realizarse por telemedicina.",
-            archivoGuiaSIGGES: "15 Esquizofrenia v2.3.pdf"
+            archivoGuiaSIGGES: "15 Esquizofrenia v2.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS15"
         ),
         ProblemaGES(
             id: 16,
