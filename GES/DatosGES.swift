@@ -387,7 +387,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación dentro de 30 días. Diagnóstico → cirugía: intervención quirúrgica dentro de 90 días desde la confirmación diagnóstica.",
             tratamiento: "Colecistectomía laparoscópica electiva. Conversión a cirugía abierta si complicaciones intraoperatorias.",
             seguimiento: "Control postoperatorio a los 7-10 días. Alta quirúrgica al mes. Estudio histopatológico de pieza operatoria (obligatorio).",
-            archivoGuiaSIGGES: "26 Colecistectomía v3.2.pdf"
+            archivoGuiaSIGGES: "26 Colecistectomía v3.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS26"
         ),
         ProblemaGES(
             id: 27,
@@ -401,7 +402,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Personas de 40 años y más: sospecha → evaluación por especialista (Gastroenterología, Medicina Interna, Cirugía): dentro de 30 días. Todos: especialista → confirmación diagnóstica e etapificación: dentro de 30 días desde la solicitud. Confirmación → intervención quirúrgica: dentro de 30 días. Tratamiento adyuvante quimioterapia: dentro de 30 días desde la indicación médica. Tratamiento adyuvante radioterapia: dentro de 30 días desde la indicación médica.",
             tratamiento: "Gastrectomía total o subtotal con linfadenectomía D2. Quimioterapia perioperatoria (FLOT) o adyuvante. Radioterapia adyuvante según indicación. Paliación en etapas avanzadas.",
             seguimiento: "Control clínico por especialista posterior al tratamiento. TAC y endoscopía según protocolo oncológico. Suplementación de vitamina B12 post gastrectomía.",
-            archivoGuiaSIGGES: "27_-_Cáncer_Gástrico_v10.0.pdf"
+            archivoGuiaSIGGES: "27_-_Cáncer_Gástrico_v10.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS27"
         ),
         ProblemaGES(
             id: 28,
@@ -415,7 +417,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación → etapificación (cintigrafía ósea, RNM pélvica): dentro de 45 días. Etapificación → tratamiento primario: dentro de 60 días. Tratamiento adyuvante (cirugía, quimioterapia, radioterapia y braquiterapia u hormonoterapia, según indicación): dentro de 30 días desde la indicación médica por cada modalidad. Recidiva: mismos plazos desde nueva confirmación.",
             tratamiento: "Según etapa y riesgo: vigilancia activa, prostatectomía radical, radioterapia externa o braquiterapia, hormonoterapia (análogos LHRH), quimioterapia. Tratamientos adyuvantes según protocolo oncológico.",
             seguimiento: "Control por urólogo u oncólogo. PSA periódico según protocolo. GO Seguimiento activa en DS 29.",
-            archivoGuiaSIGGES: "28_-_Cáncer_de_Próstata_15_Años_y_Más_v12.0.pdf"
+            archivoGuiaSIGGES: "28_-_Cáncer_de_Próstata_15_Años_y_Más_v12.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS28"
         ),
         ProblemaGES(
             id: 29,
@@ -429,7 +432,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 180 días desde la sospecha. Tratamiento — entrega de lentes: presbicia dentro de 30 días desde la solicitud; miopía, astigmatismo o hipermetropía dentro de 30 días desde la confirmación diagnóstica.",
             tratamiento: "Prescripción y entrega de lentes ópticos correctores (lejos y/o cerca).",
             seguimiento: "Control anual de agudeza visual. Evaluación de patología ocular asociada.",
-            archivoGuiaSIGGES: "29 Vicios de Refracción v2.2.pdf"
+            archivoGuiaSIGGES: "29 Vicios de Refracción v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS29"
         ),
         ProblemaGES(
             id: 30,
@@ -443,7 +447,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → confirmación diagnóstica (Oftalmología): dentro de 90 días desde la SIC. Confirmación → tratamiento médico (corrección óptica, oclusión): dentro de 30 días. Tratamiento quirúrgico (si indicado): dentro de 90 días desde la indicación médica. Control Médico desde el alta médica: dentro de 30 días.",
             tratamiento: "Corrección óptica, oclusión del ojo dominante (parche), cirugía de músculos extraoculares según tipo y magnitud.",
             seguimiento: "Control médico garantizado dentro de los 30 días desde el alta médica. Controles posteriores según indicación del especialista hasta estabilización.",
-            archivoGuiaSIGGES: "30_-_Estrabismo_Menor_9_Años_v10.0.pdf"
+            archivoGuiaSIGGES: "30_-_Estrabismo_Menor_9_Años_v10.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS30"
         ),
         ProblemaGES(
             id: 31,
