@@ -537,7 +537,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Indicación médica → entrega: bastones, cojines y colchones dentro de 20 días desde la indicación médica; sillas de ruedas o andadores dentro de 30 días desde la indicación médica.",
             tratamiento: "Entrega de ayuda técnica según indicación médica: bastones, andadores, sillas de ruedas, colchón antiescaras, cojín antiescaras. Toda entrega incluye sesiones de kinesiología garantizadas para entrenamiento y uso.",
             seguimiento: "Control de uso y adaptación a la ayuda técnica. Evaluación de cambio o actualización según evolución.",
-            archivoGuiaSIGGES: "36 Ayudas Técnicas Instructivo GES v.1.0.pdf"
+            archivoGuiaSIGGES: "36 Ayudas Técnicas Instructivo GES v.1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS36"
         ),
         ProblemaGES(
             id: 37,
@@ -551,7 +552,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación diagnóstica: dentro de 24 horas desde la sospecha. Tratamiento: inicio dentro de 24 horas desde la confirmación diagnóstica. Hospitalización en prestador con capacidad resolutiva: dentro de 24 horas desde la indicación médica. Seguimiento (Atención Especialista Post Alta): dentro de 10 días desde el alta hospitalaria. Rehabilitación hospitalizada: inicio dentro de 48 horas desde la indicación médica. Rehabilitación ambulatoria: inicio dentro de 15 días desde la indicación médica. Ayudas técnicas para menores de 65 años: bastones, cojín y colchón antiescaras, sillas de ruedas estándar o neurológica según indicación médica.",
             tratamiento: "Trombolisis EV con alteplasa (ventana 4.5 horas). Trombectomía mecánica (ventana hasta 24 horas en seleccionados). Antiagregación, estatinas. Estudio etiológico y prevención secundaria. Rehabilitación intrahospitalaria (kinesiología, fonoaudiología, terapia ocupacional).",
             seguimiento: "Atención con médico especialista garantizada dentro de los 10 días desde el alta hospitalaria. Rehabilitación ambulatoria, control de factores de riesgo cardiovascular y prevención secundaria.",
-            archivoGuiaSIGGES: "37_-_Ataque_Cerebrovascular_Isquémico_en_Personas_.pdf"
+            archivoGuiaSIGGES: "37_-_Ataque_Cerebrovascular_Isquémico_en_Personas_.pdf",
+            flujogramaDerivacion: "FlujogramaPS37"
         ),
         ProblemaGES(
             id: 38,
@@ -565,7 +567,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación diagnóstica dentro de 30 días desde la sospecha. Tratamiento: inicio desde la confirmación diagnóstica, según indicación. Pacientes con sospecha de EPOC de alto riesgo: atención con especialista dentro de 45 días desde la derivación, según indicación médica.",
             tratamiento: "Cesación tabáquica. Broncodilatadores inhalados (LABA, LAMA). Corticoides inhalados si exacerbaciones frecuentes. Rehabilitación pulmonar.",
             seguimiento: "Espirometría anual. Vacunación influenza y neumococo. Evaluación de exacerbaciones. Oxigenoterapia si PaO2 < 55 mmHg.",
-            archivoGuiaSIGGES: "38 Enfermedad Pulmonar Obstructiva Crónica v2.4.pdf"
+            archivoGuiaSIGGES: "38 Enfermedad Pulmonar Obstructiva Crónica v2.4.pdf",
+            flujogramaDerivacion: "FlujogramaPS38"
         ),
         ProblemaGES(
             id: 39,
@@ -579,7 +582,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación diagnóstica dentro de 20 días desde la sospecha. Tratamiento: inicio desde la confirmación diagnóstica, según indicación. Si requiere atención con especialista, por indicación médica: dentro de 30 días desde la derivación.",
             tratamiento: "Corticoides inhalados (budesonida, fluticasona) como controlador. LABA si no se controla. Salbutamol como rescate. Plan de acción escrito.",
             seguimiento: "Control cada 1-3 meses según nivel de control. Espirometría semestral. Evaluación de técnica inhalatoria. Educación.",
-            archivoGuiaSIGGES: "39 Asma Bronquial infantil v2.3.pdf"
+            archivoGuiaSIGGES: "39 Asma Bronquial infantil v2.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS39"
         ),
         ProblemaGES(
             id: 40,
@@ -593,7 +597,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico y tratamiento: inicio del tratamiento desde la sospecha. Ingreso a prestador con capacidad de resolución integral dentro de 72 horas desde la sospecha.",
             tratamiento: "Surfactante exógeno endotraqueal. Soporte ventilatorio (CPAP, ventilación mecánica). Oxigenoterapia controlada.",
             seguimiento: "Monitorización en UCI neonatal. Evaluación de displasia broncopulmonar. Seguimiento del prematuro si corresponde.",
-            archivoGuiaSIGGES: "40 SDRN v2.1.pdf"
+            archivoGuiaSIGGES: "40 SDRN v2.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS40"
         ),
         ProblemaGES(
             id: 41,
