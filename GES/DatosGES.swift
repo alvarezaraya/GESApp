@@ -237,7 +237,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación dentro de 30 días desde sospecha; orquiectomía dentro de 15 días desde la indicación médica; etapificación dentro de 30 días desde la confirmación. Tratamiento: quimioterapia en 30 días desde indicación médica; radioterapia en 45 días desde indicación médica; cirugía adicional a la orquiectomía en 45 días desde indicación médica; terapia de reemplazo hormonal en 30 días desde indicación médica. Seguimiento: primer control en 60 días desde la indicación médica.",
             tratamiento: "Orquiectomía radical inguinal. Según etapa y tipo: vigilancia activa, quimioterapia (BEP), radioterapia (seminoma), cirugía adicional (vaciamiento ganglionar), hormonoterapia. Banco de espermios para pacientes en edad fértil según criterios de inclusión.",
             seguimiento: "Primer control garantizado en 60 días desde la indicación médica. Marcadores tumorales y TAC según protocolo. Banco de espermios previo al tratamiento según criterios de inclusión.",
-            archivoGuiaSIGGES: "16_-_Cáncer_de_Testículos_15_Años_y_Más_v17.0.pdf"
+            archivoGuiaSIGGES: "16_-_Cáncer_de_Testículos_15_Años_y_Más_v17.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS16"
         ),
         ProblemaGES(
             id: 17,
@@ -251,7 +252,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: confirmación dentro de 35 días desde sospecha; etapificación dentro de 30 días desde la confirmación. Tratamiento: quimioterapia dentro de 10 días desde etapificación; radioterapia dentro de 25 días desde indicación médica. Seguimiento: primer control dentro de 30 días de finalizado el tratamiento.",
             tratamiento: "Hodgkin: ABVD ± radioterapia. No Hodgkin: según subtipo, R-CHOP para linfomas B difusos de células grandes. Trasplante en recaída.",
             seguimiento: "Primer control garantizado dentro de 30 días de finalizado el tratamiento. Evaluación de respuesta y vigilancia de recaída según protocolo.",
-            archivoGuiaSIGGES: "17_-_Linfoma_15_Años_y_Más_v13.0.pdf"
+            archivoGuiaSIGGES: "17_-_Linfoma_15_Años_y_Más_v13.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS17"
         ),
         ProblemaGES(
             id: 18,
@@ -265,7 +267,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: dentro de 45 días desde sospecha o solicitud del usuario. Consulta médica: dentro de 45 días desde la confirmación. Tratamiento: inicio dentro de 7 días desde la indicación médica. Persona gestante VIH (+): TAR dentro de 7 días desde indicación. Tratamiento parto: profilaxis antirretroviral desde el inicio del trabajo de parto vaginal o 4 horas antes de la cesárea programada. Terapia puerperio VIH (+): medicamentos para interrupción de lactancia dentro de 6 horas del nacimiento. Recién nacido de gestante VIH (+): profilaxis antirretroviral dentro de 4 horas desde el nacimiento.",
             tratamiento: "Terapia antirretroviral (TAR) combinada: 2 INTR + 1 inhibidor de integrasa (dolutegravir). Profilaxis de infecciones oportunistas según CD4.",
             seguimiento: "Carga viral y CD4 al inicio, a los 3 y 6 meses, luego cada 6 meses. Meta: carga viral indetectable. Screening de comorbilidades.",
-            archivoGuiaSIGGES: "18_-_VIH_SIDA_v.6.0.pdf"
+            archivoGuiaSIGGES: "18_-_VIH_SIDA_v.6.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS18"
         ),
         ProblemaGES(
             id: 19,
@@ -279,7 +282,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico → tratamiento farmacológico: inicio dentro de 24 horas desde el diagnóstico. Tratamiento kinesiológico (si indicado): inicio dentro de 24 horas desde la indicación médica. No se considera garantía de urgencia (se traslada al próximo día hábil).",
             tratamiento: "Según diagnóstico: antipiréticos, hidratación, salbutamol en SBO (según Score de Tal), corticoides en laringitis. Antibióticos solo si bacteriana.",
             seguimiento: "Control a las 24-48 horas en SBO. Educación a padres sobre signos de alarma. Derivar si hay deterioro clínico.",
-            archivoGuiaSIGGES: "19 IRA 2.3.pdf"
+            archivoGuiaSIGGES: "19 IRA 2.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS19"
         ),
         ProblemaGES(
             id: 20,
@@ -293,7 +297,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación clínico-radiológica dentro de 48 horas. Tratamiento farmacológico: inicio desde la sospecha. Tratamiento kinesiológico (si indicado): inicio dentro de 24 horas desde la indicación médica.",
             tratamiento: "Amoxicilina 1g cada 8 horas por 7 días, o amoxicilina/ácido clavulánico. Macrólidos si alergia a penicilina. Hidratación y reposo.",
             seguimiento: "Control clínico a las 48 horas. Radiografía de control a las 6 semanas. Vacunación antineumocócica e influenza.",
-            archivoGuiaSIGGES: "20 Neumonía 2.3.pdf"
+            archivoGuiaSIGGES: "20 Neumonía 2.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS20"
         ),
         ProblemaGES(
             id: 21,
