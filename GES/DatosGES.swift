@@ -1063,7 +1063,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → cirugía: intervención quirúrgica dentro de 30 días desde la sospecha. Cirugía → diagnóstico: confirmación diagnóstica dentro de 30 días desde la intervención quirúrgica. Diagnóstico → tratamiento adyuvante: inicio dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 60 días desde la indicación médica.",
             tratamiento: "Cirugía de citorreducción máxima (histerectomía, SOB, omentectomía, linfadenectomía). Quimioterapia: carboplatino + paclitaxel.",
             seguimiento: "CA-125 cada 3 meses. TAC cada 6 meses los primeros 2 años. Vigilancia clínica.",
-            archivoGuiaSIGGES: "71 Cáncer de Ovario v1.2.pdf"
+            archivoGuiaSIGGES: "71 Cáncer de Ovario v1.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS71"
         ),
         ProblemaGES(
             id: 72,
@@ -1077,7 +1078,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación → etapificación: dentro de 30 días desde la indicación médica. Confirmación → tratamiento primario: dentro de 45 días desde la indicación médica. Confirmación → tratamiento adyuvante: dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 30 días desde la indicación médica.",
             tratamiento: "Superficial: RTU + BCG intravesical. Músculo-invasor: cistectomía radical + derivación urinaria. Quimioterapia neoadyuvante.",
             seguimiento: "Cistoscopía cada 3 meses el primer año, semestral hasta 5 años. Citología urinaria.",
-            archivoGuiaSIGGES: "72_-_Cáncer_Vesical_15_Años_y_Más_3.0.pdf"
+            archivoGuiaSIGGES: "72_-_Cáncer_Vesical_15_Años_y_Más_3.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS72"
         ),
         ProblemaGES(
             id: 73,
@@ -1091,7 +1093,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica y etapificación dentro de 60 días desde la sospecha. Diagnóstico → tratamiento primario: inicio dentro de 30 días desde la indicación médica. Diagnóstico → tratamiento adyuvante: inicio dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 30 días desde la indicación médica. Rehabilitación: inicio dentro de 15 días desde la indicación médica. Silla de ruedas y andadores: entrega dentro de 30 días desde la indicación médica. Bastones: entrega dentro de 20 días desde la indicación médica. Vendaje para preparación de muñón: entrega dentro de 48 horas desde la indicación médica.",
             tratamiento: "Quimioterapia neoadyuvante, cirugía con preservación de extremidad o amputación, quimioterapia adyuvante. Rehabilitación.",
             seguimiento: "Control cada 3 meses con imágenes. TAC de tórax para vigilancia de metástasis pulmonares. Rehabilitación funcional.",
-            archivoGuiaSIGGES: "73_-_Osteosarcoma_15_Años_y_Más_v3.0.pdf"
+            archivoGuiaSIGGES: "73_-_Osteosarcoma_15_Años_y_Más_v3.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS73"
         ),
         ProblemaGES(
             id: 74,
@@ -1105,7 +1108,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación de indicación quirúrgica → tratamiento: cirugía dentro de 45 días desde la confirmación de indicación quirúrgica. Seguimiento: primer control dentro de 15 días desde la indicación médica.",
             tratamiento: "Reemplazo valvular aórtico (prótesis mecánica o biológica). TAVI en pacientes de alto riesgo quirúrgico. Reparación valvular en seleccionados.",
             seguimiento: "Control cardiológico y ecocardiograma al mes, 6 meses y anual. Anticoagulación con AVK si prótesis mecánica.",
-            archivoGuiaSIGGES: "74 Tto quirúgico válvula aórtica v1.3.pdf"
+            archivoGuiaSIGGES: "74 Tto quirúgico válvula aórtica v1.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS74"
         ),
         ProblemaGES(
             id: 75,
@@ -1119,7 +1123,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico → tratamiento: inicio dentro de 24 horas desde la confirmación diagnóstica. Hospitalización: dentro de 24 horas desde la indicación médica.",
             tratamiento: "Estabilizadores del ánimo: litio (primera línea), ácido valproico. Antipsicóticos atípicos en manía aguda. Lamotrigina para prevención de depresión.",
             seguimiento: "Control psiquiátrico mensual inicial, luego cada 2-3 meses. Litemia cada 3-6 meses. Función tiroidea y renal anual con litio.",
-            archivoGuiaSIGGES: "75. Enfermedad Bipolar v1.2.pdf"
+            archivoGuiaSIGGES: "75. Enfermedad Bipolar v1.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS75"
         ),
         ProblemaGES(
             id: 76,
