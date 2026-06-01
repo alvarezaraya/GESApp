@@ -838,7 +838,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio dentro de 45 días desde la confirmación diagnóstica o desde la indicación de recambio del audífono. Seguimiento: audiometría anual dentro de 60 días desde la indicación del examen; atención por especialista dentro de 45 días desde la detección de necesidad de cambio de audífono, según audiólogo. Rehabilitación: inicio dentro de 30 días luego de la entrega del audífono.",
             tratamiento: "Adaptación de audífono (uno o bilateral según indicación). Rehabilitación auditiva.",
             seguimiento: "Audiometría anual dentro de 60 días desde la indicación del examen. Atención por especialista dentro de 45 días desde la detección de necesidad de cambio de audífono. Acceso a repuesto de pilas para audífono en período de seguimiento.",
-            archivoGuiaSIGGES: "56 Hipoacusia Bilateral Instructivo GES v2.0.pdf"
+            archivoGuiaSIGGES: "56 Hipoacusia Bilateral Instructivo GES v2.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS56"
         ),
         ProblemaGES(
             id: 57,
@@ -852,7 +853,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha: primer examen con fondo de ojo por oftalmólogo dentro de las 6 semanas desde el nacimiento; control con oftalmólogo hasta alcanzar madurez retinal. Diagnóstico: confirmación diagnóstica dentro de 48 horas desde la sospecha. Tratamiento: inicio dentro de 24 horas desde la confirmación diagnóstica. Seguimiento: inicio dentro de 30 días desde la indicación médica.",
             tratamiento: "Láser transpupilar o crioterapia en estadios con indicación (enfermedad umbral). Anti-VEGF en casos seleccionados. Vitrectomía en estadio 4-5.",
             seguimiento: "Fondo de ojo seriado cada 1-2 semanas hasta vascularización retinal completa. Seguimiento oftalmológico a largo plazo.",
-            archivoGuiaSIGGES: "57 Retinopatía prematuro v3.1.pdf"
+            archivoGuiaSIGGES: "57 Retinopatía prematuro v3.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS57"
         ),
         ProblemaGES(
             id: 58,
@@ -866,7 +868,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: dentro de 24 horas desde la confirmación diagnóstica. Seguimiento: primer control dentro de 14 días después del alta hospitalaria.",
             tratamiento: "Oxigenoterapia domiciliaria, broncodilatadores inhalados, diuréticos, corticoides en exacerbaciones. Vacuna anti-VRS (palivizumab).",
             seguimiento: "Control mensual con saturometría. Retiro gradual de oxígeno. Evaluación de función pulmonar. Seguimiento hasta los 7 años.",
-            archivoGuiaSIGGES: "58 DBP del prematuro v3.2.pdf"
+            archivoGuiaSIGGES: "58 DBP del prematuro v3.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS58"
         ),
         ProblemaGES(
             id: 59,
@@ -880,7 +883,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha: screening auditivo automatizado previo al alta de la unidad de neonatología. Diagnóstico: confirmación diagnóstica dentro de 3 meses con screening alterado. Tratamiento: audífonos dentro de 3 meses desde la confirmación diagnóstica; implante coclear dentro de 180 días desde la indicación médica; cambio de procesador dentro de 90 días desde la indicación médica. Seguimiento: primer control dentro de 14 días desde la implementación de audífonos o implante coclear.",
             tratamiento: "Implementación de audífonos bilaterales. Terapia auditivo-verbal precoz. Implante coclear si hipoacusia severa-profunda bilateral sin beneficio con audífonos.",
             seguimiento: "Control audiológico cada 3 meses. Evaluación del desarrollo del lenguaje. Ajuste de audífonos según crecimiento y evolución audiométrica.",
-            archivoGuiaSIGGES: "59 Hipoacusia prematuro v3.2.pdf"
+            archivoGuiaSIGGES: "59 Hipoacusia prematuro v3.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS59"
         ),
         ProblemaGES(
             id: 60,
@@ -894,7 +898,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio dentro de 7 días desde la confirmación diagnóstica. Evaluación por especialista (Neurología o Medicina Interna): dentro de 60 días desde la derivación.",
             tratamiento: "Monoterapia inicial: levetiracetam, lamotrigina (focal), ácido valproico (generalizada). Ajuste según tipo de crisis y tolerancia.",
             seguimiento: "Control neurológico cada 3-6 meses. EEG de control según indicación. Educación sobre restricciones (conducción, natación). Considerar retiro tras 2 años sin crisis.",
-            archivoGuiaSIGGES: "60_-_Epilepsia_No_Refractaria_15_Años_y_Más_v.4.0.pdf"
+            archivoGuiaSIGGES: "60_-_Epilepsia_No_Refractaria_15_Años_y_Más_v.4.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS60"
         ),
         ProblemaGES(
             id: 61,
