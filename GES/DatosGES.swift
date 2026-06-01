@@ -1288,7 +1288,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico y tratamiento: primera respuesta inmediata desde la solicitud de atención en unidad de emergencia hospitalaria. Seguimiento: dentro de los primeros 35 días desde la primera respuesta.",
             tratamiento: "Profilaxis de ITS (VIH, hepatitis B, sífilis, gonorrea, clamidia), anticoncepción de emergencia, atención psicológica de crisis, toma de muestras legales.",
             seguimiento: "Control a las 2 semanas, 1 mes, 3 meses y 6 meses. Serología de control. Apoyo psicológico continuado. Derivación a red de protección.",
-            archivoGuiaSIGGES: "86 Atención Agresión Sexual V1.0.pdf"
+            archivoGuiaSIGGES: "86 Atención Agresión Sexual V1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS86"
         ),
         ProblemaGES(
             id: 87,
@@ -1302,7 +1303,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Rehabilitación: inicio de la rehabilitación ambulatoria o domiciliaria dentro de 15 días desde el alta hospitalaria o según indicación médica.",
             tratamiento: "Rehabilitación pulmonar, kinesioterapia respiratoria y motora, terapia ocupacional, fonoaudiología si disfagia, apoyo psicológico.",
             seguimiento: "Evaluación funcional cada 3 meses. Espirometría de control. Evaluación de reintegro laboral. Alta cuando se alcancen objetivos funcionales.",
-            archivoGuiaSIGGES: "87 Rehabilitación SARS COV 2 v1.0.pdf"
+            archivoGuiaSIGGES: "87 Rehabilitación SARS COV 2 v1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS87"
         ),
         ProblemaGES(
             id: 88,
@@ -1316,7 +1318,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio dentro de 30 días desde la indicación médica (al alta hospitalaria). El acceso a fármacos garantizados se entrega tanto en nivel de especialidad como en APS. Seguimiento: no garantizado (control hepatológico recomendado dentro de 7 a 14 días post alta).",
             tratamiento: "Según tipo de descompensación: diuréticos (espironolactona, furosemida), lactulosa, rifaximina, betabloqueadores no selectivos (profilaxis de hemorragia variceal), albúmina, norfloxacino profiláctico.",
             seguimiento: "Control hepatológico dentro de los primeros 7-14 días post alta. Luego mensual. Evaluación para trasplante hepático. Monitoreo de función hepática y renal.",
-            archivoGuiaSIGGES: "88_-_Tratamiento_Farmacológico_Cirrosis_v.1.0.pdf"
+            archivoGuiaSIGGES: "88_-_Tratamiento_Farmacológico_Cirrosis_v.1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS88"
         ),
         ProblemaGES(
             id: 89,
@@ -1330,7 +1333,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento (hospitalización): inicio inmediato desde la confirmación diagnóstica. Consulta con especialista: dentro de 30 días desde la derivación (continuidad de atención ambulatoria al egreso).",
             tratamiento: "Hospitalización en unidad de psiquiatría infanto-juvenil (UHCIP/UHCE) o cuidados medios pediátricos. Farmacoterapia (ISRS, ajuste de dosis), psicoterapia intensiva, contención de crisis, intervención familiar. Hospitalización diurna al egreso si se requiere. Terapia electroconvulsiva en casos excepcionales.",
             seguimiento: "Al egreso, continuidad de atención ambulatoria de especialidad (COSAM, CAE o CDT). Seguimiento ambulatorio intensivo. Coordinación con red educacional. Prevención de reingreso.",
-            archivoGuiaSIGGES: "89_-_Tratamiento_Hospitalario_Depresión_v.1.0.pdf"
+            archivoGuiaSIGGES: "89_-_Tratamiento_Hospitalario_Depresión_v.1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS89"
         ),
         ProblemaGES(
             id: 90,
@@ -1344,7 +1348,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento farmacológico: inicio dentro de 30 días desde la confirmación diagnóstica. Sospecha, confirmación y seguimiento: no garantizados. El caso se cierra automáticamente 13 semanas después de la primera entrega del tratamiento farmacológico.",
             tratamiento: "Consejería breve (ABC), terapia conductual grupal o individual (6 sesiones), terapia farmacológica iniciada 5-7 días antes del Día D por 12 semanas: terapia de reemplazo de nicotina (parches, chicles), vareniclina o bupropión según evaluación.",
             seguimiento: "Seguimiento a los 1, 3, 6 y 12 meses. Evaluación de abstinencia. Manejo de recaídas.",
-            archivoGuiaSIGGES: "90_-CESACIÓN_DEL_CONSUMO_DE_TABACO_EN_PERSONAS_DE_.pdf"
+            archivoGuiaSIGGES: "90_-CESACIÓN_DEL_CONSUMO_DE_TABACO_EN_PERSONAS_DE_.pdf",
+            flujogramaDerivacion: "FlujogramaPS90"
         ),
     ]
 }
