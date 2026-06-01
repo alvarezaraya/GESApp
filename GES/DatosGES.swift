@@ -913,7 +913,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación diagnóstica: dentro de 20 días desde la sospecha. Tratamiento: inicio desde la confirmación diagnóstica, según indicación médica. Atención con especialista (Broncopulmonar o Medicina Interna): dentro de 60 días desde la derivación.",
             tratamiento: "Broncodilatadores de rescate (salbutamol). Corticosteroides inhalados (ICS) como controlador de base. ICS + LABA en asma persistente moderada a grave. Tratamiento de exacerbaciones. Biológicos (anticuerpos monoclonales anti-IgE, anti-IL-5, anti-IL-4/13) para asma grave no controlada con inflamación T2, según indicación del equipo tratante.",
             seguimiento: "Control cada 1-3 meses hasta lograr control. Evaluación de técnica inhalatoria, adherencia, control ambiental. Espirometría anual.",
-            archivoGuiaSIGGES: "61_-_Asma_Bronquial_15_Años_y_Más_v.4.0.pdf"
+            archivoGuiaSIGGES: "61_-_Asma_Bronquial_15_Años_y_Más_v.4.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS61"
         ),
         ProblemaGES(
             id: 62,
@@ -927,7 +928,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: dentro de 20 días desde la confirmación diagnóstica. Atención con especialista (Neurología o Medicina Interna): dentro de 60 días desde la derivación (SIC a Control de Especialidad). Rehabilitación (bastón, cojines y colchón antiescaras): entrega dentro de 20 días desde la indicación médica, para menores de 65 años. Silla de ruedas, andadores y órtesis antiequino: entrega dentro de 20-30 días según ayuda técnica, para menores de 65 años.",
             tratamiento: "Levodopa/carbidopa (gold standard). Agonistas dopaminérgicos (pramipexol, rotigotina). Inhibidores MAO-B, COMT. Rehabilitación motora incluida como garantía.",
             seguimiento: "Control neurológico cada 3-6 meses. Ajuste de dosis según progresión y complicaciones motoras (fluctuaciones, discinesias).",
-            archivoGuiaSIGGES: "62_-_Enfermedad_de_Parkinson_v3.0.pdf"
+            archivoGuiaSIGGES: "62_-_Enfermedad_de_Parkinson_v3.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS62"
         ),
         ProblemaGES(
             id: 63,
@@ -941,7 +943,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: dentro de 7 días desde la confirmación diagnóstica.",
             tratamiento: "AINES como primera línea. Metotrexato si poliarticular o refractaria. Biológicos (etanercept, adalimumab) si falla a FARMEs. Corticoides intraarticulares.",
             seguimiento: "Control reumatológico cada 1-3 meses. Evaluación oftalmológica cada 3-6 meses (uveítis). Monitoreo de crecimiento.",
-            archivoGuiaSIGGES: "63. Artritis idiopática Juvenil v1.3.pdf"
+            archivoGuiaSIGGES: "63. Artritis idiopática Juvenil v1.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS63"
         ),
         ProblemaGES(
             id: 64,
@@ -955,7 +958,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: dentro de 24 horas desde la confirmación. Consulta de especialista dentro de 30 días desde la derivación.",
             tratamiento: "Control estricto de PA (< 130/80), IECA/ARA II, control glicémico en diabéticos, restricción proteica, manejo de dislipidemia, evitar nefrotóxicos.",
             seguimiento: "Control nefrológico cada 3-6 meses. Monitoreo de VFG, proteinuria, electrolitos, hemoglobina, metabolismo óseo-mineral. Preparación para TRR.",
-            archivoGuiaSIGGES: "64 prevencion secundaria IRC v2.2.pdf"
+            archivoGuiaSIGGES: "64 prevencion secundaria IRC v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS64"
         ),
         ProblemaGES(
             id: 65,
@@ -969,7 +973,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Screening de radiografía de caderas: dentro de 30 días desde la indicación. Confirmación diagnóstica: por especialista dentro de 30 días desde la indicación médica. Tratamiento: dentro de 15 días desde la confirmación diagnóstica por especialista.",
             tratamiento: "Arnés de Pavlik en menores de 6 meses. Reducción cerrada o abierta en casos tardíos o refractarios. Yeso pelvipédico.",
             seguimiento: "Ecografía o radiografía de control según tratamiento. Seguimiento ortopédico hasta madurez esquelética.",
-            archivoGuiaSIGGES: "65 Displasia luxante de caderas v2.1.pdf"
+            archivoGuiaSIGGES: "65 Displasia luxante de caderas v2.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS65"
         ),
         ProblemaGES(
             id: 66,
