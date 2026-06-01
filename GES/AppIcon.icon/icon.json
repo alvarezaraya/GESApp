@@ -1,4 +1,5 @@
 {
+  "color-space-for-untagged-svg-colors" : "display-p3",
   "fill-specializations" : [
     {
       "value" : "system-light"
@@ -12,7 +13,17 @@
     {
       "layers" : [
         {
+          "blend-mode-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : "normal"
+            }
+          ],
           "fill-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : "automatic"
+            },
             {
               "appearance" : "tinted",
               "value" : {
@@ -20,6 +31,8 @@
               }
             }
           ],
+          "glass" : true,
+          "hidden" : false,
           "image-name" : "3590209F-7168-4EDD-932F-F54C97F0D138.png",
           "name" : "3590209F-7168-4EDD-932F-F54C97F0D138",
           "position" : {
