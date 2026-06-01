@@ -763,7 +763,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio inmediato desde la confirmación diagnóstica (dentro de 24 horas).",
             tratamiento: "Kinesioterapia respiratoria diaria, antibióticos (tobramicina inhalada en ciclos), enzimas pancreáticas, vitaminas liposolubles (A, D, E, K), DNasa (alfa-dornasa). Moduladores CFTR garantizados: elexacaftor/tezacaftor/ivacaftor para pacientes de 6 años y más con mutación F508del según indicación especialista. Hospitalización domiciliaria para pacientes estables mayores de 5 años.",
             seguimiento: "Control multidisciplinario (broncopulmonar, nutrición, kinesiología) cada 1-3 meses. Cultivos de esputo, espirometría, evaluación nutricional. Referir a trasplante pulmonar si indicado.",
-            archivoGuiaSIGGES: "51_-_Fibrosis_Quística_v.6.0.pdf"
+            archivoGuiaSIGGES: "51_-_Fibrosis_Quística_v.6.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS51"
         ),
         ProblemaGES(
             id: 52,
@@ -777,7 +778,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 90 días desde la sospecha. Diagnóstico → tratamiento: inicio desde la confirmación diagnóstica por médico especialista. Rehabilitación: inicio dentro de 15 días desde la indicación médica.",
             tratamiento: "Metotrexato como primera línea. Asociar leflunomida, sulfasalazina si insuficiente. Biológicos (anti-TNF) si falla a FARMEs convencionales.",
             seguimiento: "Control cada 1-3 meses hasta remisión. DAS28 para evaluar actividad. Monitoreo hepático y hematológico con metotrexato.",
-            archivoGuiaSIGGES: "52 Artritis Reumatoide Instructivo GES v1.0.pdf"
+            archivoGuiaSIGGES: "52 Artritis Reumatoide Instructivo GES v1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS52"
         ),
         ProblemaGES(
             id: 53,
@@ -791,7 +793,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico → tratamiento: inicio dentro de 10 días desde la confirmación diagnóstica.",
             tratamiento: "Intervención breve, psicoterapia individual y familiar, tratamiento ambulatorio intensivo. Desintoxicación si necesario.",
             seguimiento: "Seguimiento por al menos 12 meses. Prevención de recaídas. Reinserción escolar y social.",
-            archivoGuiaSIGGES: "53 Consumo perjudicial alcohol y drogas v2.3.pdf"
+            archivoGuiaSIGGES: "53 Consumo perjudicial alcohol y drogas v2.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS53"
         ),
         ProblemaGES(
             id: 54,
@@ -805,7 +808,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio durante el trabajo de parto y en el parto, según indicación médica.",
             tratamiento: "Analgesia epidural o combinada espinal-epidural. Alternativas: óxido nitroso, opioides parenterales si contraindicación.",
             seguimiento: "Monitorización continua durante analgesia. Evaluación de bloqueo motor. Control de signos vitales maternos y fetales.",
-            archivoGuiaSIGGES: "54 Analgesia del Parto v2.1.pdf"
+            archivoGuiaSIGGES: "54 Analgesia del Parto v2.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS54"
         ),
         ProblemaGES(
             id: 55,
@@ -819,7 +823,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: dentro de 72 horas desde la confirmación diagnóstica, en prestador con capacidad resolutiva. En mayores de 15 años: tratamiento inicial (estabilización) en el centro de origen dentro de 8 horas desde la confirmación diagnóstica. Seguimiento: primer control dentro de 15 días desde la indicación médica. Rehabilitación hospitalizada: inicio dentro de 48 horas desde la indicación médica. Rehabilitación ambulatoria: primera atención dentro de 15 días desde el alta hospitalaria. Ayudas técnicas: entrega dentro de 30 días desde la indicación.",
             tratamiento: "Reanimación con fluidos (fórmula de Parkland), manejo de vía aérea, escarotomía, aseo quirúrgico, injertos cutáneos, rehabilitación.",
             seguimiento: "Rehabilitación prolongada. Uso de prendas compresivas. Cirugía reconstructiva de secuelas. Apoyo psicológico.",
-            archivoGuiaSIGGES: "55 Gran Quemado Instructivo GES v1.0.pdf"
+            archivoGuiaSIGGES: "55 Gran Quemado Instructivo GES v1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS55"
         ),
         ProblemaGES(
             id: 56,
