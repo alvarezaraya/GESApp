@@ -1213,7 +1213,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 60 días desde la sospecha. Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica. Diagnóstico → tratamiento primario: inicio dentro de 45 días desde la indicación médica. Tratamientos adyuvantes: inicio dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 30 días desde la indicación médica.",
             tratamiento: "Etapas I-II: cirugía (lobectomía + linfadenectomía) ± QT adyuvante. Etapa III: QT-RT. Etapa IV: QT, inmunoterapia, terapia dirigida según marcadores.",
             seguimiento: "TAC cada 3-6 meses los primeros 2 años, luego anual. Control clínico según síntomas.",
-            archivoGuiaSIGGES: "81_-_Cáncer_de_Pulmón_V._3.0.pdf"
+            archivoGuiaSIGGES: "81_-_Cáncer_de_Pulmón_V._3.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS81"
         ),
         ProblemaGES(
             id: 82,
@@ -1227,7 +1228,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica (anaplásico: dentro de 7 días). Tratamiento quirúrgico — alto riesgo y medular: dentro de 90 días desde la indicación médica. Tratamiento quirúrgico — riesgo intermedio: dentro de 6 meses desde la indicación médica. Tratamiento quirúrgico — bajo riesgo: dentro de 9 meses desde la indicación médica. Tratamiento quirúrgico — anaplásico: dentro de 7 días desde la indicación médica. Re-estadificación: inicio al cuarto mes posterior a la cirugía. Tratamientos adyuvantes: dentro de 90 días desde la indicación médica. Tratamiento sistémico: dentro de 60 días desde la indicación médica. Seguimiento: primer control dentro de 90 días desde la indicación médica. Rehabilitación: inicio dentro de 30 días desde la indicación médica.",
             tratamiento: "Tiroidectomía total o parcial según tamaño y tipo. Radioyodo (I-131) en diferenciado. Supresión de TSH con levotiroxina. Disección cervical si adenopatías.",
             seguimiento: "Tiroglobulina y ecografía cervical cada 6-12 meses. Cintigrafía con I-131 de seguimiento. Calcitonina en medular.",
-            archivoGuiaSIGGES: "82  Cáncer de tiroides Instructivo GES v2.0 .pdf"
+            archivoGuiaSIGGES: "82  Cáncer de tiroides Instructivo GES v2.0 .pdf",
+            flujogramaDerivacion: "FlujogramaPS82"
         ),
         ProblemaGES(
             id: 83,
@@ -1241,7 +1243,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica. Diagnóstico → tratamiento primario: inicio dentro de 30 días desde la indicación médica. Tratamientos adyuvantes: inicio dentro de 30 días desde la indicación médica.",
             tratamiento: "Nefrectomía radical o parcial según tamaño y localización. Terapias sistémicas en enfermedad avanzada: antiangiogénicos, inmunoterapia (nivolumab + ipilimumab), inhibidores de tirosina quinasa.",
             seguimiento: "TAC cada 3-6 meses los primeros 2 años, luego anual. Control de función renal. Vigilancia del riñón contralateral.",
-            archivoGuiaSIGGES: "83_-_Cáncer_Renal_en_Personas_de_15_Años_y_Más_V.3.pdf"
+            archivoGuiaSIGGES: "83_-_Cáncer_Renal_en_Personas_de_15_Años_y_Más_V.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS83"
         ),
         ProblemaGES(
             id: 84,
@@ -1255,7 +1258,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica. Diagnóstico → tratamiento primario: inicio dentro de 30 días desde la indicación médica. Tratamiento adyuvante: inicio dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 30 días desde la indicación médica.",
             tratamiento: "Inducción: VRd (bortezomib, lenalidomida, dexametasona). Trasplante autólogo en elegibles. Mantención con lenalidomida.",
             seguimiento: "Electroforesis y cadenas livianas cada 1-2 meses. Evaluación de respuesta según criterios IMWG. Vigilancia de complicaciones óseas.",
-            archivoGuiaSIGGES: "84_-_Mieloma_Múltiple_en_Personas_de_15_Años_y_Más.pdf"
+            archivoGuiaSIGGES: "84_-_Mieloma_Múltiple_en_Personas_de_15_Años_y_Más.pdf",
+            flujogramaDerivacion: "FlujogramaPS84"
         ),
         ProblemaGES(
             id: 85,
@@ -1269,7 +1273,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 60 días desde la sospecha. Confirmación diagnóstica diferencial: dentro de 180 días desde la indicación médica. Diagnóstico → tratamiento: inicio dentro de 60 días desde la confirmación diagnóstica.",
             tratamiento: "Inhibidores de colinesterasa (donepezilo, rivastigmina) en demencia leve-moderada. Memantina en moderada-severa. Manejo conductual no farmacológico.",
             seguimiento: "Control cada 3-6 meses. Evaluación cognitiva y funcional periódica. Apoyo al cuidador. Planificación de cuidados avanzados.",
-            archivoGuiaSIGGES: "85 Alzheimer y Otras Demencias Instructivo GES v3.0 .pdf"
+            archivoGuiaSIGGES: "85 Alzheimer y Otras Demencias Instructivo GES v3.0 .pdf",
+            flujogramaDerivacion: "FlujogramaPS85"
         ),
         ProblemaGES(
             id: 86,
