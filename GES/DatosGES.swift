@@ -612,7 +612,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio dentro de 24 horas desde la confirmación diagnóstica. Atención por especialista: dentro de 120 días desde la derivación según indicación médica.",
             tratamiento: "Educación, baja de peso, ejercicio terapéutico, kinesioterapia. Paracetamol, AINES en agudizaciones. Infiltraciones intraarticulares.",
             seguimiento: "Control cada 3-6 meses. Evaluación de progresión radiológica. Derivar a cirugía si artrosis severa.",
-            archivoGuiaSIGGES: "41 Artrosis de Cadera y Rodilla v2.1.pdf"
+            archivoGuiaSIGGES: "41 Artrosis de Cadera y Rodilla v2.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS41"
         ),
         ProblemaGES(
             id: 42,
@@ -626,7 +627,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación diagnóstica de HSA por TAC: dentro de 24 horas desde la sospecha. Confirmación de aneurisma roto por AngioTAC multicorte o angiografía digital: dentro de 48 horas desde la confirmación de HSA. Tratamiento en establecimiento con capacidad resolutiva: inicio dentro de 24 horas desde la confirmación de aneurisma roto, según indicación médica. Seguimiento (primer control con médico especialista): dentro de 30 días desde el alta, según indicación médica. Rehabilitación hospitalizada y ambulatoria: según indicación médica. Ayudas técnicas para menores de 65 años: bastones, cojín y colchón antiescaras, sillas de ruedas según indicación médica.",
             tratamiento: "Clipaje quirúrgico o embolización endovascular (COIL) del aneurisma. Ventriculostomía si hidrocefalia. Manejo en UCI: nimodipino, control de PA, prevención y manejo de vasoespasmo.",
             seguimiento: "Primer control con médico especialista dentro de los 30 días desde el alta. AngioTAC de control y vigilancia de vasoespasmo según indicación médica. Rehabilitación neurológica.",
-            archivoGuiaSIGGES: "42_-_Hemorragia_Subaracnoidea_v.6.0.pdf"
+            archivoGuiaSIGGES: "42_-_Hemorragia_Subaracnoidea_v.6.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS42"
         ),
         ProblemaGES(
             id: 43,
@@ -641,7 +643,8 @@ extension ProblemaGES {
             tratamiento: "Cirugía (resección máxima segura). Radioterapia + temozolomida en gliomas de alto grado (GBM). Observación en meningiomas grado I.",
             seguimiento: "RNM de control cada 3 meses el primer año, luego semestral. Evaluación neurológica y funcional periódica.",
             archivoGuiaSIGGES: "43 Tumores Primarios SNC Instructivo GES V2.0.pdf",
-            estadoDS29: .modificado
+            estadoDS29: .modificado,
+            flujogramaDerivacion: "FlujogramaPS43"
         ),
         ProblemaGES(
             id: 44,
@@ -655,7 +658,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Indicación quirúrgica → cirugía: dentro de 45 días desde la confirmación de indicación quirúrgica, según criterios de inclusión. Seguimiento: control por especialista dentro de 30 días desde el alta.",
             tratamiento: "Discectomía lumbar (microdiscectomía). Kinesioterapia postoperatoria.",
             seguimiento: "Control por especialista dentro de los 30 días desde el alta. Rehabilitación kinésica según indicación médica.",
-            archivoGuiaSIGGES: "44 Hernia del Núcleo Pulposo v2.2.pdf"
+            archivoGuiaSIGGES: "44 Hernia del Núcleo Pulposo v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS44"
         ),
         ProblemaGES(
             id: 45,
@@ -669,7 +673,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Leucemia aguda — Confirmación diagnóstica: dentro de 21 días desde la sospecha. Quimioterapia: inicio dentro de 72 horas desde la indicación médica. Seguimiento (primer control): dentro de 14 días desde la indicación médica. Leucemia crónica — Confirmación diagnóstica: dentro de 60 días desde la sospecha. Quimioterapia: inicio dentro de 10 días desde la indicación médica. Seguimiento (primer control): dentro de 14 días desde la indicación médica.",
             tratamiento: "LLA: quimioterapia de inducción (vincristina, dexametasona, asparaginasa), consolidación, mantención. LMA: quimioterapia intensiva (citarabina + antraciclina, esquema 7+3). LMC: inhibidores de tirosina kinasa (imatinib primera línea; dasatinib o nilotinib en resistencia). Trasplante de médula ósea en seleccionados.",
             seguimiento: "Primer control hematológico garantizado dentro de 14 días desde la indicación médica. Evaluación de remisión completa. Vigilancia de recaída y efectos secundarios del tratamiento.",
-            archivoGuiaSIGGES: "45_-_Leucemia_15_Años_y_Más_v6.0.pdf"
+            archivoGuiaSIGGES: "45_-_Leucemia_15_Años_y_Más_v6.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS45"
         ),
         ProblemaGES(
             id: 46,
