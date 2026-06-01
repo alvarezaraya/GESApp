@@ -988,7 +988,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio dentro de 21 días desde la solicitud de atención. Alta integral hasta 15 meses desde la primera atención.",
             tratamiento: "Educación en higiene oral, destartraje, obturaciones, exodoncias según necesidad, tratamiento de gingivitis. Procedimientos seguros en 2do trimestre.",
             seguimiento: "Control odontológico durante el embarazo. Refuerzo de higiene oral.",
-            archivoGuiaSIGGES: "66 Salud Oral de la embarazada v2.2.pdf"
+            archivoGuiaSIGGES: "66 Salud Oral de la embarazada v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS66"
         ),
         ProblemaGES(
             id: 67,
@@ -1002,7 +1003,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico: dentro de 60 días desde la sospecha. Tratamiento: inicio dentro de 30 días desde la confirmación diagnóstica. Rehabilitación: inicio dentro de 30 días desde la indicación médica. Rehabilitación integral en brote: inicio dentro de 48 horas desde la indicación médica. Bastones: entrega dentro de 20 días desde la indicación médica. Sillas de ruedas, andadores y órtesis tobillo-pie: entrega dentro de 30 días desde la indicación médica.",
             tratamiento: "Brotes: metilprednisolona EV. Terapia modificadora: interferón beta, acetato de glatiramer, fingolimod, natalizumab según actividad.",
             seguimiento: "Control neurológico cada 3-6 meses. RNM anual. Evaluación de discapacidad (EDSS). Monitoreo de efectos adversos de terapia.",
-            archivoGuiaSIGGES: "67-_Esclerosis_Múltiple_Remitente_Recurrente_v4.0.pdf"
+            archivoGuiaSIGGES: "67-_Esclerosis_Múltiple_Remitente_Recurrente_v4.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS67"
         ),
         ProblemaGES(
             id: 68,
@@ -1016,7 +1018,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico → evaluación inicial: dentro de 30 días desde la confirmación diagnóstica. Diagnóstico → tratamiento: inicio dentro de 30 días desde la indicación médica.",
             tratamiento: "Antivirales (tenofovir, entecavir) en hepatitis crónica activa. Interferón pegilado en seleccionados.",
             seguimiento: "Control cada 3-6 meses con carga viral, HBeAg, perfil hepático. Screening de hepatocarcinoma cada 6 meses (ecografía + AFP).",
-            archivoGuiaSIGGES: "68 Hepatitis B v2.2.pdf"
+            archivoGuiaSIGGES: "68 Hepatitis B v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS68"
         ),
         ProblemaGES(
             id: 69,
@@ -1030,7 +1033,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 45 días desde la sospecha. Diagnóstico → evaluación pretratamiento: dentro de 30 días desde la confirmación diagnóstica. Evaluación pretratamiento → tratamiento: inicio del tratamiento farmacológico dentro de 30 días desde la indicación médica.",
             tratamiento: "Antivirales de acción directa (DAA): sofosbuvir/velpatasvir pangenotípico por 12 semanas. Tasa de curación > 95%.",
             seguimiento: "Carga viral a las 12 semanas post tratamiento (RVS12 = curación). Screening de hepatocarcinoma si cirrosis.",
-            archivoGuiaSIGGES: "69 Hepatitis C Instructivo GES v1.0.pdf"
+            archivoGuiaSIGGES: "69 Hepatitis C Instructivo GES v1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS69"
         ),
         ProblemaGES(
             id: 70,
@@ -1044,7 +1048,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 45 días desde la sospecha. Confirmación → etapificación: dentro de 45 días desde la confirmación diagnóstica. Diagnóstico → tratamiento primario: inicio dentro de 30 días desde la indicación médica. Tratamiento adyuvante y/o neoadyuvante: inicio dentro de 30 días desde la indicación médica. Reconstitución del tránsito intestinal y/o cierre de colostomía: dentro de 90 días desde la indicación quirúrgica. Seguimiento: primer control dentro de 90 días desde la indicación médica.",
             tratamiento: "Colon: colectomía + quimioterapia adyuvante (FOLFOX si etapa III). Recto: neoadyuvancia (QT-RT), resección anterior baja o amputación abdominoperineal.",
             seguimiento: "CEA cada 3 meses por 3 años. TAC cada 6-12 meses. Colonoscopía al año, luego cada 3-5 años.",
-            archivoGuiaSIGGES: "70_-_Cáncer_Colorectal_15_Años_y_Más_4.0.pdf"
+            archivoGuiaSIGGES: "70_-_Cáncer_Colorectal_15_Años_y_Más_4.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS70"
         ),
         ProblemaGES(
             id: 71,
