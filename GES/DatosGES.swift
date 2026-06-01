@@ -1138,7 +1138,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: inicio dentro de 7 días desde la confirmación diagnóstica.",
             tratamiento: "Levotiroxina en ayunas (dosis según peso y severidad). Iniciar con dosis bajas en ancianos y cardiópatas.",
             seguimiento: "TSH a las 6-8 semanas de inicio o cambio de dosis. Una vez estable, control cada 6-12 meses.",
-            archivoGuiaSIGGES: "76 Hipotiroidismo v1.1.pdf"
+            archivoGuiaSIGGES: "76 Hipotiroidismo v1.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS76"
         ),
         ProblemaGES(
             id: 77,
@@ -1152,7 +1153,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación diagnóstica dentro de 90 días desde la sospecha. Diagnóstico → audífonos: entrega dentro de 90 días desde la confirmación diagnóstica. Indicación médica → implante coclear: implementación dentro de 180 días desde la indicación médica. Cambio de procesador del implante coclear: dentro de 90 días desde la indicación médica. Cambio de accesorios del procesador coclear: dentro de 30 días desde la indicación médica. Seguimiento: primer control dentro de 14 días desde la implementación de audífonos o implante coclear. Rehabilitación: inicio dentro de 30 días desde la confirmación diagnóstica.",
             tratamiento: "Implementación de audífono bilateral precoz. Terapia auditivo-verbal intensiva. Implante coclear si hipoacusia severa-profunda sin beneficio con audífono.",
             seguimiento: "Control audiológico cada 3 meses. Evaluación de desarrollo del lenguaje. Ajuste de audífonos según crecimiento.",
-            archivoGuiaSIGGES: "77 Hipoacusia menor 4 años Instructivo GES  v1.0.pdf"
+            archivoGuiaSIGGES: "77 Hipoacusia menor 4 años Instructivo GES  v1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS77"
         ),
         ProblemaGES(
             id: 78,
@@ -1166,7 +1168,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico → tratamiento: inicio desde la confirmación diagnóstica por especialista.",
             tratamiento: "Hidroxicloroquina para todos. AINES, corticoides según actividad. Inmunosupresores: azatioprina, micofenolato (nefritis), ciclofosfamida en formas graves.",
             seguimiento: "Control reumatológico cada 1-3 meses. Monitoreo renal, hematológico. Anti-dsDNA y complemento como marcadores de actividad.",
-            archivoGuiaSIGGES: "78 Lupus Eritematoso Sistémico v1.1.pdf"
+            archivoGuiaSIGGES: "78 Lupus Eritematoso Sistémico v1.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS78"
         ),
         ProblemaGES(
             id: 79,
@@ -1180,7 +1183,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Confirmación de indicación quirúrgica → tratamiento: cirugía dentro de 45 días desde la confirmación de indicación quirúrgica. Seguimiento: primer control dentro de 15 días desde la indicación médica.",
             tratamiento: "Reparación valvular mitral (preferida sobre reemplazo). Reemplazo valvular con prótesis mecánica o biológica. Anuloplastía tricuspídea.",
             seguimiento: "Ecocardiograma al mes, 6 meses y anual. Anticoagulación con AVK si prótesis mecánica o fibrilación auricular.",
-            archivoGuiaSIGGES: "79 Tto quirúgico válvula mitral y tricuspide v1.3.pdf"
+            archivoGuiaSIGGES: "79 Tto quirúgico válvula mitral y tricuspide v1.3.pdf",
+            flujogramaDerivacion: "FlujogramaPS79"
         ),
         ProblemaGES(
             id: 80,
@@ -1194,7 +1198,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Diagnóstico → tratamiento erradicador: inicio dentro de 7 días desde la confirmación diagnóstica. Atención con especialista: dentro de 60 días desde la derivación.",
             tratamiento: "Terapia triple: IBP + amoxicilina + claritromicina por 14 días. Segunda línea: IBP + amoxicilina + levofloxacino o terapia cuádruple con bismuto.",
             seguimiento: "Test de erradicación (aire espirado o antígeno fecal) 4-6 semanas post tratamiento. Sin IBP por 2 semanas previas al test.",
-            archivoGuiaSIGGES: "80 erradicacion helicobacter pylori v1.1.pdf"
+            archivoGuiaSIGGES: "80 erradicacion helicobacter pylori v1.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS80"
         ),
         ProblemaGES(
             id: 81,
