@@ -688,7 +688,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación dentro de 24 horas desde la sospecha. Diagnóstico → tratamiento: inmediato desde la confirmación diagnóstica.",
             tratamiento: "Drenaje de absceso, pulpotomía, reimplante dentario en avulsión, exodoncia de urgencia, sutura de tejidos blandos, analgesia.",
             seguimiento: "Control según evolución si procedimiento invasivo. Derivación a atención odontológica integral si se requiere.",
-            archivoGuiaSIGGES: "46 Urgencia Odontológica v2.1.pdf"
+            archivoGuiaSIGGES: "46 Urgencia Odontológica v2.1.pdf",
+            flujogramaDerivacion: "FlujogramaPS46"
         ),
         ProblemaGES(
             id: 47,
@@ -702,7 +703,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Solicitud de atención → inicio de tratamiento: dentro de 90 días desde la solicitud de atención.",
             tratamiento: "Obturaciones, exodoncias, tratamiento periodontal, prótesis dental removible (parcial o total) según necesidad. El alta se otorga al completar los procedimientos de promoción, prevención, recuperación y rehabilitación requeridos.",
             seguimiento: "Alta odontológica integral al completar todos los procedimientos garantizados. Controles de adaptación protésica según indicación del odontólogo tratante.",
-            archivoGuiaSIGGES: "47 Salud Oral Integral 60 Años v2.2.pdf"
+            archivoGuiaSIGGES: "47 Salud Oral Integral 60 Años v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS47"
         ),
         ProblemaGES(
             id: 48,
@@ -716,7 +718,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Tratamiento: en centro con capacidad resolutiva según patología predominante, antes de 24 horas desde el rescate. Rehabilitación (con lesión medular): inicio dentro de 24 horas desde la indicación médica.",
             tratamiento: "Reanimación con control de daños. Cirugía de control de daños. Manejo en UCI. Cirugía definitiva diferida.",
             seguimiento: "Rehabilitación integral. Evaluación de secuelas. Apoyo psicológico. Reinserción laboral y social.",
-            archivoGuiaSIGGES: "48 Politraumatizado Grave Instructivo GES v1.0.pdf"
+            archivoGuiaSIGGES: "48 Politraumatizado Grave Instructivo GES v1.0.pdf",
+            flujogramaDerivacion: "FlujogramaPS48"
         ),
         ProblemaGES(
             id: 49,
@@ -730,7 +733,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación dentro de 12 horas desde la sospecha. Diagnóstico → tratamiento: inicio dentro de 24 horas desde la confirmación.",
             tratamiento: "Manejo en UCI: neuroprotección, control de PIC, cirugía descompresiva o evacuación de hematomas. Prevención de daño secundario.",
             seguimiento: "Rehabilitación neurológica integral. Evaluación neuropsicológica. Seguimiento de epilepsia postraumática.",
-            archivoGuiaSIGGES: "49 Traumatismo Cráneo Encefálico v2.2.pdf"
+            archivoGuiaSIGGES: "49 Traumatismo Cráneo Encefálico v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS49"
         ),
         ProblemaGES(
             id: 50,
@@ -744,7 +748,8 @@ extension ProblemaGES {
             garantiaOportunidad: "Sospecha → diagnóstico: confirmación dentro de 12 horas desde la sospecha. Diagnóstico → tratamiento: por especialista dentro de 60 horas desde la confirmación diagnóstica.",
             tratamiento: "Reparación quirúrgica de globo abierto (< 24 horas). Manejo de hifema, desprendimiento de retina traumático, catarata traumática.",
             seguimiento: "Control oftalmológico frecuente post trauma. Vigilancia de glaucoma secundario, desprendimiento de retina tardío.",
-            archivoGuiaSIGGES: "50 Trauma Ocular Grave v2.2.pdf"
+            archivoGuiaSIGGES: "50 Trauma Ocular Grave v2.2.pdf",
+            flujogramaDerivacion: "FlujogramaPS50"
         ),
         ProblemaGES(
             id: 51,
