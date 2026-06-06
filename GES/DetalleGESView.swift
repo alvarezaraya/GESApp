@@ -212,25 +212,33 @@ struct DetalleGESView: View {
                 Text("Flujograma de derivación")
                     .font(.headline)
                 Spacer()
-                Image(systemName: "arrow.up.left.and.arrow.down.right")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .accessibilityHidden(true)
             }
 
             Button {
                 mostrarFlujograma = true
             } label: {
-                Image(nombreImagen)
-                    .resizable()
-                    .scaledToFit()
+                // Vista previa en formato 2:1 (apaisado) mostrando la parte
+                // superior del flujograma con un desenfoque sutil, y un ícono de
+                // expandir nítido al centro. Se toca para abrir el flujograma completo.
+                Color.clear
+                    .aspectRatio(2, contentMode: .fit)
                     .frame(maxWidth: .infinity)
-                    .background(Color.white)
+                    .overlay(alignment: .top) {
+                        Image(nombreImagen)
+                            .resizable()
+                            .scaledToFill()
+                            .blur(radius: 2)
+                    }
+                    .clipped()
                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color(.separator), lineWidth: 1)
-                    )
+                    .overlay {
+                        Image(systemName: "arrow.up.left.and.arrow.down.right")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.white)
+                            .padding(12)
+                            .background(.ultraThinMaterial, in: Circle())
+                    }
             }
             .buttonStyle(.plain)
             .accessibilityLabel("Flujograma de derivación del proceso GES. Toca para ampliar.")
