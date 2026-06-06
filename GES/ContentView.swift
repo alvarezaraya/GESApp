@@ -138,14 +138,6 @@ struct ContentView: View {
                     .accessibilityLabel("Acerca de esta app")
                     .accessibilityInputLabels(["Información", "Acerca de"])
                 }
-                ToolbarItem(placement: .principal) {
-                    Image("GESLogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 30)
-                        .accessibilityLabel("GES")
-                        .accessibilityAddTraits(.isHeader)
-                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         withAnimation { mostrarFavoritos.toggle() }
