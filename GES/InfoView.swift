@@ -57,12 +57,7 @@ struct InfoView: View {
                         cuerpo: "El desarrollador no garantiza la exactitud, completitud, vigencia ni idoneidad de la información para un propósito determinado. El uso de esta aplicación es de exclusiva responsabilidad del usuario. Para información oficial y vinculante sobre las Garantías Explícitas en Salud, consulte directamente al MINSAL o a su prestador de salud."
                     )
 
-                    bloqueInfo(
-                        icono: "book.closed.fill",
-                        color: .indigo,
-                        titulo: "Fuente normativa",
-                        cuerpo: "Los contenidos referencian el Decreto Supremo N° 29 del Ministerio de Salud de Chile, que establece las Garantías Explícitas en Salud para el período 2025–2028. Dicho decreto es un documento de dominio público del Estado de Chile."
-                    )
+                    bloqueFuentes
 
                     Text("Hecha en Chile 🇨🇱")
                         .font(.caption2)
@@ -82,6 +77,70 @@ struct InfoView: View {
                 }
             }
         }
+    }
+
+    /// Bloque "Fuente normativa" con citas y enlaces a las fuentes oficiales.
+    /// Cumple el requisito de la guía 1.4.1: citas accesibles y enlaces a la fuente.
+    private var bloqueFuentes: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                Image(systemName: "book.closed.fill")
+                    .foregroundColor(.indigo)
+                    .accessibilityHidden(true)
+                Text("Fuentes y citas")
+                    .font(.headline)
+            }
+
+            Text("Los contenidos referencian el Decreto Supremo N° 29 del Ministerio de Salud de Chile, que establece las Garantías Explícitas en Salud para el período 2025–2028. Las guías para SIGGES incluidas son guías clínicas publicadas por el Ministerio de Salud. Ambos son documentos de dominio público del Estado de Chile.")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Link(destination: FuentesGES.decretoURL) {
+                enlaceFuente(icono: "doc.text.magnifyingglass",
+                             titulo: "Texto oficial del DS N° 29 (LeyChile)",
+                             detalle: "Biblioteca del Congreso Nacional")
+            }
+
+            Link(destination: FuentesGES.minsalURL) {
+                enlaceFuente(icono: "cross.case.fill",
+                             titulo: "Guías clínicas GES / AUGE (MINSAL)",
+                             detalle: "auge.minsal.cl")
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+    }
+
+    private func enlaceFuente(icono: String, titulo: String, detalle: String) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: icono)
+                .foregroundColor(.blue)
+                .frame(width: 24)
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(titulo)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                Text(detalle)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            Spacer(minLength: 0)
+            Image(systemName: "arrow.up.right.square")
+                .font(.caption)
+                .foregroundColor(.secondary)
+                .accessibilityHidden(true)
+        }
+        .padding(.vertical, 6)
+        .padding(.horizontal, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.blue.opacity(0.08))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(.isLink)
     }
 
     private func bloqueInfo(icono: String, color: Color, titulo: String, cuerpo: String) -> some View {
