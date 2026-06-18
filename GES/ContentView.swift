@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var searchText = ""
     @State private var mostrarFavoritos = false
     @State private var mostrarInfo = false
+    @State private var mostrarCalculadora = false
     @State private var resultados: [ProblemaGES] = ProblemaGES.todos
     @State private var favoritosSet: Set<Int> = []
     @AppStorage("favoritos") private var favoritosString = ""
@@ -122,6 +123,7 @@ struct ContentView: View {
                 aplicarFiltros()
             }
             .sheet(isPresented: $mostrarInfo) { InfoView() }
+            .sheet(isPresented: $mostrarCalculadora) { CalculadoraPlazosView() }
             // App ya en ejecución (warm): el SceneDelegate emite estas notificaciones.
             .onReceive(NotificationCenter.default.publisher(for: .abrirFavoritos)) { _ in
                 ejecutar(.favoritos)
@@ -137,6 +139,14 @@ struct ContentView: View {
                     }
                     .accessibilityLabel("Acerca de esta app")
                     .accessibilityInputLabels(["Información", "Acerca de"])
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button { mostrarCalculadora = true } label: {
+                        Image(systemName: "clock.badge.checkmark")
+                            .font(.title3)
+                    }
+                    .accessibilityLabel("Calculadora de plazos GES")
+                    .accessibilityInputLabels(["Calculadora", "Plazos", "Calculadora de plazos"])
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {

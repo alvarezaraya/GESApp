@@ -61,6 +61,8 @@ struct DetalleGESView: View {
                         GuiaSIGGESView(nombreArchivo: archivo, problema: problema)
                     }
                 }
+
+                fuenteSection
             }
             .padding()
         }
@@ -222,6 +224,48 @@ struct DetalleGESView: View {
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .accessibilityElement(children: .combine)
         }
+    }
+
+    /// Cita de la fuente normativa de esta ficha, con enlace al texto oficial.
+    /// Cumple la guía 1.4.1 de App Store: cada contenido médico cita su fuente.
+    private var fuenteSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 6) {
+                Image(systemName: "text.book.closed.fill")
+                    .foregroundColor(.secondary)
+                    .accessibilityHidden(true)
+                Text("Fuente")
+                    .font(.headline)
+            }
+
+            Text(FuentesGES.decretoCita)
+                .font(.footnote)
+                .foregroundColor(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            if problema.archivoGuiaSIGGES != nil {
+                Text("Guía para SIGGES publicada por el Ministerio de Salud de Chile (ver botón anterior).")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Link(destination: FuentesGES.decretoURL) {
+                HStack(spacing: 6) {
+                    Image(systemName: "arrow.up.right.square")
+                        .accessibilityHidden(true)
+                    Text("Ver texto oficial del decreto (LeyChile)")
+                        .fontWeight(.medium)
+                }
+                .font(.subheadline)
+            }
+            .padding(.top, 2)
+            .accessibilityAddTraits(.isLink)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 
     private func toggleFavorito() {
